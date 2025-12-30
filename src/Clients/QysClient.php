@@ -32,8 +32,7 @@ class QysClient extends BaseClient
      */
     public function batchAccountingStandard(array $params)
     {
-        $this->validateParams($params, ['orgIds', 'accountingStandard']);
-        
+        $this->validateParams($params, ['aggOrgIds', 'accountingStandardsId', 'reportingCategoryCode', 'reportingSubCategoryCode', 'reportingPeriod', 'isSkipOperatorWarn']);
         return $this->request('/v2/tax/qys/batchAccountingStandard', $params);
     }
     
@@ -46,7 +45,7 @@ class QysClient extends BaseClient
      */
     public function queryTaskTaxInfo(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->request('/v2/tax/qys/queryTaskTaxInfo', $params);
     }
@@ -60,7 +59,7 @@ class QysClient extends BaseClient
      */
     public function loadTaxItemTask(array $params)
     {
-        $this->validateParams($params, ['orgId', 'taxPeriod']);
+        $this->validateParams($params, ['aggOrgId', 'taxPeriod']);
         
         return $this->request('/v2/tax/qys/loadTaxItemTask', $params);
     }
@@ -74,7 +73,7 @@ class QysClient extends BaseClient
      */
     public function writeTaxData(array $params)
     {
-        $this->validateParams($params, ['orgId', 'taxType', 'taxPeriod', 'taxData']);
+        $this->validateParams($params, ['aggOrgId', 'skssqq', 'skssqz', 'yzpzzlDm', 'jrwc', 'yjkgz']);
         
         return $this->request('/v2/tax/qys/writeTaxData', $params);
     }
@@ -88,7 +87,7 @@ class QysClient extends BaseClient
      */
     public function writeTaxExcelData(array $params)
     {
-        $this->validateParams($params, ['orgId', 'taxType', 'taxPeriod', 'excelData']);
+        $this->validateParams($params, ['aggOrgId', 'year', 'period', 'usePresetDialog', 'zsxmDm', 'zsxmList']);
         
         return $this->request('/v2/tax/qys/writeTaxExcelData', $params);
     }
@@ -116,7 +115,7 @@ class QysClient extends BaseClient
      */
     public function writeFiData(array $params)
     {
-        $this->validateParams($params, ['orgId', 'taxPeriod', 'fiData']);
+        $this->validateParams($params, ['aggOrgId', 'taxPeriod', 'fiData']);
         
         return $this->request('/v2/tax/qys/writeFiData', $params);
     }
@@ -130,7 +129,7 @@ class QysClient extends BaseClient
      */
     public function queryContract(array $params)
     {
-        $this->validateParams($params, ['orgId', 'taxPeriod']);
+        $this->validateParams($params, ['aggOrgId', 'taxPeriod']);
         
         return $this->request('/v2/tax/qys/queryContract', $params);
     }
@@ -158,7 +157,7 @@ class QysClient extends BaseClient
      */
     public function loadInitDataTask(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->request('/v2/tax/qys/loadInitDataTask', $params);
     }
@@ -186,7 +185,7 @@ class QysClient extends BaseClient
      */
     public function loadTaxUnbilledCalculate(array $params)
     {
-        $this->validateParams($params, ['orgId', 'taxPeriod']);
+        $this->validateParams($params, ['aggOrgId', 'taxPeriod']);
         
         return $this->request('/v2/tax/qys/loadTaxUnbilledCalculate', $params);
     }
@@ -214,7 +213,7 @@ class QysClient extends BaseClient
      */
     public function loadDeclareTask(array $params)
     {
-        $this->validateParams($params, ['orgId', 'taxType', 'taxPeriod']);
+        $this->validateParams($params, ['aggOrgId', 'taxType', 'taxPeriod']);
         
         return $this->request('/v2/tax/qys/loadDeclareTask', $params);
     }
@@ -228,7 +227,7 @@ class QysClient extends BaseClient
      */
     public function writeTaxDataWithGzDeclare(array $params)
     {
-        $this->validateParams($params, ['orgId', 'taxType', 'taxPeriod', 'taxData']);
+        $this->validateParams($params, ['aggOrgId', 'taxType', 'taxPeriod', 'taxData']);
         
         return $this->request('/v2/tax/qys/writeTaxDataWithGzDeclare', $params);
     }
@@ -242,7 +241,7 @@ class QysClient extends BaseClient
      */
     public function loadSimplifiedDeclareTask(array $params)
     {
-        $this->validateParams($params, ['orgId', 'taxType', 'taxPeriod']);
+        $this->validateParams($params, ['aggOrgId', 'taxType', 'taxPeriod']);
         
         return $this->request('/v2/tax/qys/loadSimplifiedDeclareTask', $params);
     }
@@ -270,7 +269,7 @@ class QysClient extends BaseClient
      */
     public function loadTaxSbCancel(array $params)
     {
-        $this->validateParams($params, ['orgId', 'taxType', 'taxPeriod']);
+        $this->validateParams($params, ['aggOrgId', 'taxType', 'taxPeriod']);
         
         return $this->request('/v2/tax/qys/loadTaxSbCancel', $params);
     }
@@ -298,7 +297,7 @@ class QysClient extends BaseClient
      */
     public function loadPaymentTask(array $params)
     {
-        $this->validateParams($params, ['orgId', 'taxType', 'taxPeriod']);
+        $this->validateParams($params, ['aggOrgId', 'taxType', 'taxPeriod']);
         
         return $this->request('/v2/tax/qys/loadPaymentTask', $params);
     }
@@ -312,7 +311,7 @@ class QysClient extends BaseClient
      */
     public function loadDeclareInfoTask(array $params)
     {
-        $this->validateParams($params, ['orgId', 'taxType', 'taxPeriod']);
+        $this->validateParams($params, ['aggOrgId', 'taxType', 'taxPeriod']);
         
         return $this->request('/v2/tax/qys/loadDeclareInfoTask', $params);
     }
@@ -326,7 +325,7 @@ class QysClient extends BaseClient
      */
     public function loadTaxCheckTask(array $params)
     {
-        $this->validateParams($params, ['orgId', 'taxPeriod']);
+        $this->validateParams($params, ['aggOrgId', 'taxPeriod']);
         
         return $this->request('/v2/tax/qys/loadTaxCheckTask', $params);
     }
@@ -340,7 +339,7 @@ class QysClient extends BaseClient
      */
     public function loadTaxFundTask(array $params)
     {
-        $this->validateParams($params, ['orgId', 'taxFundType', 'taxPeriod']);
+        $this->validateParams($params, ['aggOrgId', 'taxFundType', 'taxPeriod']);
         
         return $this->request('/v2/tax/qys/loadTaxFundTask', $params);
     }
@@ -354,7 +353,7 @@ class QysClient extends BaseClient
      */
     public function loadTaxFundGainTask(array $params)
     {
-        $this->validateParams($params, ['orgId', 'taxFundType', 'taxPeriod']);
+        $this->validateParams($params, ['aggOrgId', 'taxFundType', 'taxPeriod']);
         
         return $this->request('/v2/tax/qys/loadTaxFundGainTask', $params);
     }
@@ -382,7 +381,7 @@ class QysClient extends BaseClient
      */
     public function loadTaxFundChangeTask(array $params)
     {
-        $this->validateParams($params, ['orgId', 'taxFundType', 'taxPeriod']);
+        $this->validateParams($params, ['aggOrgId', 'taxFundType', 'taxPeriod']);
         
         return $this->request('/v2/tax/qys/loadTaxFundChangeTask', $params);
     }
