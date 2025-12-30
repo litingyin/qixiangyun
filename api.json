@@ -1,0 +1,2837 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "默认模块",
+    "description": "",
+    "version": "1.0.0",
+    "x-download-time": "2025-12-30T02:07:02.261Z"
+  },
+  "paths": {
+    "/v2/public/oauth2/login": {
+      "$ref": "/paths/_v2_public_oauth2_login.json",
+      "post": {
+        "summary": "获取access_token"
+      }
+    },
+    "/v2/public/org/productPurchase": {
+      "$ref": "/paths/_v2_public_org_productPurchase.json",
+      "post": {
+        "summary": "订购产品"
+      }
+    },
+    "/v2/public/org/productPurchaseModify": {
+      "$ref": "/paths/_v2_public_org_productPurchaseModify.json",
+      "post": {
+        "summary": "订购修改"
+      }
+    },
+    "/v2/public/org/productCancel": {
+      "$ref": "/paths/_v2_public_org_productCancel.json",
+      "post": {
+        "summary": "订购取消"
+      }
+    },
+    "/v2/public/org/productList": {
+      "$ref": "/paths/_v2_public_org_productList.json",
+      "post": {
+        "summary": "订购查询"
+      }
+    },
+    "/v2/public/org/delete": {
+      "$ref": "/paths/_v2_public_org_delete.json",
+      "post": {
+        "summary": "企业取消授权"
+      }
+    },
+    "/v2/public/zrr/queryOrglist": {
+      "$ref": "/paths/_v2_public_zrr_queryOrglist.json",
+      "post": {
+        "summary": "自然人获取企业列表"
+      }
+    },
+    "/v2/public/beginOrgInfoTask": {
+      "$ref": "/paths/_v2_public_beginOrgInfoTask.json",
+      "post": {
+        "summary": "发起企业基本信息"
+      }
+    },
+    "/地址联系技术支持配置": {
+      "$ref": "/paths/_%E5%9C%B0%E5%9D%80%E8%81%94%E7%B3%BB%E6%8A%80%E6%9C%AF%E6%94%AF%E6%8C%81%E9%85%8D%E7%BD%AE.json",
+      "post": {
+        "summary": "获取采集状态-回调通知"
+      }
+    },
+    "/v2/public/queryOrgInfoTask": {
+      "$ref": "/paths/_v2_public_queryOrgInfoTask.json",
+      "post": {
+        "summary": "获取企业基本信息"
+      }
+    },
+    "/v2/subscribe/sysmessage/getNoticeMessage": {
+      "$ref": "/paths/_v2_subscribe_sysmessage_getNoticeMessage.json",
+      "post": {
+        "summary": "服务异常通知"
+      }
+    },
+    "/服务商CallbackURL地址": {
+      "$ref": "/paths/_%E6%9C%8D%E5%8A%A1%E5%95%86CallbackURL%E5%9C%B0%E5%9D%80.json",
+      "post": {
+        "summary": "异步任务执行结果回调"
+      }
+    },
+    "/v2/public/account/createBaseAccount": {
+      "$ref": "/paths/_v2_public_account_createBaseAccount.json",
+      "post": {
+        "summary": "通用账号创建/修改"
+      }
+    },
+    "/v2/public/account/create": {
+      "$ref": "/paths/_v2_public_account_create.json",
+      "post": {
+        "summary": "托管账号创建"
+      }
+    },
+    "/v2/public/account/update": {
+      "$ref": "/paths/_v2_public_account_update.json",
+      "post": {
+        "summary": "托管账号修改"
+      }
+    },
+    "/v2/public/account/delete": {
+      "$ref": "/paths/_v2_public_account_delete.json",
+      "post": {
+        "summary": "托管账号删除"
+      }
+    },
+    "/v2/public/account/queryAccount": {
+      "$ref": "/paths/_v2_public_account_queryAccount.json",
+      "post": {
+        "summary": "托管账号查询"
+      }
+    },
+    "/v2/public/account/bindAccountProduct": {
+      "$ref": "/paths/_v2_public_account_bindAccountProduct.json",
+      "post": {
+        "summary": "账号产品绑定"
+      }
+    },
+    "/v2/public/account/unbindAccountProduct": {
+      "$ref": "/paths/_v2_public_account_unbindAccountProduct.json",
+      "post": {
+        "summary": "账号产品解绑"
+      }
+    },
+    "/v2/public/account/bindAccountProducts": {
+      "$ref": "/paths/_v2_public_account_bindAccountProducts.json",
+      "post": {
+        "summary": "账号批量绑定产品"
+      }
+    },
+    "/v2/public/login/remote/etaxcookie": {
+      "$ref": "/paths/_v2_public_login_remote_etaxcookie.json",
+      "post": {
+        "summary": "税务APP登录发送短信验证码"
+      }
+    },
+    "/v2/public/login/remote/pushsms": {
+      "$ref": "/paths/_v2_public_login_remote_pushsms.json",
+      "post": {
+        "summary": "税务APP登录上传短信验证码"
+      }
+    },
+    "/v2/public/login/remote/checkRomoteAppCache": {
+      "$ref": "/paths/_v2_public_login_remote_checkRomoteAppCache.json",
+      "post": {
+        "summary": "校验税务APP是否能快速登录"
+      }
+    },
+    "/v2/public/login/remote/checkCache": {
+      "$ref": "/paths/_v2_public_login_remote_checkCache.json",
+      "post": {
+        "summary": "校验税局缓存是否有效"
+      }
+    },
+    "/v2/public/login/checkAccount": {
+      "$ref": "/paths/_v2_public_login_checkAccount.json",
+      "post": {
+        "summary": "账密检查接口"
+      }
+    },
+    "/v2/public/agent/login/proxyOrgList": {
+      "$ref": "/paths/_v2_public_agent_login_proxyOrgList.json",
+      "post": {
+        "summary": "代理登录获取企业列表"
+      }
+    },
+    "/v2/public/login/ext/etaxcookie": {
+      "$ref": "/paths/_v2_public_login_ext_etaxcookie.json",
+      "post": {
+        "summary": "登录税局发送短信验证码"
+      }
+    },
+    "/v2/public/login/ext/etaxpushsms": {
+      "$ref": "/paths/_v2_public_login_ext_etaxpushsms.json",
+      "post": {
+        "summary": "登录税局上传短信验证码"
+      }
+    },
+    "/v2/public/login/ext/checkAsyncLoginSjCache": {
+      "$ref": "/paths/_v2_public_login_ext_checkAsyncLoginSjCache.json",
+      "post": {
+        "summary": "校验税局缓存是否有效"
+      }
+    },
+    "/v2/public/login/scanLogin/getQrcode": {
+      "$ref": "/paths/_v2_public_login_scanLogin_getQrcode.json",
+      "post": {
+        "summary": "获取登录税局二维码"
+      }
+    },
+    "/v2/public/login/scanLogin/qrcodeLogin": {
+      "$ref": "/paths/_v2_public_login_scanLogin_qrcodeLogin.json",
+      "post": {
+        "summary": "扫二维码登录税局"
+      }
+    },
+    "/v2/public/login/multiacc/checkAsyncLoginDpptCache": {
+      "$ref": "/paths/_v2_public_login_multiacc_checkAsyncLoginDpptCache.json",
+      "post": {
+        "summary": "校验税局缓存是否有效"
+      }
+    },
+    "/v2/public/login/app/checkAppCache": {
+      "$ref": "/paths/_v2_public_login_app_checkAppCache.json",
+      "post": {
+        "summary": "校验税务APP是否可快速登录"
+      }
+    },
+    "/v2/public/login/ext/uploadToken": {
+      "$ref": "/paths/_v2_public_login_ext_uploadToken.json",
+      "post": {
+        "summary": "上传Cookie接口"
+      }
+    },
+    "/v2/public/login/zc/getCacheCookie": {
+      "$ref": "/paths/_v2_public_login_zc_getCacheCookie.json",
+      "post": {
+        "summary": "获取自持业务缓存 登录cookie "
+      }
+    },
+    "/v2/public/login/multiacc/dpptCookie": {
+      "$ref": "/paths/_v2_public_login_multiacc_dpptCookie.json",
+      "post": {
+        "summary": "登录税局发送短信验证码"
+      }
+    },
+    "/v2/public/login/multiacc/dpptpushsms": {
+      "$ref": "/paths/_v2_public_login_multiacc_dpptpushsms.json",
+      "post": {
+        "summary": "登录税局上传短信验证码"
+      }
+    },
+    "/v2/public/login/ext/uploadTokenByAccountId": {
+      "$ref": "/paths/_v2_public_login_ext_uploadTokenByAccountId.json",
+      "post": {
+        "summary": "上传Cookie接口"
+      }
+    },
+    "/v2/public/login/ext/loginOut": {
+      "$ref": "/paths/_v2_public_login_ext_loginOut.json",
+      "post": {
+        "summary": "登出"
+      }
+    },
+    "/v2/public/login/zc/checkAccount": {
+      "$ref": "/paths/_v2_public_login_zc_checkAccount.json",
+      "post": {
+        "summary": "账密检查接口"
+      }
+    },
+    "/v2/public/login/ext/etaxCookiePlus": {
+      "$ref": "/paths/_v2_public_login_ext_etaxCookiePlus.json",
+      "post": {
+        "summary": "APP登录发送短信验证码"
+      }
+    },
+    "/v2/public/login/ext/etaxpushsmsPlus": {
+      "$ref": "/paths/_v2_public_login_ext_etaxpushsmsPlus.json",
+      "post": {
+        "summary": "APP登录上传短信验证码 "
+      }
+    },
+    "/v2/public/login/ext/getCookieByCache": {
+      "$ref": "/paths/_v2_public_login_ext_getCookieByCache.json",
+      "post": {
+        "summary": "获取缓存cookie接口"
+      }
+    },
+    "/v2/public/agent/login/etaxCookie": {
+      "$ref": "/paths/_v2_public_agent_login_etaxCookie.json",
+      "post": {
+        "summary": "代理登录发送验证码"
+      }
+    },
+    "/v2/public/agent/login/etaxpushsms": {
+      "$ref": "/paths/_v2_public_agent_login_etaxpushsms.json",
+      "post": {
+        "summary": "代理登录上传短信验证码 "
+      }
+    },
+    "/v2/bsrygl/qy/addBsyTask": {
+      "$ref": "/paths/_v2_bsrygl_qy_addBsyTask.json",
+      "post": {
+        "summary": "企业添加办税人员任务"
+      }
+    },
+    "/v2/bsrygl/qy/queryBsyTask": {
+      "$ref": "/paths/_v2_bsrygl_qy_queryBsyTask.json",
+      "post": {
+        "summary": "企业添加办税人员结果查询"
+      }
+    },
+    "/v2/bsrygl/common/getQrcode": {
+      "$ref": "/paths/_v2_bsrygl_common_getQrcode.json",
+      "post": {
+        "summary": "获取二维码"
+      }
+    },
+    "/v2/bsrygl/common/getQrcodeState": {
+      "$ref": "/paths/_v2_bsrygl_common_getQrcodeState.json",
+      "post": {
+        "summary": "二维码状态确认"
+      }
+    },
+    "/v2/bsrygl/qy/bsyInfoTask": {
+      "$ref": "/paths/_v2_bsrygl_qy_bsyInfoTask.json",
+      "post": {
+        "summary": "企业现有办税人员获取"
+      }
+    },
+    "/v2/bsrygl/qy/queryBsyInfoTask": {
+      "$ref": "/paths/_v2_bsrygl_qy_queryBsyInfoTask.json",
+      "post": {
+        "summary": "企业现有办税人员结果查询"
+      }
+    },
+    "/v2/bsrygl/qy/delBsyTask": {
+      "$ref": "/paths/_v2_bsrygl_qy_delBsyTask.json",
+      "post": {
+        "summary": "企业删除办税人员"
+      }
+    },
+    "/v2/bsrygl/qy/bsyDeletedTask": {
+      "$ref": "/paths/_v2_bsrygl_qy_bsyDeletedTask.json",
+      "post": {
+        "summary": "现有办税人员删除记录任务"
+      }
+    },
+    "/v2/bsrygl/qy/queryDelBsyTask": {
+      "$ref": "/paths/_v2_bsrygl_qy_queryDelBsyTask.json",
+      "post": {
+        "summary": "企业删除办税人员结果查询"
+      }
+    },
+    "/v2/bsrygl/qy/queryBsyDeletedTask": {
+      "$ref": "/paths/_v2_bsrygl_qy_queryBsyDeletedTask.json",
+      "post": {
+        "summary": "现有办税人员删除记录任务查询"
+      }
+    },
+    "/v2/public/sjhm/createBsxhOrder": {
+      "$ref": "/paths/_v2_public_sjhm_createBsxhOrder.json",
+      "post": {
+        "summary": "申请小号订单"
+      }
+    },
+    "/v2/public/sjhm/queryBsxhOrder": {
+      "$ref": "/paths/_v2_public_sjhm_queryBsxhOrder.json",
+      "post": {
+        "summary": "查询小号订单详情"
+      }
+    },
+    "/v2/public/sjhm/editBsxhOrderPushUrlConfig": {
+      "$ref": "/paths/_v2_public_sjhm_editBsxhOrderPushUrlConfig.json",
+      "post": {
+        "summary": "配置小号订单开通通知地址"
+      }
+    },
+    "/客户提供的订单开通通知地址": {
+      "$ref": "/paths/6fd3af1856051768f17930211a21875d.json",
+      "post": {
+        "summary": "小号订单开通通知回调"
+      }
+    },
+    "/v2/public/sjhm/bindAxn": {
+      "$ref": "/paths/_v2_public_sjhm_bindAxn.json",
+      "post": {
+        "summary": "绑定实名手机号与办税小号"
+      }
+    },
+    "/v2/public/sjhm/updateNoA": {
+      "$ref": "/paths/_v2_public_sjhm_updateNoA.json",
+      "post": {
+        "summary": "更换绑定的实名手机号"
+      }
+    },
+    "/v2/public/sjhm/unbind": {
+      "$ref": "/paths/_v2_public_sjhm_unbind.json",
+      "post": {
+        "summary": "解除实名手机号与办税小号绑定"
+      }
+    },
+    "/v2/public/sjhm/querySecretReportPageList": {
+      "$ref": "/paths/_v2_public_sjhm_querySecretReportPageList.json",
+      "post": {
+        "summary": "办税小号通话清单查询"
+      }
+    },
+    "/v2/public/sjhm/queryNote": {
+      "$ref": "/paths/_v2_public_sjhm_queryNote.json",
+      "post": {
+        "summary": "查询短信验证码"
+      }
+    },
+    "/v2/public/sjhm/editPushSmsConfig": {
+      "$ref": "/paths/_v2_public_sjhm_editPushSmsConfig.json",
+      "post": {
+        "summary": "配置小号短信通知地址"
+      }
+    },
+    "/客户提供的小号短信通知地址": {
+      "$ref": "/paths/ec850716afee3b24897eba551cef03ab.json",
+      "post": {
+        "summary": "小号短信通知回调"
+      }
+    },
+    "/v2/public/login/recoveryLogin": {
+      "$ref": "/paths/_v2_public_login_recoveryLogin.json",
+      "post": {
+        "summary": "停用账号启用"
+      }
+    },
+    "/v2/invoice/cy/zzsfpCy": {
+      "$ref": "/paths/_v2_invoice_cy_zzsfpCy.json",
+      "post": {
+        "summary": "数电票查验并获取版式文件"
+      }
+    },
+    "/v2/invoice/cy/dpptCy": {
+      "$ref": "/paths/_v2_invoice_cy_dpptCy.json",
+      "post": {
+        "summary": "数电票查验并获取版式文件"
+      }
+    },
+    "/v2/invoice/cy/czpjCy": {
+      "$ref": "/paths/_v2_invoice_cy_czpjCy.json",
+      "post": {
+        "summary": "财政票据(明细版)"
+      }
+    },
+    "/v2/invoice/cy/qklfpCy": {
+      "$ref": "/paths/_v2_invoice_cy_qklfpCy.json",
+      "post": {
+        "summary": "区块链发票(云南)"
+      }
+    },
+    "/v2/invoice/cy/tydzfpCy": {
+      "$ref": "/paths/_v2_invoice_cy_tydzfpCy.json",
+      "post": {
+        "summary": "通用电子发票(广东)"
+      }
+    },
+    "/v2/invoice/cy/cltxffpCy": {
+      "$ref": "/paths/_v2_invoice_cy_cltxffpCy.json",
+      "post": {
+        "summary": "车辆通行费发票查验(江苏)"
+      }
+    },
+    "/v2/invoice/cy/bswjxz": {
+      "$ref": "/paths/_v2_invoice_cy_bswjxz.json",
+      "post": {
+        "summary": "同步获取数电票版式文件"
+      }
+    },
+    "/v2/invoice/cy/asyncBswjxz": {
+      "$ref": "/paths/_v2_invoice_cy_asyncBswjxz.json",
+      "post": {
+        "summary": "异步获取数电票版式文件"
+      }
+    },
+    "/v2/invoice/cy/ytbqCx": {
+      "$ref": "/paths/_v2_invoice_cy_ytbqCx.json",
+      "post": {
+        "summary": "入账状态及用途标签查询"
+      }
+    },
+    "/v2/invoice/cy/bsxzJgCx": {
+      "$ref": "/paths/_v2_invoice_cy_bsxzJgCx.json",
+      "post": {
+        "summary": "查验版式下载任务结果查询"
+      }
+    },
+    "/v2/invoice/cy/uploadCy": {
+      "$ref": "/paths/_v2_invoice_cy_uploadCy.json",
+      "post": {
+        "summary": "上传文件查验"
+      }
+    },
+    "/v2/invoice/ocr/sb": {
+      "$ref": "/paths/_v2_invoice_ocr_sb.json",
+      "post": {
+        "summary": "普通票据识别"
+      }
+    },
+    "/v2/invoice/qdfp/qyjbxxcx": {
+      "$ref": "/paths/_v2_invoice_qdfp_qyjbxxcx.json",
+      "post": {
+        "summary": "企业基本信息"
+      }
+    },
+    "/v2/invoice/qdfp/sxlbCx": {
+      "$ref": "/paths/_v2_invoice_qdfp_sxlbCx.json",
+      "post": {
+        "summary": "扫脸时长查询"
+      }
+    },
+    "/v2/invoice/qdfp/smsc": {
+      "$ref": "/paths/_v2_invoice_qdfp_smsc.json",
+      "post": {
+        "summary": "扫脸时长设置"
+      }
+    },
+    "/v2/invoice/qdfp/rzewm": {
+      "$ref": "/paths/_v2_invoice_qdfp_rzewm.json",
+      "post": {
+        "summary": "获取人脸识别二维码"
+      }
+    },
+    "/v2/invoice/qdfp/rzztcx": {
+      "$ref": "/paths/_v2_invoice_qdfp_rzztcx.json",
+      "post": {
+        "summary": "获取人脸识别结果"
+      }
+    },
+    "/v2/invoice/qdfp/gsrzewm": {
+      "$ref": "/paths/_v2_invoice_qdfp_gsrzewm.json",
+      "post": {
+        "summary": "获取人脸识别二维码 "
+      }
+    },
+    "/v2/invoice/qdfp/gsrzztcx": {
+      "$ref": "/paths/_v2_invoice_qdfp_gsrzztcx.json",
+      "post": {
+        "summary": "获取人脸识别结果"
+      }
+    },
+    "/v2/invoice/qdfp/queryKchztz": {
+      "$ref": "/paths/_v2_invoice_qdfp_queryKchztz.json",
+      "post": {
+        "summary": "查询成品油库存汇总台账"
+      }
+    },
+    "/v2/invoice/qdfp/queryCpySpbms": {
+      "$ref": "/paths/_v2_invoice_qdfp_queryCpySpbms.json",
+      "post": {
+        "summary": "查询成品油换算标准(税收商品查询)"
+      }
+    },
+    "/v2/invoice/qdfp/queryCpySpbmhgs": {
+      "$ref": "/paths/_v2_invoice_qdfp_queryCpySpbmhgs.json",
+      "post": {
+        "summary": "查询成品油换算标准(海关商品查询) "
+      }
+    },
+    "/v2/invoice/qdfp/queryCpySpbmmx": {
+      "$ref": "/paths/_v2_invoice_qdfp_queryCpySpbmmx.json",
+      "post": {
+        "summary": "查询成品油授权编码"
+      }
+    },
+    "/v2/invoice/qdfp/queryCpydysm": {
+      "$ref": "/paths/_v2_invoice_qdfp_queryCpydysm.json",
+      "post": {
+        "summary": "查询成品油对应品目列表"
+      }
+    },
+    "/v2/invoice/qdfp/queryKqysssxbyglbhcx": {
+      "$ref": "/paths/_v2_invoice_qdfp_queryKqysssxbyglbhcx.json",
+      "post": {
+        "summary": "跨区域涉税事项报验管理编号信息查询"
+      }
+    },
+    "/v2/invoice/qdfp/saveKqysssxbg": {
+      "$ref": "/paths/_v2_invoice_qdfp_saveKqysssxbg.json",
+      "post": {
+        "summary": "提交跨区域涉税事项报验管理"
+      }
+    },
+    "/v2/invoice/qdfp/jysssdqy": {
+      "$ref": "/paths/_v2_invoice_qdfp_jysssdqy.json",
+      "post": {
+        "summary": "查询是否金银首饰试点企业"
+      }
+    },
+    "/v2/invoice/qdfp/jyssjyqy": {
+      "$ref": "/paths/_v2_invoice_qdfp_jyssjyqy.json",
+      "post": {
+        "summary": "查询是金银首饰经营企业 "
+      }
+    },
+    "/v2/invoice/qdfp/queryJdcxx": {
+      "$ref": "/paths/_v2_invoice_qdfp_queryJdcxx.json",
+      "post": {
+        "summary": "查询车架号信息"
+      }
+    },
+    "/v2/invoice/qdfp/queryMhcxfyxx": {
+      "$ref": "/paths/_v2_invoice_qdfp_queryMhcxfyxx.json",
+      "post": {
+        "summary": "不动产房源信息查询"
+      }
+    },
+    "/v2/invoice/qdfp/kptjxxcx": {
+      "$ref": "/paths/_v2_invoice_qdfp_kptjxxcx.json",
+      "post": {
+        "summary": "开票额度查询"
+      }
+    },
+    "/v2/invoice/qdfp/fpkjZzs": {
+      "$ref": "/paths/_v2_invoice_qdfp_fpkjZzs.json",
+      "post": {
+        "summary": "报废产品收购发票"
+      }
+    },
+    "/v2/invoice/qdfp/hzqrxxSave": {
+      "$ref": "/paths/_v2_invoice_qdfp_hzqrxxSave.json",
+      "post": {
+        "summary": "申请红字信息表"
+      }
+    },
+    "/v2/invoice/qdfp/hzFpkj": {
+      "$ref": "/paths/_v2_invoice_qdfp_hzFpkj.json",
+      "post": {
+        "summary": "红字发票开具"
+      }
+    },
+    "/v2/invoice/qdfp/hzqrxxConfirm": {
+      "$ref": "/paths/_v2_invoice_qdfp_hzqrxxConfirm.json",
+      "post": {
+        "summary": "确认红字信息表"
+      }
+    },
+    "/v2/invoice/qdfp/hzqrxxCancel": {
+      "$ref": "/paths/_v2_invoice_qdfp_hzqrxxCancel.json",
+      "post": {
+        "summary": "撤销红字信息表"
+      }
+    },
+    "/v2/invoice/qdfp/hzqrxxList": {
+      "$ref": "/paths/_v2_invoice_qdfp_hzqrxxList.json",
+      "post": {
+        "summary": "查询红字信息列表"
+      }
+    },
+    "/v2/invoice/qdfp/hzqrxxDetail": {
+      "$ref": "/paths/_v2_invoice_qdfp_hzqrxxDetail.json",
+      "post": {
+        "summary": "查询红字信息明细"
+      }
+    },
+    "/v2/invoice/qdfp/hzfptjxxcx": {
+      "$ref": "/paths/_v2_invoice_qdfp_hzfptjxxcx.json",
+      "post": {
+        "summary": "红字发票概况统计"
+      }
+    },
+    "/v2/invoice/qdfp/queryFphcztxx": {
+      "$ref": "/paths/_v2_invoice_qdfp_queryFphcztxx.json",
+      "post": {
+        "summary": "蓝票可红冲信息"
+      }
+    },
+    "/v2/invoice/qdfp/fpcx": {
+      "$ref": "/paths/_v2_invoice_qdfp_fpcx.json",
+      "post": {
+        "summary": "已开发票列表查询"
+      }
+    },
+    "/v2/invoice/qdfp/fpmx": {
+      "$ref": "/paths/_v2_invoice_qdfp_fpmx.json",
+      "post": {
+        "summary": "已开发票明细查询"
+      }
+    },
+    "/v2/invoice/qdfp/fptjcx": {
+      "$ref": "/paths/_v2_invoice_qdfp_fptjcx.json",
+      "post": {
+        "summary": "已开发票统计查询"
+      }
+    },
+    "/v2/invoice/qdfp/bswjxzBatch": {
+      "$ref": "/paths/_v2_invoice_qdfp_bswjxzBatch.json",
+      "post": {
+        "summary": "下载版式文件"
+      }
+    },
+    "/v2/invoice/qdfp/bswjxz": {
+      "$ref": "/paths/_v2_invoice_qdfp_bswjxz.json",
+      "post": {
+        "summary": "下载版式文件-废弃"
+      }
+    },
+    "/v2/invoice/qdfp/fpjf": {
+      "$ref": "/paths/_v2_invoice_qdfp_fpjf.json",
+      "post": {
+        "summary": "税局邮箱交付"
+      }
+    },
+    "/v2/invoice/qdfp/saveSxedsqSqxx": {
+      "$ref": "/paths/_v2_invoice_qdfp_saveSxedsqSqxx.json",
+      "post": {
+        "summary": "申请发票额度调整"
+      }
+    },
+    "/v2/invoice/qdfp/querySxedtzSqxx": {
+      "$ref": "/paths/_v2_invoice_qdfp_querySxedtzSqxx.json",
+      "post": {
+        "summary": "查询申请额度列表"
+      }
+    },
+    "/v2/invoice/qdfp/spxxZnFm": {
+      "$ref": "/paths/_v2_invoice_qdfp_spxxZnFm.json",
+      "post": {
+        "summary": "品名查询税收分类信息"
+      }
+    },
+    "/v2/invoice/qdfp/spxxFmxx": {
+      "$ref": "/paths/_v2_invoice_qdfp_spxxFmxx.json",
+      "post": {
+        "summary": "税编查询税收分类信息"
+      }
+    },
+    "/v2/invoice/qdfp/spxxFlcx": {
+      "$ref": "/paths/_v2_invoice_qdfp_spxxFlcx.json",
+      "post": {
+        "summary": "查询商品分类"
+      }
+    },
+    "/v2/invoice/qdfp/spxxFladd": {
+      "$ref": "/paths/_v2_invoice_qdfp_spxxFladd.json",
+      "post": {
+        "summary": "新增商品分类"
+      }
+    },
+    "/v2/invoice/qdfp/spxxFldel": {
+      "$ref": "/paths/_v2_invoice_qdfp_spxxFldel.json",
+      "post": {
+        "summary": "删除商品分类"
+      }
+    },
+    "/v2/invoice/qdfp/spxxFlrename": {
+      "$ref": "/paths/_v2_invoice_qdfp_spxxFlrename.json",
+      "post": {
+        "summary": "修改商品分类"
+      }
+    },
+    "/v2/invoice/qdfp/spxxCx": {
+      "$ref": "/paths/_v2_invoice_qdfp_spxxCx.json",
+      "post": {
+        "summary": "查询商品"
+      }
+    },
+    "/v2/invoice/qdfp/spxxAdd": {
+      "$ref": "/paths/_v2_invoice_qdfp_spxxAdd.json",
+      "post": {
+        "summary": "新增商品"
+      }
+    },
+    "/v2/invoice/qdfp/spxxUpdate": {
+      "$ref": "/paths/_v2_invoice_qdfp_spxxUpdate.json",
+      "post": {
+        "summary": "编辑商品"
+      }
+    },
+    "/v2/invoice/qdfp/spxxDel": {
+      "$ref": "/paths/_v2_invoice_qdfp_spxxDel.json",
+      "post": {
+        "summary": "删除商品"
+      }
+    },
+    "/v2/invoice/qdfp/khxxFlcx": {
+      "$ref": "/paths/_v2_invoice_qdfp_khxxFlcx.json",
+      "post": {
+        "summary": "客户分类查询"
+      }
+    },
+    "/v2/invoice/qdfp/khxxFladd": {
+      "$ref": "/paths/_v2_invoice_qdfp_khxxFladd.json",
+      "post": {
+        "summary": "客户分类新增"
+      }
+    },
+    "/v2/invoice/qdfp/khxxFldel": {
+      "$ref": "/paths/_v2_invoice_qdfp_khxxFldel.json",
+      "post": {
+        "summary": "客户分类删除"
+      }
+    },
+    "/v2/invoice/qdfp/khxxCx": {
+      "$ref": "/paths/_v2_invoice_qdfp_khxxCx.json",
+      "post": {
+        "summary": "客户信息查询"
+      }
+    },
+    "/v2/invoice/qdfp/khxxAdd": {
+      "$ref": "/paths/_v2_invoice_qdfp_khxxAdd.json",
+      "post": {
+        "summary": "客户信息新增"
+      }
+    },
+    "/v2/invoice/qdfp/khxxUpdate": {
+      "$ref": "/paths/_v2_invoice_qdfp_khxxUpdate.json",
+      "post": {
+        "summary": "客户信息修改"
+      }
+    },
+    "/v2/invoice/qdfp/khxxDel": {
+      "$ref": "/paths/_v2_invoice_qdfp_khxxDel.json",
+      "post": {
+        "summary": "客户信息删除"
+      }
+    },
+    "/v2/invoice/qdfp/fjysxxList": {
+      "$ref": "/paths/_v2_invoice_qdfp_fjysxxList.json",
+      "post": {
+        "summary": "附加要素列表查询"
+      }
+    },
+    "/v2/invoice/qdfp/fjysxxAdd": {
+      "$ref": "/paths/_v2_invoice_qdfp_fjysxxAdd.json",
+      "post": {
+        "summary": "附加要素信息添加"
+      }
+    },
+    "/v2/invoice/qdfp/fjysxxUpdate": {
+      "$ref": "/paths/_v2_invoice_qdfp_fjysxxUpdate.json",
+      "post": {
+        "summary": "附加要素信息编辑"
+      }
+    },
+    "/v2/invoice/qdfp/fjysxxDel": {
+      "$ref": "/paths/_v2_invoice_qdfp_fjysxxDel.json",
+      "post": {
+        "summary": "附加要素信息删除"
+      }
+    },
+    "/v2/invoice/qdfp/cjmbList": {
+      "$ref": "/paths/_v2_invoice_qdfp_cjmbList.json",
+      "post": {
+        "summary": "场景模版查询"
+      }
+    },
+    "/v2/invoice/qdfp/cjmbAdd": {
+      "$ref": "/paths/_v2_invoice_qdfp_cjmbAdd.json",
+      "post": {
+        "summary": "场景模版添加"
+      }
+    },
+    "/v2/invoice/qdfp/cjmbUpdate": {
+      "$ref": "/paths/_v2_invoice_qdfp_cjmbUpdate.json",
+      "post": {
+        "summary": "场景模版编辑"
+      }
+    },
+    "/v2/invoice/qdfp/cjmbDel": {
+      "$ref": "/paths/_v2_invoice_qdfp_cjmbDel.json",
+      "post": {
+        "summary": "场景模版删除"
+      }
+    },
+    "/v2/invoice/qdfp/asynResult": {
+      "$ref": "/paths/_v2_invoice_qdfp_asynResult.json",
+      "post": {
+        "summary": "异步请求结果查询"
+      }
+    },
+    "/v2/invoice/rz/sbxx": {
+      "$ref": "/paths/_v2_invoice_rz_sbxx.json",
+      "post": {
+        "summary": "获取税款所属期"
+      }
+    },
+    "/v2/invoice/rz/sqSkssqCj": {
+      "$ref": "/paths/_v2_invoice_rz_sqSkssqCj.json",
+      "post": {
+        "summary": "获取税款所属期"
+      }
+    },
+    "/v2/invoice/rz/skssqCjjg": {
+      "$ref": "/paths/_v2_invoice_rz_skssqCjjg.json",
+      "post": {
+        "summary": "获取税款所属期任务结果"
+      }
+    },
+    "/v2/invoice/rz/jxfpqs": {
+      "$ref": "/paths/_v2_invoice_rz_jxfpqs.json",
+      "post": {
+        "summary": "进项发票取数"
+      }
+    },
+    "/v2/invoice/rz/sqJxfpCj": {
+      "$ref": "/paths/_v2_invoice_rz_sqJxfpCj.json",
+      "post": {
+        "summary": "申请进项发票采集"
+      }
+    },
+    "/v2/invoice/rz/jxfpCjjg": {
+      "$ref": "/paths/_v2_invoice_rz_jxfpCjjg.json",
+      "post": {
+        "summary": "进项发票采集结果查询"
+      }
+    },
+    "/v2/invoice/rz/sqHgjksCj": {
+      "$ref": "/paths/_v2_invoice_rz_sqHgjksCj.json",
+      "post": {
+        "summary": "申请海关缴款书采集"
+      }
+    },
+    "/v2/invoice/rz/hgjksCjjg": {
+      "$ref": "/paths/_v2_invoice_rz_hgjksCjjg.json",
+      "post": {
+        "summary": "海关缴款书采集结果查询"
+      }
+    },
+    "/v2/invoice/rz/hgjksqs": {
+      "$ref": "/paths/_v2_invoice_rz_hgjksqs.json",
+      "post": {
+        "summary": "海关缴款书取数"
+      }
+    },
+    "/v2/invoice/rz/sqDkdjwspzCj": {
+      "$ref": "/paths/_v2_invoice_rz_sqDkdjwspzCj.json",
+      "post": {
+        "summary": "申请代扣代缴凭证采集"
+      }
+    },
+    "/v2/invoice/rz/dkdjwspzCjjg": {
+      "$ref": "/paths/_v2_invoice_rz_dkdjwspzCjjg.json",
+      "post": {
+        "summary": "代扣代缴凭证采集结果查询"
+      }
+    },
+    "/v2/invoice/rz/sqDclNcpfpCj": {
+      "$ref": "/paths/_v2_invoice_rz_sqDclNcpfpCj.json",
+      "post": {
+        "summary": "待处理农产品采集"
+      }
+    },
+    "/v2/invoice/rz/dclNcpfpCjjg": {
+      "$ref": "/paths/_v2_invoice_rz_dclNcpfpCjjg.json",
+      "post": {
+        "summary": "待处理农产品采集结果查询"
+      }
+    },
+    "/v2/invoice/rz/sqJjkcNcpCj": {
+      "$ref": "/paths/_v2_invoice_rz_sqJjkcNcpCj.json",
+      "post": {
+        "summary": "申请加计扣除农产品采集"
+      }
+    },
+    "/v2/invoice/rz/jjkcNcpCjjg": {
+      "$ref": "/paths/_v2_invoice_rz_jjkcNcpCjjg.json",
+      "post": {
+        "summary": "加计扣除农产品采集结果查询"
+      }
+    },
+    "/v2/invoice/rz/sqNcpfpCl": {
+      "$ref": "/paths/_v2_invoice_rz_sqNcpfpCl.json",
+      "post": {
+        "summary": "申请农产品发票处理"
+      }
+    },
+    "/v2/invoice/rz/ncpfpCljg": {
+      "$ref": "/paths/_v2_invoice_rz_ncpfpCljg.json",
+      "post": {
+        "summary": "农产品发票处理结果查询"
+      }
+    },
+    "/v2/invoice/rz/sqHgjksLr": {
+      "$ref": "/paths/_v2_invoice_rz_sqHgjksLr.json",
+      "post": {
+        "summary": "申请海关缴款书录入"
+      }
+    },
+    "/v2/invoice/rz/hgjksLrjg": {
+      "$ref": "/paths/_v2_invoice_rz_hgjksLrjg.json",
+      "post": {
+        "summary": "海关缴款书录入结果查询"
+      }
+    },
+    "/v2/invoice/rz/sqLrHgjksCj": {
+      "$ref": "/paths/_v2_invoice_rz_sqLrHgjksCj.json",
+      "post": {
+        "summary": "已录入海关缴款书查询"
+      }
+    },
+    "/v2/invoice/rz/lrHgjksCjjg": {
+      "$ref": "/paths/_v2_invoice_rz_lrHgjksCjjg.json",
+      "post": {
+        "summary": "已录入缴款书查询任务结果"
+      }
+    },
+    "/v2/invoice/rz/jxfpgx": {
+      "$ref": "/paths/_v2_invoice_rz_jxfpgx.json",
+      "post": {
+        "summary": "发票勾选"
+      }
+    },
+    "/v2/invoice/rz/jxfpgxjg": {
+      "$ref": "/paths/_v2_invoice_rz_jxfpgxjg.json",
+      "post": {
+        "summary": "发票勾选结果查询"
+      }
+    },
+    "/v2/invoice/rz/hgjksgx": {
+      "$ref": "/paths/_v2_invoice_rz_hgjksgx.json",
+      "post": {
+        "summary": "海关缴款书勾选"
+      }
+    },
+    "/v2/invoice/rz/hgjksgxjg": {
+      "$ref": "/paths/_v2_invoice_rz_hgjksgxjg.json",
+      "post": {
+        "summary": "海关缴款书勾选结果"
+      }
+    },
+    "/v2/invoice/rz/dkdjwspzgx": {
+      "$ref": "/paths/_v2_invoice_rz_dkdjwspzgx.json",
+      "post": {
+        "summary": "代扣代缴凭证勾选"
+      }
+    },
+    "/v2/invoice/rz/dkdjwspzgxjg": {
+      "$ref": "/paths/_v2_invoice_rz_dkdjwspzgxjg.json",
+      "post": {
+        "summary": "代扣代缴凭证勾选结果查询"
+      }
+    },
+    "/v2/invoice/rz/sqNcpJjkc": {
+      "$ref": "/paths/_v2_invoice_rz_sqNcpJjkc.json",
+      "post": {
+        "summary": "农产品加计扣除勾选"
+      }
+    },
+    "/v2/invoice/rz/ncpJjkcjg": {
+      "$ref": "/paths/_v2_invoice_rz_ncpJjkcjg.json",
+      "post": {
+        "summary": "农产品加计扣除勾选结果查询"
+      }
+    },
+    "/v2/invoice/rz/sqtjqr": {
+      "$ref": "/paths/_v2_invoice_rz_sqtjqr.json",
+      "post": {
+        "summary": "撤销统计确认"
+      }
+    },
+    "/v2/invoice/rz/tjqrsqjg": {
+      "$ref": "/paths/_v2_invoice_rz_tjqrsqjg.json",
+      "post": {
+        "summary": "统计确认/撤销统计结果查询"
+      }
+    },
+    "/v2/invoice/rz/zxgx": {
+      "$ref": "/paths/_v2_invoice_rz_zxgx.json",
+      "post": {
+        "summary": "注销勾选"
+      }
+    },
+    "/v2/invoice/rz/zxgxjg": {
+      "$ref": "/paths/_v2_invoice_rz_zxgxjg.json",
+      "post": {
+        "summary": "注销勾选结果查询"
+      }
+    },
+    "/v2/invoice/rz/tjqrjg": {
+      "$ref": "/paths/_v2_invoice_rz_tjqrjg.json",
+      "post": {
+        "summary": "最新统计确认信息查询"
+      }
+    },
+    "/v2/invoice/rz/sqTjqrxxCj": {
+      "$ref": "/paths/_v2_invoice_rz_sqTjqrxxCj.json",
+      "post": {
+        "summary": "最新统计信息采集"
+      }
+    },
+    "/v2/invoice/rz/tjqrxxCjjg": {
+      "$ref": "/paths/_v2_invoice_rz_tjqrxxCjjg.json",
+      "post": {
+        "summary": "最新统计信息采集结果查询"
+      }
+    },
+    "/v2/invoice/rz/sqHzfpCj": {
+      "$ref": "/paths/_v2_invoice_rz_sqHzfpCj.json",
+      "post": {
+        "summary": "申请红字发票采集"
+      }
+    },
+    "/v2/invoice/rz/hzfpCjjg": {
+      "$ref": "/paths/_v2_invoice_rz_hzfpCjjg.json",
+      "post": {
+        "summary": "红字发票采集结果查询"
+      }
+    },
+    "/v2/invoice/rz/sqTsytqrCj": {
+      "$ref": "/paths/_v2_invoice_rz_sqTsytqrCj.json",
+      "post": {
+        "summary": "申请退税用途确认发票采集"
+      }
+    },
+    "/v2/invoice/rz/tsytqrCjjg": {
+      "$ref": "/paths/_v2_invoice_rz_tsytqrCjjg.json",
+      "post": {
+        "summary": "退税用途确认采集结果查询"
+      }
+    },
+    "/v2/invoice/rz/sqLsydkxxCj": {
+      "$ref": "/paths/_v2_invoice_rz_sqLsydkxxCj.json",
+      "post": {
+        "summary": "申请历史已抵扣信息采集"
+      }
+    },
+    "/v2/invoice/rz/lsydkxxCjjg": {
+      "$ref": "/paths/_v2_invoice_rz_lsydkxxCjjg.json",
+      "post": {
+        "summary": "历史已抵扣信息采集结果查询"
+      }
+    },
+    "/v2/invoice/rz/queryBddkFp": {
+      "$ref": "/paths/_v2_invoice_rz_queryBddkFp.json",
+      "post": {
+        "summary": "不得抵扣发票查询"
+      }
+    },
+    "/v2/invoice/rz/sqBddkFpCj": {
+      "$ref": "/paths/_v2_invoice_rz_sqBddkFpCj.json",
+      "post": {
+        "summary": "申请不得抵扣发票信息采集"
+      }
+    },
+    "/v2/invoice/rz/bddkFpCjjg": {
+      "$ref": "/paths/_v2_invoice_rz_bddkFpCjjg.json",
+      "post": {
+        "summary": "不得抵扣发票信息采集结果查询"
+      }
+    },
+    "/v2/invoice/sdfile/applyLayoutFile": {
+      "$ref": "/paths/_v2_invoice_sdfile_applyLayoutFile.json",
+      "post": {
+        "summary": "发起获取数电版式任务"
+      }
+    },
+    "/v2/invoice/sdfile/getLayoutFile": {
+      "$ref": "/paths/_v2_invoice_sdfile_getLayoutFile.json",
+      "post": {
+        "summary": "获取数电票版式文件"
+      }
+    },
+    "/v2/invoice/sdfile/syncLayoutFile": {
+      "$ref": "/paths/_v2_invoice_sdfile_syncLayoutFile.json",
+      "post": {
+        "summary": "单张数电版式下载"
+      }
+    },
+    "/v2/invoice/gj/queryFpsljeseHj": {
+      "$ref": "/paths/_v2_invoice_gj_queryFpsljeseHj.json",
+      "post": {
+        "summary": "申请全量发票汇总信息"
+      }
+    },
+    "/v2/invoice/gj/getFpsljeseHj": {
+      "$ref": "/paths/_v2_invoice_gj_getFpsljeseHj.json",
+      "post": {
+        "summary": "获取全量发票汇总信息"
+      }
+    },
+    "/v2/invoice/fpruz/queryFprzxx": {
+      "$ref": "/paths/_v2_invoice_fpruz_queryFprzxx.json",
+      "post": {
+        "summary": "发票入账信息查询"
+      }
+    },
+    "/v2/invoice/fpruz/fprzbc": {
+      "$ref": "/paths/_v2_invoice_fpruz_fprzbc.json",
+      "post": {
+        "summary": "发票入账"
+      }
+    },
+    "/v2/invoice/fpruz/queryHgjksrzxx": {
+      "$ref": "/paths/_v2_invoice_fpruz_queryHgjksrzxx.json",
+      "post": {
+        "summary": "海关缴款书入账信息查询"
+      }
+    },
+    "/v2/invoice/fpruz/hgjksrzbc": {
+      "$ref": "/paths/_v2_invoice_fpruz_hgjksrzbc.json",
+      "post": {
+        "summary": "海关缴款书入账"
+      }
+    },
+    "/v2/invoice/fpruz/queryDkdjrzxx": {
+      "$ref": "/paths/_v2_invoice_fpruz_queryDkdjrzxx.json",
+      "post": {
+        "summary": "代扣代缴入账信息查询"
+      }
+    },
+    "/v2/invoice/fpruz/dkdjrzbc": {
+      "$ref": "/paths/_v2_invoice_fpruz_dkdjrzbc.json",
+      "post": {
+        "summary": "代扣代缴入账"
+      }
+    },
+    "/v2/invoice/fpruz/asynResult": {
+      "$ref": "/paths/_v2_invoice_fpruz_asynResult.json",
+      "post": {
+        "summary": "异步请求结果查询"
+      }
+    },
+    "/v2/invoice/gj/collectTask": {
+      "$ref": "/paths/_v2_invoice_gj_collectTask.json",
+      "post": {
+        "summary": "发起进销项归集任务"
+      }
+    },
+    "/v2/invoice/gj/collectTaskStatus": {
+      "$ref": "/paths/_v2_invoice_gj_collectTaskStatus.json",
+      "post": {
+        "summary": "查询归集任务结果"
+      }
+    },
+    "/v2/invoice/gj/getCollectTaskPageData": {
+      "$ref": "/paths/_v2_invoice_gj_getCollectTaskPageData.json",
+      "post": {
+        "summary": "获取发票数据"
+      }
+    },
+    "/v2/invoice/gj/redInvoiceCollectTask": {
+      "$ref": "/paths/_v2_invoice_gj_redInvoiceCollectTask.json",
+      "post": {
+        "summary": "发起作废/红冲归集任务"
+      }
+    },
+    "/v2/invoice/gj/collectCheckedInvoice": {
+      "$ref": "/paths/_v2_invoice_gj_collectCheckedInvoice.json",
+      "post": {
+        "summary": "发起已勾选归集任务"
+      }
+    },
+    "/v2/invoice/gj/collectCheckedInvoiceStatus": {
+      "$ref": "/paths/_v2_invoice_gj_collectCheckedInvoiceStatus.json",
+      "post": {
+        "summary": "查询已勾选归集任务结果"
+      }
+    },
+    "/v2/invoice/gj/getCollectCheckedInvoicePageData": {
+      "$ref": "/paths/_v2_invoice_gj_getCollectCheckedInvoicePageData.json",
+      "post": {
+        "summary": "查询已勾选归集数据"
+      }
+    },
+    "/v2/invoice/gj/terminateCollectionTask": {
+      "$ref": "/paths/_v2_invoice_gj_terminateCollectionTask.json",
+      "post": {
+        "summary": "撤销归集待执行任务"
+      }
+    },
+    "/v2/invoice/gj/syncCollectTask": {
+      "$ref": "/paths/_v2_invoice_gj_syncCollectTask.json",
+      "post": {
+        "summary": "进销项发票信息"
+      }
+    },
+    "/v2/invoice/gj/syncFpjbxx": {
+      "$ref": "/paths/_v2_invoice_gj_syncFpjbxx.json",
+      "post": {
+        "summary": "发票基础信息"
+      }
+    },
+    "/v2/invoice/gj/fpmx": {
+      "$ref": "/paths/_v2_invoice_gj_fpmx.json",
+      "post": {
+        "summary": "发票详情归集"
+      }
+    },
+    "/v2/public/org/loadOrgTaxInfo": {
+      "$ref": "/paths/_v2_public_org_loadOrgTaxInfo.json",
+      "post": {
+        "summary": "发起采集企业税务信息"
+      }
+    },
+    "/v2/public/org/hasReadSJInfo": {
+      "$ref": "/paths/_v2_public_org_hasReadSJInfo.json",
+      "post": {
+        "summary": "查询企业税务信息状态"
+      }
+    },
+    "/v2/public/org/queryOrgInfo": {
+      "$ref": "/paths/_v2_public_org_queryOrgInfo.json",
+      "post": {
+        "summary": "查询企业信息"
+      }
+    },
+    "/v2/tax/qys/batchAccountingStandard": {
+      "$ref": "/paths/_v2_tax_qys_batchAccountingStandard.json",
+      "post": {
+        "summary": "批量设置会计准则制度"
+      }
+    },
+    "/v2/tax/qys/queryTaskTaxInfo": {
+      "$ref": "/paths/_v2_tax_qys_queryTaskTaxInfo.json",
+      "post": {
+        "summary": "查询漏报检查任务"
+      }
+    },
+    "/v2/tax/qys/loadTaxItemTask": {
+      "$ref": "/paths/_v2_tax_qys_loadTaxItemTask.json",
+      "post": {
+        "summary": "发起获取申报条目任务"
+      }
+    },
+    "/v2/tax/qys/writeTaxData": {
+      "$ref": "/paths/_v2_tax_qys_writeTaxData.json",
+      "post": {
+        "summary": "上传各税种申报表数据"
+      }
+    },
+    "/v2/tax/qys/writeTaxExcelData": {
+      "$ref": "/paths/_v2_tax_qys_writeTaxExcelData.json",
+      "post": {
+        "summary": "上传各税种申报表EXCEL数据"
+      }
+    },
+    "/v2/tax/qys/queryTaskInfo": {
+      "$ref": "/paths/_v2_tax_qys_queryTaskInfo.json",
+      "post": {
+        "summary": "查询下载PDF任务结果"
+      }
+    },
+    "/v2/tax/qys/writeFiData": {
+      "$ref": "/paths/_v2_tax_qys_writeFiData.json",
+      "post": {
+        "summary": "上传财报数据"
+      }
+    },
+    "/v2/tax/qys/queryContract": {
+      "$ref": "/paths/_v2_tax_qys_queryContract.json",
+      "post": {
+        "summary": "发起查询合同接口任务"
+      }
+    },
+    "/v2/tax/qys/queryContractTaskInfo": {
+      "$ref": "/paths/_v2_tax_qys_queryContractTaskInfo.json",
+      "post": {
+        "summary": "查询合同任务结果"
+      }
+    },
+    "/v2/tax/qys/loadInitDataTask": {
+      "$ref": "/paths/_v2_tax_qys_loadInitDataTask.json",
+      "post": {
+        "summary": "发起获取初始化数据任务"
+      }
+    },
+    "/v2/tax/qys/getInitData": {
+      "$ref": "/paths/_v2_tax_qys_getInitData.json",
+      "post": {
+        "summary": "初始化数据查询"
+      }
+    },
+    "/v2/tax/qys/loadTaxUnbilledCalculate": {
+      "$ref": "/paths/_v2_tax_qys_loadTaxUnbilledCalculate.json",
+      "post": {
+        "summary": "未开票收入算税"
+      }
+    },
+    "/v2/tax/qys/queryTaxUnbilledCalculate": {
+      "$ref": "/paths/_v2_tax_qys_queryTaxUnbilledCalculate.json",
+      "post": {
+        "summary": "查询未开票收入算税任务"
+      }
+    },
+    "/v2/tax/qys/loadDeclareTask": {
+      "$ref": "/paths/_v2_tax_qys_loadDeclareTask.json",
+      "post": {
+        "summary": "发起申报任务"
+      }
+    },
+    "/v2/task/qys/queryDeclareTask": {
+      "$ref": "/paths/_v2_task_qys_queryDeclareTask.json",
+      "post": {
+        "summary": "查询申报任务进度结果接口"
+      }
+    },
+    "/v2/tax/qys/writeTaxDataWithGzDeclare": {
+      "$ref": "/paths/_v2_tax_qys_writeTaxDataWithGzDeclare.json",
+      "post": {
+        "summary": "发起更正申报任务接口"
+      }
+    },
+    "/v2/tax/qys/loadSimplifiedDeclareTask": {
+      "$ref": "/paths/_v2_tax_qys_loadSimplifiedDeclareTask.json",
+      "post": {
+        "summary": "发起简易申报任务"
+      }
+    },
+    "/v2/tax/qys/querySimplifiedDeclareTaskInfo": {
+      "$ref": "/paths/_v2_tax_qys_querySimplifiedDeclareTaskInfo.json",
+      "post": {
+        "summary": "查询简易申报任务结果"
+      }
+    },
+    "/v2/tax/qys/loadTaxSbCancel": {
+      "$ref": "/paths/_v2_tax_qys_loadTaxSbCancel.json",
+      "post": {
+        "summary": "发起作废申报任务"
+      }
+    },
+    "/v2/tax/qys/queryTaxSbCancel": {
+      "$ref": "/paths/_v2_tax_qys_queryTaxSbCancel.json",
+      "post": {
+        "summary": "查询作废申报任务结果"
+      }
+    },
+    "/v2/tax/qys/loadPaymentTask": {
+      "$ref": "/paths/_v2_tax_qys_loadPaymentTask.json",
+      "post": {
+        "summary": "发起税款缴纳任务"
+      }
+    },
+    "/v2/task/qys/queryPayTask": {
+      "$ref": "/paths/_v2_task_qys_queryPayTask.json",
+      "post": {
+        "summary": "查询缴款任务进度结果接口"
+      }
+    },
+    "/v2/tax/qys/loadDeclareInfoTask": {
+      "$ref": "/paths/_v2_tax_qys_loadDeclareInfoTask.json",
+      "post": {
+        "summary": "发起申报信息查询任务"
+      }
+    },
+    "/v2/tax/qys/loadTaxCheckTask": {
+      "$ref": "/paths/_v2_tax_qys_loadTaxCheckTask.json",
+      "post": {
+        "summary": "发起漏报检查任务"
+      }
+    },
+    "/v2/tax/qys/loadTaxFundTask": {
+      "$ref": "/paths/_v2_tax_qys_loadTaxFundTask.json",
+      "post": {
+        "summary": "税源信息采集接口"
+      }
+    },
+    "/v2/tax/qys/loadTaxFundGainTask": {
+      "$ref": "/paths/_v2_tax_qys_loadTaxFundGainTask.json",
+      "post": {
+        "summary": "税源信息获取接口"
+      }
+    },
+    "/v2/tax/qys/queryTaxFundGainInfo": {
+      "$ref": "/paths/_v2_tax_qys_queryTaxFundGainInfo.json",
+      "post": {
+        "summary": "查询税源获取任务结果接口"
+      }
+    },
+    "/v2/tax/qys/loadTaxFundChangeTask": {
+      "$ref": "/paths/_v2_tax_qys_loadTaxFundChangeTask.json",
+      "post": {
+        "summary": "税源变更接口"
+      }
+    },
+    "/v2/tax/qys/queryTaxFundChangeTask": {
+      "$ref": "/paths/_v2_tax_qys_queryTaxFundChangeTask.json",
+      "post": {
+        "summary": "查询税源变更任务结果接口"
+      }
+    },
+    "/v2/public/org/saveDialogInfo": {
+      "$ref": "/paths/_v2_public_org_saveDialogInfo.json",
+      "post": {
+        "summary": "保存申报辅助设置弹窗选项信息"
+      }
+    },
+    "/v2/public/queryDiaLogInfo": {
+      "$ref": "/paths/_v2_public_queryDiaLogInfo.json",
+      "post": {
+        "summary": "查询申报辅助设置弹窗信息"
+      }
+    },
+    "/v2/public/org/queryAllDiaLogInfo": {
+      "$ref": "/paths/_v2_public_org_queryAllDiaLogInfo.json",
+      "post": {
+        "summary": "查询全量申报辅助设置弹窗信息"
+      }
+    },
+    "/v2/tax/qys/loadWszmTask": {
+      "$ref": "/paths/_v2_tax_qys_loadWszmTask.json",
+      "post": {
+        "summary": "发起下载完税证明任务"
+      }
+    },
+    "/v2/tax/qys/loadWszmIncludeDetailTask": {
+      "$ref": "/paths/_v2_tax_qys_loadWszmIncludeDetailTask.json",
+      "post": {
+        "summary": "发起下载完税证明并解析任务"
+      }
+    },
+    "/v2/tax/qys/loadPdfTask": {
+      "$ref": "/paths/_v2_tax_qys_loadPdfTask.json",
+      "post": {
+        "summary": "发起下载当期PDF任务"
+      }
+    },
+    "/v2/tax/qys/loadWqPdfTask": {
+      "$ref": "/paths/_v2_tax_qys_loadWqPdfTask.json",
+      "post": {
+        "summary": "发起下载往期PDF任务"
+      }
+    },
+    "/v2/tax/qys/queryWqPdfResult": {
+      "$ref": "/paths/_v2_tax_qys_queryWqPdfResult.json",
+      "post": {
+        "summary": "查询往期PDF数据"
+      }
+    },
+    "/v2/task/qys/queryAnalysisPdfTask": {
+      "$ref": "/paths/_v2_task_qys_queryAnalysisPdfTask.json",
+      "post": {
+        "summary": "查询PDF任务返回结构化数据"
+      }
+    },
+    "/v2/tax/qys/queryTaskIdsInfo": {
+      "$ref": "/paths/_v2_tax_qys_queryTaskIdsInfo.json",
+      "post": {
+        "summary": "查询多个任务执行结果"
+      }
+    },
+    "/v2/public/bszs/getZsClientUrl": {
+      "$ref": "/paths/_v2_public_bszs_getZsClientUrl.json",
+      "post": {
+        "summary": "获取助手客户端下载地址"
+      }
+    },
+    "/v2/tax/qys/queryTaxIncentives": {
+      "$ref": "/paths/_v2_tax_qys_queryTaxIncentives.json",
+      "post": {
+        "summary": "查询税收优惠政策代码及名称"
+      }
+    },
+    "/v2/tax/qxy/taskCancel": {
+      "$ref": "/paths/_v2_tax_qxy_taskCancel.json",
+      "post": {
+        "summary": "任务终止接口"
+      }
+    },
+    "/{客户自行设计}": {
+      "$ref": "/paths/_%7B%E5%AE%A2%E6%88%B7%E8%87%AA%E8%A1%8C%E8%AE%BE%E8%AE%A1%7D.json",
+      "post": {
+        "summary": "任务回调接口样例(忽略https://api.qixiangyun.com/这个地址前缀)"
+      }
+    },
+    "/v2/tax/qys/loadTaxMyTodo": {
+      "$ref": "/paths/_v2_tax_qys_loadTaxMyTodo.json",
+      "post": {
+        "summary": "发起获取我的待办"
+      }
+    },
+    "/v2/tax/qys/loadTaxMyRemind": {
+      "$ref": "/paths/_v2_tax_qys_loadTaxMyRemind.json",
+      "post": {
+        "summary": "发起获取我的提醒"
+      }
+    },
+    "/v2/tax/qys/queryTaxMyTodo": {
+      "$ref": "/paths/_v2_tax_qys_queryTaxMyTodo.json",
+      "post": {
+        "summary": "获取我的待办结果"
+      }
+    },
+    "/v2/tax/qys/queryTaxMyRemind": {
+      "$ref": "/paths/_v2_tax_qys_queryTaxMyRemind.json",
+      "post": {
+        "summary": "获取我的提醒结果"
+      }
+    },
+    "/v2/iit/declare/getCompanyRegisterInfo": {
+      "$ref": "/paths/_v2_iit_declare_getCompanyRegisterInfo.json",
+      "post": {
+        "summary": "企业注册"
+      }
+    },
+    "/v2/iit/check/checkPassword": {
+      "$ref": "/paths/_v2_iit_check_checkPassword.json",
+      "post": {
+        "summary": "账号信息上传并校验（申报密码校验）"
+      }
+    },
+    "/v2/iit/declare/declareEmployeeInfo": {
+      "$ref": "/paths/_v2_iit_declare_declareEmployeeInfo.json",
+      "post": {
+        "summary": "投资者信息报送"
+      }
+    },
+    "/v2/iit/declare/getEmployeeInfoFeedback": {
+      "$ref": "/paths/_v2_iit_declare_getEmployeeInfoFeedback.json",
+      "post": {
+        "summary": "投资者信息报送反馈"
+      }
+    },
+    "/v2/iit/declare/batchInvalidSubmission": {
+      "$ref": "/paths/_v2_iit_declare_batchInvalidSubmission.json",
+      "post": {
+        "summary": "作废人员信息"
+      }
+    },
+    "/v2/iit/data/getCompanyEmployee": {
+      "$ref": "/paths/_v2_iit_data_getCompanyEmployee.json",
+      "post": {
+        "summary": "企业人员列表查询"
+      }
+    },
+    "/v2/iit/mergedEmployeeArchives/query": {
+      "$ref": "/paths/_v2_iit_mergedEmployeeArchives_query.json",
+      "post": {
+        "summary": "并档查询"
+      }
+    },
+    "/v2/iit/mergedEmployeeArchives/getFeedback": {
+      "$ref": "/paths/_v2_iit_mergedEmployeeArchives_getFeedback.json",
+      "post": {
+        "summary": "自然人并档服务反馈"
+      }
+    },
+    "/v2/iit/deductionAmount/queryPreDeduct": {
+      "$ref": "/paths/_v2_iit_deductionAmount_queryPreDeduct.json",
+      "post": {
+        "summary": "扣除名单查询"
+      }
+    },
+    "/v2/iit/deductionAmount/confirmPreDeduct": {
+      "$ref": "/paths/_v2_iit_deductionAmount_confirmPreDeduct.json",
+      "post": {
+        "summary": "扣除名单确认"
+      }
+    },
+    "/v2/iit/deductionAmount/getPreDeductConfirmFeedback": {
+      "$ref": "/paths/_v2_iit_deductionAmount_getPreDeductConfirmFeedback.json",
+      "post": {
+        "summary": "扣除名单确认反馈"
+      }
+    },
+    "/v2/iit/declare/downloadAuthenticationState": {
+      "$ref": "/paths/_v2_iit_declare_downloadAuthenticationState.json",
+      "post": {
+        "summary": "人员验证状态更新"
+      }
+    },
+    "/v2/iit/personalPension/download": {
+      "$ref": "/paths/_v2_iit_personalPension_download.json",
+      "post": {
+        "summary": "个人养老金下载接口"
+      }
+    },
+    "/v2/iit/personalPension/getDownloadFeedback": {
+      "$ref": "/paths/_v2_iit_personalPension_getDownloadFeedback.json",
+      "post": {
+        "summary": "获取个人养老金下载反馈"
+      }
+    },
+    "/v2/iit/declare/declareEssentialInfo": {
+      "$ref": "/paths/_v2_iit_declare_declareEssentialInfo.json",
+      "post": {
+        "summary": "人员专项扣除信息登记报送服务"
+      }
+    },
+    "/v2/iit/declare/getEssentialInfoFeedback": {
+      "$ref": "/paths/_v2_iit_declare_getEssentialInfoFeedback.json",
+      "post": {
+        "summary": "人员专项附加扣除信息接收反馈"
+      }
+    },
+    "/v2/iit/declare/queryEssentialInfo": {
+      "$ref": "/paths/_v2_iit_declare_queryEssentialInfo.json",
+      "post": {
+        "summary": "专项附加扣除查询"
+      }
+    },
+    "/v2/iit/declare/queryEssentialInfoFeedback": {
+      "$ref": "/paths/_v2_iit_declare_queryEssentialInfoFeedback.json",
+      "post": {
+        "summary": "专项附加扣除查询反馈"
+      }
+    },
+    "/v2/iit/personalPension/suspendEnjoyingList": {
+      "$ref": "/paths/_v2_iit_personalPension_suspendEnjoyingList.json",
+      "post": {
+        "summary": "专项附加扣除暂停享受名单查询"
+      }
+    },
+    "/v2/iit/calculateTax/calculateASynIndividualIncomeTax": {
+      "$ref": "/paths/_v2_iit_calculateTax_calculateASynIndividualIncomeTax.json",
+      "post": {
+        "summary": "异步算税"
+      }
+    },
+    "/v2/iit/calculateTax/getASynIndividualIncomeTaxFeedback": {
+      "$ref": "/paths/_v2_iit_calculateTax_getASynIndividualIncomeTaxFeedback.json",
+      "post": {
+        "summary": "异步算税反馈"
+      }
+    },
+    "/v2/iit/calculateTax/batchClearSalaryData": {
+      "$ref": "/paths/_v2_iit_calculateTax_batchClearSalaryData.json",
+      "post": {
+        "summary": "一月多次算薪清空数据"
+      }
+    },
+    "/v2/iit/getdkdhAreaInfo": {
+      "$ref": "/paths/_v2_iit_getdkdhAreaInfo.json",
+      "post": {
+        "summary": "获取地区信息"
+      }
+    },
+    "/v2/iit/getEquityIncentiveInfo": {
+      "$ref": "/paths/_v2_iit_getEquityIncentiveInfo.json",
+      "post": {
+        "summary": "获取其他单位股权激励信息"
+      }
+    },
+    "/v2/iit/calculateTax/backCalculateCurrentPeriodIncome": {
+      "$ref": "/paths/_v2_iit_calculateTax_backCalculateCurrentPeriodIncome.json",
+      "post": {
+        "summary": "反算当期收入"
+      }
+    },
+    "/v2/iit/calculateTax/getCurrentPeriodIncomeFeedback": {
+      "$ref": "/paths/_v2_iit_calculateTax_getCurrentPeriodIncomeFeedback.json",
+      "post": {
+        "summary": "反算当期收入反馈结果"
+      }
+    },
+    "/v2/iit/calculateTax/getCumulativeNumber": {
+      "$ref": "/paths/_v2_iit_calculateTax_getCumulativeNumber.json",
+      "post": {
+        "summary": "获取累计数"
+      }
+    },
+    "/v2/iit/calculateTax/getCumulativeNumberFeedback": {
+      "$ref": "/paths/_v2_iit_calculateTax_getCumulativeNumberFeedback.json",
+      "post": {
+        "summary": "获取累计数反馈结果"
+      }
+    },
+    "/v2/iit/calculateTax/taxPlanning": {
+      "$ref": "/paths/_v2_iit_calculateTax_taxPlanning.json",
+      "post": {
+        "summary": "全年一次性奖金个税筹划"
+      }
+    },
+    "/v2/iit/calculateTax/getTaxPlanningFeedback": {
+      "$ref": "/paths/_v2_iit_calculateTax_getTaxPlanningFeedback.json",
+      "post": {
+        "summary": "查询全年一次性奖金个税筹划反馈结果"
+      }
+    },
+    "/v2/iit/report/send": {
+      "$ref": "/paths/_v2_iit_report_send.json",
+      "post": {
+        "summary": "申报数据报送"
+      }
+    },
+    "/v2/iit/report/getFeedback": {
+      "$ref": "/paths/_v2_iit_report_getFeedback.json",
+      "post": {
+        "summary": "申报数据报送反馈"
+      }
+    },
+    "/v2/iit/report/getDeclareTaxResultFeedback": {
+      "$ref": "/paths/_v2_iit_report_getDeclareTaxResultFeedback.json",
+      "post": {
+        "summary": "申报内置算税结果查询"
+      }
+    },
+    "/v2/iit/report/cancel": {
+      "$ref": "/paths/_v2_iit_report_cancel.json",
+      "post": {
+        "summary": "申报作废"
+      }
+    },
+    "/v2/iit/report/getCancelFeedback": {
+      "$ref": "/paths/_v2_iit_report_getCancelFeedback.json",
+      "post": {
+        "summary": "申报作废反馈"
+      }
+    },
+    "/v2/iit/report/queryDeclarationRecord": {
+      "$ref": "/paths/_v2_iit_report_queryDeclarationRecord.json",
+      "post": {
+        "summary": "申报状态查询"
+      }
+    },
+    "/v2/iit/report/queryDeclarationRecordByTime": {
+      "$ref": "/paths/_v2_iit_report_queryDeclarationRecordByTime.json",
+      "post": {
+        "summary": "申报状态按时段查询"
+      }
+    },
+    "/v2/iit/report/correct": {
+      "$ref": "/paths/_v2_iit_report_correct.json",
+      "post": {
+        "summary": "申报更正"
+      }
+    },
+    "/v2/iit/report/cancelCorrect": {
+      "$ref": "/paths/_v2_iit_report_cancelCorrect.json",
+      "post": {
+        "summary": "撤销更正申报"
+      }
+    },
+    "/v2/iit/report/queryDeclareDetailsInfo": {
+      "$ref": "/paths/_v2_iit_report_queryDeclareDetailsInfo.json",
+      "post": {
+        "summary": "企业申报数据明细查询 "
+      }
+    },
+    "/v2/iit/payment/sendWithholdingConfirm": {
+      "$ref": "/paths/_v2_iit_payment_sendWithholdingConfirm.json",
+      "post": {
+        "summary": "发送扣缴确认申报申请"
+      }
+    },
+    "/v2/iit/payment/queryAgreement": {
+      "$ref": "/paths/_v2_iit_payment_queryAgreement.json",
+      "post": {
+        "summary": "获取三方信息"
+      }
+    },
+    "/v2/iit/payment/getAgreementQueryFeedback": {
+      "$ref": "/paths/_v2_iit_payment_getAgreementQueryFeedback.json",
+      "post": {
+        "summary": "获取三方查询反馈"
+      }
+    },
+    "/v2/iit/payment/declareWithholding": {
+      "$ref": "/paths/_v2_iit_payment_declareWithholding.json",
+      "post": {
+        "summary": "三方协议缴款"
+      }
+    },
+    "/v2/iit/payment/getWithholdingFeedback": {
+      "$ref": "/paths/_v2_iit_payment_getWithholdingFeedback.json",
+      "post": {
+        "summary": "三方协议缴款反馈"
+      }
+    },
+    "/v2/iit/payment/getUnionPayUrl": {
+      "$ref": "/paths/_v2_iit_payment_getUnionPayUrl.json",
+      "post": {
+        "summary": "银联缴款"
+      }
+    },
+    "/v2/iit/payment/getSyncWithholdingFeedback": {
+      "$ref": "/paths/_v2_iit_payment_getSyncWithholdingFeedback.json",
+      "post": {
+        "summary": "缴款状态查询"
+      }
+    },
+    "/v2/iit/payment/withholdingVoucher": {
+      "$ref": "/paths/_v2_iit_payment_withholdingVoucher.json",
+      "post": {
+        "summary": "打印缴款凭证"
+      }
+    },
+    "/v2/iit/payment/getWithholdingVoucherFeedback": {
+      "$ref": "/paths/_v2_iit_payment_getWithholdingVoucherFeedback.json",
+      "post": {
+        "summary": "缴款凭证反馈"
+      }
+    },
+    "/v2/iit/payment/cancelWithholdingVoucher": {
+      "$ref": "/paths/_v2_iit_payment_cancelWithholdingVoucher.json",
+      "post": {
+        "summary": "缴款凭证作废"
+      }
+    },
+    "/v2/iit/payment/checkReceipt": {
+      "$ref": "/paths/_v2_iit_payment_checkReceipt.json",
+      "post": {
+        "summary": "打印缴款凭证的缴款结果查询"
+      }
+    },
+    "/v2/iit/payment/queryArrearage": {
+      "$ref": "/paths/_v2_iit_payment_queryArrearage.json",
+      "post": {
+        "summary": "欠费查询"
+      }
+    },
+    "/v2/iit/payment/getArrearageQueryFeedback": {
+      "$ref": "/paths/_v2_iit_payment_getArrearageQueryFeedback.json",
+      "post": {
+        "summary": "欠费查询反馈"
+      }
+    },
+    "/v2/iit/taxReceiptNumber/cancel": {
+      "$ref": "/paths/_v2_iit_taxReceiptNumber_cancel.json",
+      "post": {
+        "summary": "电子税票号码作废"
+      }
+    },
+    "/v2/iit/payment/getWithheldVoucher": {
+      "$ref": "/paths/_v2_iit_payment_getWithheldVoucher.json",
+      "post": {
+        "summary": "完税证明开具"
+      }
+    },
+    "/v2/iit/report/queryPersonWithhold": {
+      "$ref": "/paths/_v2_iit_report_queryPersonWithhold.json",
+      "post": {
+        "summary": "个人扣缴明细查询"
+      }
+    },
+    "/v2/iit/taxPayment/queryTaxPayment": {
+      "$ref": "/paths/_v2_iit_taxPayment_queryTaxPayment.json",
+      "post": {
+        "summary": "缴税记录查询"
+      }
+    },
+    "/v2/iit/query/yghssbztcx": {
+      "$ref": "/paths/_v2_iit_query_yghssbztcx.json",
+      "post": {
+        "summary": "员工汇算申报状态查询"
+      }
+    },
+    "/v2/iit/stat/ygwzcgsappqk": {
+      "$ref": "/paths/_v2_iit_stat_ygwzcgsappqk.json",
+      "post": {
+        "summary": "员工未注册个税APP情况"
+      }
+    },
+    "/v2/iit/report/getDeclarationRecordScreenshot": {
+      "$ref": "/paths/_v2_iit_report_getDeclarationRecordScreenshot.json",
+      "post": {
+        "summary": "单位申报记录查询截图 "
+      }
+    },
+    "/v2/iit/check/lbljCheck": {
+      "$ref": "/paths/_v2_iit_check_lbljCheck.json",
+      "post": {
+        "summary": "代扣代缴-漏报漏缴检查"
+      }
+    },
+    "/v2/iit/message/xscx": {
+      "$ref": "/paths/_v2_iit_message_xscx.json",
+      "post": {
+        "summary": "消息查询"
+      }
+    },
+    "/v2/iit/message/xscxFeedback": {
+      "$ref": "/paths/_v2_iit_message_xscxFeedback.json",
+      "post": {
+        "summary": "消息查询反馈"
+      }
+    },
+    "/v2/iit/message/cxyyssssjlry": {
+      "$ref": "/paths/_v2_iit_message_cxyyssssjlry.json",
+      "post": {
+        "summary": "查询异议申诉属实记录人员"
+      }
+    },
+    "/v2/iit/report/backupfile": {
+      "$ref": "/paths/_v2_iit_report_backupfile.json",
+      "post": {
+        "summary": "备份文件任务"
+      }
+    },
+    "/v2/iit/report/backupfilefk": {
+      "$ref": "/paths/_v2_iit_report_backupfilefk.json",
+      "post": {
+        "summary": "备份文件反馈"
+      }
+    },
+    "/callbackUrl": {
+      "$ref": "/paths/_callbackUrl.json",
+      "post": {
+        "summary": "个税回调接口"
+      }
+    },
+    "/v2/scjy/data/getInvestorInfo": {
+      "$ref": "/paths/_v2_scjy_data_getInvestorInfo.json",
+      "post": {
+        "summary": "投资者列表查询"
+      }
+    },
+    "/v2/scjy/basic/getEnterpriseAndInvestorInfo": {
+      "$ref": "/paths/_v2_scjy_basic_getEnterpriseAndInvestorInfo.json",
+      "post": {
+        "summary": "获取企业及投资者信息（生产经营）"
+      }
+    },
+    "/v2/scjy/calculateTax/getRevenueExpenseAndPrepaymentInfo": {
+      "$ref": "/paths/_v2_scjy_calculateTax_getRevenueExpenseAndPrepaymentInfo.json",
+      "post": {
+        "summary": "获取收入费用测算情况及预缴信息"
+      }
+    },
+    "/v2/scjy/calculateTax/calculateASynIndividualIncomeTax": {
+      "$ref": "/paths/_v2_scjy_calculateTax_calculateASynIndividualIncomeTax.json",
+      "post": {
+        "summary": "异步算税服务"
+      }
+    },
+    "/v2/scjy/calculateTax/getASynIndividualIncomeTaxFeedback": {
+      "$ref": "/paths/_v2_scjy_calculateTax_getASynIndividualIncomeTaxFeedback.json",
+      "post": {
+        "summary": "查询算税反馈结果"
+      }
+    },
+    "/v2/scjy/report/send": {
+      "$ref": "/paths/_v2_scjy_report_send.json",
+      "post": {
+        "summary": "申报数据报送"
+      }
+    },
+    "/v2/scjy/report/getFeedback": {
+      "$ref": "/paths/_v2_scjy_report_getFeedback.json",
+      "post": {
+        "summary": "申报数据报送反馈结果"
+      }
+    },
+    "/v2/scjy/report/getDeclareTaxResultFeedback": {
+      "$ref": "/paths/_v2_scjy_report_getDeclareTaxResultFeedback.json",
+      "post": {
+        "summary": "查询内置算税反馈结果"
+      }
+    },
+    "/v2/scjy/report/getCompanyIncomes": {
+      "$ref": "/paths/_v2_scjy_report_getCompanyIncomes.json",
+      "post": {
+        "summary": "企业申报数据明细查询"
+      }
+    },
+    "/v2/scjy/report/checkStatus": {
+      "$ref": "/paths/_v2_scjy_report_checkStatus.json",
+      "post": {
+        "summary": "辅助申报-申报状态查询"
+      }
+    },
+    "/v2/scjy/report/abandoned": {
+      "$ref": "/paths/_v2_scjy_report_abandoned.json",
+      "post": {
+        "summary": "申报作废"
+      }
+    },
+    "/v2/scjy/report/abandonedFeedback": {
+      "$ref": "/paths/_v2_scjy_report_abandonedFeedback.json",
+      "post": {
+        "summary": "申报作废反馈"
+      }
+    },
+    "/v2/scjy/report/correct": {
+      "$ref": "/paths/_v2_scjy_report_correct.json",
+      "post": {
+        "summary": "更正申报"
+      }
+    },
+    "/v2/scjy/report/cancelCorrect": {
+      "$ref": "/paths/_v2_scjy_report_cancelCorrect.json",
+      "post": {
+        "summary": "撤销更正申报"
+      }
+    },
+    "/v2/scjy/payment/thirdInfo": {
+      "$ref": "/paths/_v2_scjy_payment_thirdInfo.json",
+      "post": {
+        "summary": "获取三方信息"
+      }
+    },
+    "/v2/scjy/payment/thirdInfo/feedback": {
+      "$ref": "/paths/_v2_scjy_payment_thirdInfo_feedback.json",
+      "post": {
+        "summary": "获取三方信息反馈"
+      }
+    },
+    "/v2/scjy/payment/thirdAgreementPayment": {
+      "$ref": "/paths/_v2_scjy_payment_thirdAgreementPayment.json",
+      "post": {
+        "summary": "三方协议缴款"
+      }
+    },
+    "/v2/scjy/payment/thirdAgreementPayment/feedback": {
+      "$ref": "/paths/_v2_scjy_payment_thirdAgreementPayment_feedback.json",
+      "post": {
+        "summary": "三方协议缴款反馈"
+      }
+    },
+    "/v2/scjy/payment/getUnionPayUrl": {
+      "$ref": "/paths/_v2_scjy_payment_getUnionPayUrl.json",
+      "post": {
+        "summary": "银联缴款"
+      }
+    },
+    "/v2/scjy/payment/scanPay": {
+      "$ref": "/paths/_v2_scjy_payment_scanPay.json",
+      "post": {
+        "summary": "扫码缴款"
+      }
+    },
+    "/v2/scjy/payment/checkStatus": {
+      "$ref": "/paths/_v2_scjy_payment_checkStatus.json",
+      "post": {
+        "summary": "缴款状态查询"
+      }
+    },
+    "/v2/scjy/payment/withholdingVoucher": {
+      "$ref": "/paths/_v2_scjy_payment_withholdingVoucher.json",
+      "post": {
+        "summary": "打印缴款凭证（生产经营）"
+      }
+    },
+    "/v2/scjy/payment/getWithholdingVoucherFeedback": {
+      "$ref": "/paths/_v2_scjy_payment_getWithholdingVoucherFeedback.json",
+      "post": {
+        "summary": "打印缴款凭证反馈（生产经营）"
+      }
+    },
+    "/v2/scjy/payment/checkReceipt": {
+      "$ref": "/paths/_v2_scjy_payment_checkReceipt.json",
+      "post": {
+        "summary": "打印缴款凭证的缴款结果查询"
+      }
+    },
+    "/v2/scjy/payment/cancelWithholdingVoucher": {
+      "$ref": "/paths/_v2_scjy_payment_cancelWithholdingVoucher.json",
+      "post": {
+        "summary": "缴款凭证作废（生产经营）"
+      }
+    },
+    "/v2/scjy/payment/getWithheldVoucher": {
+      "$ref": "/paths/_v2_scjy_payment_getWithheldVoucher.json",
+      "post": {
+        "summary": "完税证明开具（生产经营）"
+      }
+    },
+    "/v2/scjy/taxReceiptNumber/cancel": {
+      "$ref": "/paths/_v2_scjy_taxReceiptNumber_cancel.json",
+      "post": {
+        "summary": "电子税票号码作废"
+      }
+    },
+    "/v2/scjy/payment/queryArrearage": {
+      "$ref": "/paths/_v2_scjy_payment_queryArrearage.json",
+      "post": {
+        "summary": "生产经营-欠费查询"
+      }
+    },
+    "/v2/scjy/payment/getArrearageQueryFeedback": {
+      "$ref": "/paths/_v2_scjy_payment_getArrearageQueryFeedback.json",
+      "post": {
+        "summary": "生产经营-欠费查询反馈"
+      }
+    },
+    "/v2/scjy/check/lbljCheck": {
+      "$ref": "/paths/_v2_scjy_check_lbljCheck.json",
+      "post": {
+        "summary": "生产经营-漏报漏缴检查"
+      }
+    },
+    "/v2/scjy/payment/queryTaxPayment": {
+      "$ref": "/paths/_v2_scjy_payment_queryTaxPayment.json",
+      "post": {
+        "summary": "生产经营-缴税记录查询"
+      }
+    },
+    "/v2/shbx/declare/getCompanyRegisterInfo": {
+      "$ref": "/paths/_v2_shbx_declare_getCompanyRegisterInfo.json",
+      "post": {
+        "summary": "企业登记和查询"
+      }
+    },
+    "/v2/shbx/declare/checkAccountPassword": {
+      "$ref": "/paths/_v2_shbx_declare_checkAccountPassword.json",
+      "post": {
+        "summary": "账户密码上传校验"
+      }
+    },
+    "/v2/shbx/declare/queryAnnualPaymentSalary": {
+      "$ref": "/paths/_v2_shbx_declare_queryAnnualPaymentSalary.json",
+      "post": {
+        "summary": "年度缴费工资查询"
+      }
+    },
+    "/v2/shbx/declare/adjustAnnualPaymentSalary": {
+      "$ref": "/paths/_v2_shbx_declare_adjustAnnualPaymentSalary.json",
+      "post": {
+        "summary": "年度缴费工资调整"
+      }
+    },
+    "/v2/shbx/declare/queryMonthlyPaymentSalary": {
+      "$ref": "/paths/_v2_shbx_declare_queryMonthlyPaymentSalary.json",
+      "post": {
+        "summary": "月度缴费工资查询 "
+      }
+    },
+    "/v2/shbx/declare/adjustMonthlyPaymentSalary": {
+      "$ref": "/paths/_v2_shbx_declare_adjustMonthlyPaymentSalary.json",
+      "post": {
+        "summary": "月度缴费工资调整 "
+      }
+    },
+    "/v2/shbx/declare/queryPaymentSalaryDeclarationRecord": {
+      "$ref": "/paths/_v2_shbx_declare_queryPaymentSalaryDeclarationRecord.json",
+      "post": {
+        "summary": "缴费工资申报记录查询"
+      }
+    },
+    "/v2/shbx/declare/queryDailyUnDeclare": {
+      "$ref": "/paths/_v2_shbx_declare_queryDailyUnDeclare.json",
+      "post": {
+        "summary": "日常待申报信息查询"
+      }
+    },
+    "/v2/shbx/declare/dailyDeclaration": {
+      "$ref": "/paths/_v2_shbx_declare_dailyDeclaration.json",
+      "post": {
+        "summary": "日常申报提交"
+      }
+    },
+    "/v2/shbx/declare/dailyDeclarationFk": {
+      "$ref": "/paths/_v2_shbx_declare_dailyDeclarationFk.json",
+      "post": {
+        "summary": "日常申报提交反馈"
+      }
+    },
+    "/v2/shbx/declare/querySpecialPayUnDeclare": {
+      "$ref": "/paths/_v2_shbx_declare_querySpecialPayUnDeclare.json",
+      "post": {
+        "summary": "特殊缴款待申报信息查询"
+      }
+    },
+    "/v2/shbx/declare/specPayDeclaration": {
+      "$ref": "/paths/_v2_shbx_declare_specPayDeclaration.json",
+      "post": {
+        "summary": "特殊缴款申报提交"
+      }
+    },
+    "/v2/shbx/declare/specPayDeclarationFk": {
+      "$ref": "/paths/_v2_shbx_declare_specPayDeclarationFk.json",
+      "post": {
+        "summary": "特殊缴款申报提交反馈"
+      }
+    },
+    "/v2/shbx/declare/queryDeclareRecord": {
+      "$ref": "/paths/_v2_shbx_declare_queryDeclareRecord.json",
+      "post": {
+        "summary": "社保申报记录查询"
+      }
+    },
+    "/v2/shbx/declare/cancelDeclare": {
+      "$ref": "/paths/_v2_shbx_declare_cancelDeclare.json",
+      "post": {
+        "summary": "社保申报作废"
+      }
+    },
+    "/v2/shbx/declare/thirdQuery": {
+      "$ref": "/paths/_v2_shbx_declare_thirdQuery.json",
+      "post": {
+        "summary": "三方协议查询"
+      }
+    },
+    "/v2/shbx/declare/getQfxx": {
+      "$ref": "/paths/_v2_shbx_declare_getQfxx.json",
+      "post": {
+        "summary": "获取欠费信息"
+      }
+    },
+    "/v2/shbx/declare/thirdPay": {
+      "$ref": "/paths/_v2_shbx_declare_thirdPay.json",
+      "post": {
+        "summary": "三方协议缴款"
+      }
+    },
+    "/v2/shbx/declare/printBankPaymentVoucher": {
+      "$ref": "/paths/_v2_shbx_declare_printBankPaymentVoucher.json",
+      "post": {
+        "summary": "银行端缴款凭证打印"
+      }
+    },
+    "/v2/shbx/declare/cancelBankPaymentVoucher": {
+      "$ref": "/paths/_v2_shbx_declare_cancelBankPaymentVoucher.json",
+      "post": {
+        "summary": "银行端缴款凭证作废"
+      }
+    },
+    "/v2/shbx/declare/queryPayRecord": {
+      "$ref": "/paths/_v2_shbx_declare_queryPayRecord.json",
+      "post": {
+        "summary": "缴费记录查询"
+      }
+    },
+    "/v2/shbx/declare/printTaxProof": {
+      "$ref": "/paths/_v2_shbx_declare_printTaxProof.json",
+      "post": {
+        "summary": "税收完税证明打印"
+      }
+    },
+    "/v2/shbx/declare/printPayRecord": {
+      "$ref": "/paths/_v2_shbx_declare_printPayRecord.json",
+      "post": {
+        "summary": "单位缴费记录打印"
+      }
+    },
+    "/v2/shbx/declare/printEmployeePaymentRecord": {
+      "$ref": "/paths/_v2_shbx_declare_printEmployeePaymentRecord.json",
+      "post": {
+        "summary": "职工缴费记录打印"
+      }
+    },
+    "/v2/shbx/declare/queryPayRecordRymx": {
+      "$ref": "/paths/_v2_shbx_declare_queryPayRecordRymx.json",
+      "post": {
+        "summary": "社保费申报记录人员明细查询"
+      }
+    },
+    "/v2/shbx/declare/queryUnitInsuranceInfo": {
+      "$ref": "/paths/_v2_shbx_declare_queryUnitInsuranceInfo.json",
+      "post": {
+        "summary": "单位参保信息查询"
+      }
+    },
+    "/v2/shbx/declare/querySocialSecurityFeeDeclarationDetail": {
+      "$ref": "/paths/_v2_shbx_declare_querySocialSecurityFeeDeclarationDetail.json",
+      "post": {
+        "summary": "社保费申报明细查询"
+      }
+    },
+    "/v2/shbx/declare/querySocialSecurityFeePayableInfo": {
+      "$ref": "/paths/_v2_shbx_declare_querySocialSecurityFeePayableInfo.json",
+      "post": {
+        "summary": "社保费应缴信息查询"
+      }
+    },
+    "/v2/shbx/declare/queryEmployeeInsuranceInfo": {
+      "$ref": "/paths/_v2_shbx_declare_queryEmployeeInsuranceInfo.json",
+      "post": {
+        "summary": "职工参保信息查询"
+      }
+    },
+    "/v2/customs/imex/dzh/getHQTSBGD2": {
+      "$ref": "/paths/_v2_customs_imex_dzh_getHQTSBGD2.json",
+      "post": {
+        "summary": "退税报关单"
+      }
+    },
+    "/v2/customs/imex/dzh/getTSBGD_PRINT": {
+      "$ref": "/paths/_v2_customs_imex_dzh_getTSBGD_PRINT.json",
+      "post": {
+        "summary": "退税联PDF"
+      }
+    },
+    "/v2/customs/imex/dzh/getHQJCKBGD": {
+      "$ref": "/paths/_v2_customs_imex_dzh_getHQJCKBGD.json",
+      "post": {
+        "summary": "进出口报关单"
+      }
+    },
+    "/v2/customs/imex/dzh/getHQTGWZHCKFXTZS_PDF": {
+      "$ref": "/paths/_v2_customs_imex_dzh_getHQTGWZHCKFXTZS_PDF.json",
+      "post": {
+        "summary": "放行通知书PDF"
+      }
+    },
+    "/v2/customs/imex/dzh/getHQDZWTXY_PDF": {
+      "$ref": "/paths/_v2_customs_imex_dzh_getHQDZWTXY_PDF.json",
+      "post": {
+        "summary": "电子委托协议PDF"
+      }
+    },
+    "/v2/customs/imex/dzh/getHQGXHT_PDF": {
+      "$ref": "/paths/_v2_customs_imex_dzh_getHQGXHT_PDF.json",
+      "post": {
+        "summary": "购销合同PDF"
+      }
+    },
+    "/v2/customs/imex/dzh/getHQZXD_PDF": {
+      "$ref": "/paths/_v2_customs_imex_dzh_getHQZXD_PDF.json",
+      "post": {
+        "summary": "装箱单PDF"
+      }
+    },
+    "/v2/customs/imex/dzh/getRLR_PDF": {
+      "$ref": "/paths/_v2_customs_imex_dzh_getRLR_PDF.json",
+      "post": {
+        "summary": "获取预录入报关单PDF"
+      }
+    },
+    "/v2/ckts/selfCheck": {
+      "$ref": "/paths/_v2_ckts_selfCheck.json",
+      "post": {
+        "summary": "出口退税申报自检任务发起"
+      }
+    },
+    "/v2/ckts/getSelfCheckResult": {
+      "$ref": "/paths/_v2_ckts_getSelfCheckResult.json",
+      "post": {
+        "summary": "出口退税申报自检任务结果"
+      }
+    },
+    "/v2/ckts/loadSelfCheckFeedback": {
+      "$ref": "/paths/_v2_ckts_loadSelfCheckFeedback.json",
+      "post": {
+        "summary": "出口退税自检反馈查询"
+      }
+    },
+    "/v2/ckts/getSelfCheckFeedback": {
+      "$ref": "/paths/_v2_ckts_getSelfCheckFeedback.json",
+      "post": {
+        "summary": "出口退税自检反馈查询结果"
+      }
+    },
+    "/v2/ckts/loadReviewProgress": {
+      "$ref": "/paths/_v2_ckts_loadReviewProgress.json",
+      "post": {
+        "summary": "出口退税审核进度查询"
+      }
+    },
+    "/v2/ckts/getReviewProgress": {
+      "$ref": "/paths/_v2_ckts_getReviewProgress.json",
+      "post": {
+        "summary": "出口退税审核进度查询结果"
+      }
+    },
+    "/v2/ckts/loadDeclareConfirmation": {
+      "$ref": "/paths/_v2_ckts_loadDeclareConfirmation.json",
+      "post": {
+        "summary": "出口退税申报确认提交"
+      }
+    },
+    "/v2/ckts/getDeclareConfirmationResult": {
+      "$ref": "/paths/_v2_ckts_getDeclareConfirmationResult.json",
+      "post": {
+        "summary": "出口退税查询申报确认提交结果"
+      }
+    },
+    "/v2/ckts/loadAuditTaskList": {
+      "$ref": "/paths/_v2_ckts_loadAuditTaskList.json",
+      "post": {
+        "summary": "出口退税获取审核任务清单发起"
+      }
+    },
+    "/v2/ckts/getAuditTaskListResult": {
+      "$ref": "/paths/_v2_ckts_getAuditTaskListResult.json",
+      "post": {
+        "summary": "出口退税获取审核任务清单结果查询"
+      }
+    },
+    "/v2/ckts/downloadSbForm": {
+      "$ref": "/paths/_v2_ckts_downloadSbForm.json",
+      "post": {
+        "summary": "出口退税申报表下载"
+      }
+    },
+    "/v2/ckts/getDownloadSbForm": {
+      "$ref": "/paths/_v2_ckts_getDownloadSbForm.json",
+      "post": {
+        "summary": "出口退税申报表下载结果"
+      }
+    },
+    "/v2/ckts/attachedInformationUpload": {
+      "$ref": "/paths/_v2_ckts_attachedInformationUpload.json",
+      "post": {
+        "summary": "出口退税附列资料上传"
+      }
+    },
+    "/v2/ckts/getAttachedInformationUpload": {
+      "$ref": "/paths/_v2_ckts_getAttachedInformationUpload.json",
+      "post": {
+        "summary": "出口退税附列资料上传结果"
+      }
+    },
+    "/v2/ckts/cancelSbForm": {
+      "$ref": "/paths/_v2_ckts_cancelSbForm.json",
+      "post": {
+        "summary": "出口退税申报作废"
+      }
+    },
+    "/v2/ckts/getCancelSbForm": {
+      "$ref": "/paths/_v2_ckts_getCancelSbForm.json",
+      "post": {
+        "summary": "出口退税申报作废结果"
+      }
+    },
+    "/v2/ckts/syncRefundTaxLibraryQuery": {
+      "$ref": "/paths/_v2_ckts_syncRefundTaxLibraryQuery.json",
+      "post": {
+        "summary": "出口退税文库查询"
+      }
+    },
+    "/v2/collect/beginFinTask": {
+      "$ref": "/paths/_v2_collect_beginFinTask.json",
+      "post": {
+        "summary": "发起企业数据采集"
+      }
+    },
+    "/v2/collect/taskStatusDetails": {
+      "$ref": "/paths/_v2_collect_taskStatusDetails.json",
+      "post": {
+        "summary": "获取采集状态信息"
+      }
+    },
+    "/v2/collect/getTaxAndFpInfo": {
+      "$ref": "/paths/_v2_collect_getTaxAndFpInfo.json",
+      "post": {
+        "summary": "获取采集状态及全量数据"
+      }
+    },
+    "/v2/collect/tax/getTaxInfo": {
+      "$ref": "/paths/_v2_collect_tax_getTaxInfo.json",
+      "post": {
+        "summary": "获取税务数据"
+      }
+    },
+    "/v2/collect/invoice/getCollectTaskPageData": {
+      "$ref": "/paths/_v2_collect_invoice_getCollectTaskPageData.json",
+      "post": {
+        "summary": "获取发票数据"
+      }
+    },
+    "/v2/risk/hmd/standard": {
+      "$ref": "/paths/_v2_risk_hmd_standard.json",
+      "post": {
+        "summary": "查询企业是否黑名单"
+      }
+    },
+    "/v2/risk/hmd/qyfkmx": {
+      "$ref": "/paths/_v2_risk_hmd_qyfkmx.json",
+      "post": {
+        "summary": "企业风控明细接口"
+      }
+    },
+    "/v2/risk/hmd/jyyc": {
+      "$ref": "/paths/_v2_risk_hmd_jyyc.json",
+      "post": {
+        "summary": "经营异常风险接口"
+      }
+    },
+    "/v2/risk/hmd/yzwf": {
+      "$ref": "/paths/_v2_risk_hmd_yzwf.json",
+      "post": {
+        "summary": "严重违法风险接口"
+      }
+    },
+    "/v2/risk/hmd/zdsswf": {
+      "$ref": "/paths/_v2_risk_hmd_zdsswf.json",
+      "post": {
+        "summary": "重大税收违法风险接口"
+      }
+    },
+    "/v2/risk/hmd/fzchnew": {
+      "$ref": "/paths/_v2_risk_hmd_fzchnew.json",
+      "post": {
+        "summary": "非正常户接口"
+      }
+    },
+    "/v2/risk/hmd/plus": {
+      "$ref": "/paths/_v2_risk_hmd_plus.json",
+      "post": {
+        "summary": "查询企业是否黑名单（增强版）"
+      }
+    },
+    "/v2/risk/hmd/qycx": {
+      "$ref": "/paths/_v2_risk_hmd_qycx.json",
+      "post": {
+        "summary": "云抬头查询"
+      }
+    },
+    "/v2/risk/hmd/qycxnew": {
+      "$ref": "/paths/_v2_risk_hmd_qycxnew.json",
+      "post": {
+        "summary": "企业精准查询接口"
+      }
+    },
+    "/v2/insight/newEnterprise": {
+      "$ref": "/paths/_v2_insight_newEnterprise.json",
+      "post": {
+        "summary": "新增企业信息"
+      }
+    },
+    "/v2/insight/contactInfo": {
+      "$ref": "/paths/_v2_insight_contactInfo.json",
+      "post": {
+        "summary": "企业联系人信息"
+      }
+    },
+    "/v2/insight/info": {
+      "$ref": "/paths/_v2_insight_info.json",
+      "post": {
+        "summary": "工商基本信息"
+      }
+    },
+    "/v2/insight/companyContactInfo": {
+      "$ref": "/paths/_v2_insight_companyContactInfo.json",
+      "post": {
+        "summary": "企业联系信息"
+      }
+    },
+    "/v2/insight/investmentAbroad": {
+      "$ref": "/paths/_v2_insight_investmentAbroad.json",
+      "post": {
+        "summary": "对外投资"
+      }
+    },
+    "/v2/insight/taxBigIllegal": {
+      "$ref": "/paths/_v2_insight_taxBigIllegal.json",
+      "post": {
+        "summary": "税务重大违法"
+      }
+    },
+    "/v2/insight/certificateInfo": {
+      "$ref": "/paths/_v2_insight_certificateInfo.json",
+      "post": {
+        "summary": "资质证书信息"
+      }
+    },
+    "/v2/insight/limitHighConsumerInfo": {
+      "$ref": "/paths/_v2_insight_limitHighConsumerInfo.json",
+      "post": {
+        "summary": "限制高消费信息"
+      }
+    },
+    "/v2/insight/limitHighConsumerRelationEn": {
+      "$ref": "/paths/_v2_insight_limitHighConsumerRelationEn.json",
+      "post": {
+        "summary": "限制高消费关联企业"
+      }
+    },
+    "/v2/insight/judgmentDoc": {
+      "$ref": "/paths/_v2_insight_judgmentDoc.json",
+      "post": {
+        "summary": "裁判文书"
+      }
+    },
+    "/v2/insight/oweTaxInfo": {
+      "$ref": "/paths/_v2_insight_oweTaxInfo.json",
+      "post": {
+        "summary": "欠税公告"
+      }
+    },
+    "/v2/insight/taxUnNormalInfo": {
+      "$ref": "/paths/_v2_insight_taxUnNormalInfo.json",
+      "post": {
+        "summary": "税务非正常户"
+      }
+    },
+    "/v2/insight/administrationPenalty": {
+      "$ref": "/paths/_v2_insight_administrationPenalty.json",
+      "post": {
+        "summary": "行政处罚信息"
+      }
+    },
+    "/v2/insight/administrativeLicense": {
+      "$ref": "/paths/_v2_insight_administrativeLicense.json",
+      "post": {
+        "summary": "行政许可信息"
+      }
+    },
+    "/v2/insight/exceptionList": {
+      "$ref": "/paths/_v2_insight_exceptionList.json",
+      "post": {
+        "summary": "列入经营异常名录信息"
+      }
+    },
+    "/v2/insight/seriousIllegalBlackInfo": {
+      "$ref": "/paths/_v2_insight_seriousIllegalBlackInfo.json",
+      "post": {
+        "summary": "列入严重违法失信企业名单"
+      }
+    },
+    "/v2/insight/trademarkInfo": {
+      "$ref": "/paths/_v2_insight_trademarkInfo.json",
+      "post": {
+        "summary": "商标信息"
+      }
+    },
+    "/v2/insight/patentInfo": {
+      "$ref": "/paths/_v2_insight_patentInfo.json",
+      "post": {
+        "summary": "专利信息"
+      }
+    },
+    "/v2/insight/patentRelationInfo": {
+      "$ref": "/paths/_v2_insight_patentRelationInfo.json",
+      "post": {
+        "summary": "专利关系信息"
+      }
+    },
+    "/v2/insight/patentLawStatus": {
+      "$ref": "/paths/_v2_insight_patentLawStatus.json",
+      "post": {
+        "summary": "专利法律状态信息"
+      }
+    },
+    "/v2/insight/taxpayerLevelA": {
+      "$ref": "/paths/_v2_insight_taxpayerLevelA.json",
+      "post": {
+        "summary": "A类纳税人信息查询"
+      }
+    },
+    "/v2/insight/shareholderInvest": {
+      "$ref": "/paths/_v2_insight_shareholderInvest.json",
+      "post": {
+        "summary": "股东出资信息"
+      }
+    },
+    "/v2/insight/branchInfo": {
+      "$ref": "/paths/_v2_insight_branchInfo.json",
+      "post": {
+        "summary": "分支机构信息"
+      }
+    },
+    "/v2/insight/dishonestyInfo": {
+      "$ref": "/paths/_v2_insight_dishonestyInfo.json",
+      "post": {
+        "summary": "失信信息"
+      }
+    },
+    "/v2/insight/executeInfo": {
+      "$ref": "/paths/_v2_insight_executeInfo.json",
+      "post": {
+        "summary": "失信执行信息"
+      }
+    },
+    "/v2/insight/enforceObj": {
+      "$ref": "/paths/_v2_insight_enforceObj.json",
+      "post": {
+        "summary": "失信被执行对象"
+      }
+    },
+    "/v2/insight/caseInfo": {
+      "$ref": "/paths/_v2_insight_caseInfo.json",
+      "post": {
+        "summary": "立案公告信息"
+      }
+    },
+    "/v2/insight/judgementDocRelation": {
+      "$ref": "/paths/_v2_insight_judgementDocRelation.json",
+      "post": {
+        "summary": "裁判文书相关企业"
+      }
+    },
+    "/v2/insight/websiteInfo": {
+      "$ref": "/paths/_v2_insight_websiteInfo.json",
+      "post": {
+        "summary": "域名备案"
+      }
+    },
+    "/v2/insight/softwareCopyright": {
+      "$ref": "/paths/_v2_insight_softwareCopyright.json",
+      "post": {
+        "summary": "软件著作权信息"
+      }
+    },
+    "/v2/insight/orgManagerAssociateEnt": {
+      "$ref": "/paths/_v2_insight_orgManagerAssociateEnt.json",
+      "post": {
+        "summary": "高管关联企业信息"
+      }
+    },
+    "/v2/insight/bidInfo": {
+      "$ref": "/paths/_v2_insight_bidInfo.json",
+      "post": {
+        "summary": "招投标信息"
+      }
+    },
+    "/v2/insight/annualRpt": {
+      "$ref": "/paths/_v2_insight_annualRpt.json",
+      "post": {
+        "summary": "企业年报"
+      }
+    },
+    "/v2/insight/alterInfo": {
+      "$ref": "/paths/_v2_insight_alterInfo.json",
+      "post": {
+        "summary": "企业变更信息"
+      }
+    },
+    "/v2/insight/equityPledgeInfo": {
+      "$ref": "/paths/_v2_insight_equityPledgeInfo.json",
+      "post": {
+        "summary": "股权出质信息"
+      }
+    },
+    "/v2/insight/keyPersonnelInfo": {
+      "$ref": "/paths/_v2_insight_keyPersonnelInfo.json",
+      "post": {
+        "summary": "主要人员信息"
+      }
+    },
+    "/v2/insight/courtAnnouncementInfo": {
+      "$ref": "/paths/_v2_insight_courtAnnouncementInfo.json",
+      "post": {
+        "summary": "开庭公告信息"
+      }
+    },
+    "/v2/insight/judicialEquityFreeze": {
+      "$ref": "/paths/_v2_insight_judicialEquityFreeze.json",
+      "post": {
+        "summary": "司法股权冻结"
+      }
+    },
+    "/v2/legislation/category": {
+      "$ref": "/paths/_v2_legislation_category.json",
+      "post": {
+        "summary": "政策分类查询接口"
+      }
+    },
+    "/v2/legislation/attrList": {
+      "$ref": "/paths/_v2_legislation_attrList.json",
+      "post": {
+        "summary": "政策属性查询接口"
+      }
+    },
+    "/v2/legislation/listPage": {
+      "$ref": "/paths/_v2_legislation_listPage.json",
+      "post": {
+        "summary": "政策列表分页接口"
+      }
+    },
+    "/v2/legislation/detail": {
+      "$ref": "/paths/_v2_legislation_detail.json",
+      "post": {
+        "summary": "政策详情查询接口"
+      }
+    },
+    "/v2/legislation/getFileUrl": {
+      "$ref": "/paths/_v2_legislation_getFileUrl.json",
+      "post": {
+        "summary": "获取政策附件文件下载地址"
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "$ref": "/components/schemas/index.json"
+    },
+    "responses": {
+      "$ref": "/components/responses/index.json"
+    },
+    "securitySchemes": {
+      "$ref": "/components/securitySchemes/index.json"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://api.qixiangyun.com",
+      "description": "在线测试"
+    }
+  ],
+  "security": []
+}

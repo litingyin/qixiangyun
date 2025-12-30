@@ -1,0 +1,38 @@
+{
+    "name": "qixiangyun/sdk",
+    "description": "Qixiangyun SDK for PHP",
+    "type": "library",
+    "keywords": ["qixiangyun", "api", "invoice", "sdk"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Qixiangyun Team",
+            "email": "support@qixiangyun.com"
+        }
+    ],
+    "require": {
+        "php": "^7.4 || ^8.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "QixiangyunSDK\\": "src/"
+        },
+        "files": [
+            "src/autoload.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "QixiangyunSDK\\Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true,
+        "optimize-autoloader": true
+    }
+}
