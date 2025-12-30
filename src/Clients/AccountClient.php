@@ -7,7 +7,7 @@ use QixiangyunSDK\Core\BaseClient;
 class AccountClient extends BaseClient
 {
     /**
-     * 获取客户端名称
+     * 获取客户端名称-push-test
      *
      * @return string
      */
