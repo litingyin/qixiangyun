@@ -204,7 +204,7 @@ class ClientFactory
     }
     
     /**
-     * 清除所有客户端注册
+     * 清除所有客户端注册-推送一下
      *
      * @return void
      */
