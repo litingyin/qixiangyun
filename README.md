@@ -45,8 +45,11 @@ $sdk = SDK::create([
     'cacheDir' => __DIR__ . '/cache'
 ]);
 
-// 2. 获取业务客户端
-$invoiceClient = $sdk->getClient('invoice');
+// 2. 获取业务客户端（推荐使用便捷方法）
+$invoiceClient = $sdk->getInvoice();
+
+// 或者使用通用方法
+// $invoiceClient = $sdk->getClient('invoice');
 
 // 3. 调用 API
 $result = $invoiceClient->queryZzsfpCy([
@@ -59,6 +62,98 @@ $result = $invoiceClient->queryZzsfpCy([
 ]);
 
 print_r($result);
+```
+
+### 便捷获取客户端
+
+SDK 提供了便捷的 `get` 方法来直接获取各个业务客户端：
+
+```php
+$sdk = SDK::create($config);
+
+// 发票客户端
+$invoiceClient = $sdk->getInvoice();
+
+// 企业管理客户端
+$orgClient = $sdk->getOrg();
+
+// 账号管理客户端
+$accountClient = $sdk->getAccount();
+
+// 登录客户端
+$loginClient = $sdk->getLogin();
+
+// 税务申报客户端
+$taxClient = $sdk->getTax();
+
+// 个税客户端
+$iitClient = $sdk->getIit();
+
+// 办税人员管理客户端
+$bsryglClient = $sdk->getBsrygl();
+
+// 产品管理客户端
+$productClient = $sdk->getProduct();
+
+// 企业信息采集客户端
+$orgInfoClient = $sdk->getOrgInfo();
+
+// 消息客户端
+$messageClient = $sdk->getMessage();
+
+// 办税小号客户端
+$phoneClient = $sdk->getPhone();
+
+// 前台发票客户端
+$qdfpClient = $sdk->getQdfp();
+
+// 商品信息客户端
+$spxxClient = $sdk->getSpxx();
+
+// 客户信息客户端
+$khxxClient = $sdk->getKhxx();
+
+// 认证客户端
+$rzClient = $sdk->getRz();
+
+// 文件版式下载客户端
+$sdFileClient = $sdk->getSdFile();
+
+// 发票入账客户端
+$fpruzClient = $sdk->getFpruz();
+
+// 发票归集客户端
+$gjClient = $sdk->getGj();
+
+// 企业税务信息客户端
+$orgTaxInfoClient = $sdk->getOrgTaxInfo();
+
+// 企业税种客户端
+$qysClient = $sdk->getQys();
+
+// 生产经营所得客户端
+$scjyClient = $sdk->getScjy();
+
+// 社保客户端
+$shbxClient = $sdk->getShbx();
+
+// 海关客户端
+$customsClient = $sdk->getCustoms();
+
+// 出口退税客户端
+$cktsClient = $sdk->getCkts();
+
+// 企业采集客户端
+$collectClient = $sdk->getCollect();
+
+// 风险查询客户端
+$riskClient = $sdk->getRisk();
+
+// 企业洞察客户端
+$insightClient = $sdk->getInsight();
+
+// 政策法规客户端
+$legislationClient = $sdk->getLegislation();
 ```
 
 ## 链式操作
@@ -173,13 +268,17 @@ $response->processProduct(function($productData) {
 
 ## 业务客户端
 
-SDK 提供以下业务客户端：
+SDK 提供以下业务客户端，推荐使用便捷的 `get` 方法获取：
 
 ### 1. 发票客户端 (InvoiceClient)
 发票查验、查询等业务
 
 ```php
-$invoiceClient = $sdk->getClient('invoice');
+// 推荐使用
+$invoiceClient = $sdk->getInvoice();
+
+// 或使用通用方法
+// $invoiceClient = $sdk->getClient('invoice');
 
 // 增值税发票查验
 $result = $invoiceClient->queryZzsfpCy($params);
@@ -192,7 +291,7 @@ $result = $invoiceClient->queryDigitalInvoice($params);
 企业信息管理
 
 ```php
-$orgClient = $sdk->getClient('org');
+$orgClient = $sdk->getOrg();
 
 // 创建企业
 $result = $orgClient->create($params);
@@ -205,7 +304,7 @@ $result = $orgClient->list($params);
 账号管理相关业务
 
 ```php
-$accountClient = $sdk->getClient('account');
+$accountClient = $sdk->getAccount();
 
 // 创建账号
 $result = $accountClient->create($params);
@@ -218,7 +317,7 @@ $result = $accountClient->query($params);
 登录相关业务
 
 ```php
-$loginClient = $sdk->getClient('login');
+$loginClient = $sdk->getLogin();
 
 // 账号密码登录
 $result = $loginClient->password($params);
@@ -234,7 +333,7 @@ $result = $loginClient->qrcode($params);
 税务申报业务
 
 ```php
-$taxClient = $sdk->getClient('tax');
+$taxClient = $sdk->getTax();
 
 // 提交申报
 $result = $taxClient->submit($params);
@@ -247,7 +346,7 @@ $result = $taxClient->query($params);
 个人所得税相关业务
 
 ```php
-$iitClient = $sdk->getClient('iit');
+$iitClient = $sdk->getIit();
 
 // 查询个税信息
 $result = $iitClient->query($params);
@@ -260,7 +359,7 @@ $result = $iitClient->submit($params);
 办税人员管理业务
 
 ```php
-$bsryglClient = $sdk->getClient('bsrygl');
+$bsryglClient = $sdk->getBsrygl();
 
 // 添加办税人员
 $result = $bsryglClient->addBsyTask($params);
@@ -273,7 +372,7 @@ $result = $bsryglClient->queryBsyTask($params);
 产品订购管理
 
 ```php
-$productClient = $sdk->getClient('product');
+$productClient = $sdk->getProduct();
 
 // 订购产品
 $result = $productClient->purchase($params);
@@ -286,7 +385,7 @@ $result = $productClient->list($params);
 企业信息采集
 
 ```php
-$orgInfoClient = $sdk->getClient('orginfo');
+$orgInfoClient = $sdk->getOrgInfo();
 
 // 发起采集任务
 $result = $orgInfoClient->beginTask($params);
@@ -299,7 +398,7 @@ $result = $orgInfoClient->queryTask($params);
 消息通知管理
 
 ```php
-$messageClient = $sdk->getClient('message');
+$messageClient = $sdk->getMessage();
 
 // 获取通知
 $result = $messageClient->getNotice($params);
@@ -312,7 +411,7 @@ $result = $messageClient->markAsRead($params);
 办税小号业务
 
 ```php
-$phoneClient = $sdk->getClient('phone');
+$phoneClient = $sdk->getPhone();
 
 // 申请小号
 $result = $phoneClient->createOrder($params);
@@ -325,7 +424,7 @@ $result = $phoneClient->bind($params);
 前台发票业务
 
 ```php
-$qdfpClient = $sdk->getClient('qdfp');
+$qdfpClient = $sdk->getQdfp();
 
 // 红字发票开具
 $result = $qdfpClient->createRedInvoice($params);
@@ -338,7 +437,7 @@ $result = $qdfpClient->queryInvoiceList($params);
 商品信息管理
 
 ```php
-$spxxClient = $sdk->getClient('spxx');
+$spxxClient = $sdk->getSpxx();
 
 // 新增商品
 $result = $spxxClient->addProduct($params);
@@ -351,7 +450,7 @@ $result = $spxxClient->queryProductList($params);
 客户信息管理
 
 ```php
-$khxxClient = $sdk->getClient('khxx');
+$khxxClient = $sdk->getKhxx();
 
 // 新增客户
 $result = $khxxClient->addCustomer($params);
@@ -364,13 +463,143 @@ $result = $khxxClient->queryCustomerList($params);
 认证相关业务
 
 ```php
-$rzClient = $sdk->getClient('rz');
+$rzClient = $sdk->getRz();
 
 // 进项发票采集
 $result = $rzClient->applyInputInvoiceCollect($params);
 
 // 查询采集结果
 $result = $rzClient->queryInputInvoiceResult($params);
+```
+
+### 16. 文件版式下载客户端 (SdFileClient)
+文件版式下载业务
+
+```php
+$sdFileClient = $sdk->getSdFile();
+
+// 下载文件
+$result = $sdFileClient->download($params);
+```
+
+### 17. 发票入账客户端 (FpruzClient)
+发票入账业务
+
+```php
+$fpruzClient = $sdk->getFpruz();
+
+// 发票入账
+$result = $fpruzClient->accounting($params);
+```
+
+### 18. 发票归集客户端 (GjClient)
+发票归集业务
+
+```php
+$gjClient = $sdk->getGj();
+
+// 发票归集
+$result = $gjClient->collect($params);
+```
+
+### 19. 企业税务信息客户端 (OrgTaxInfoClient)
+企业税务信息业务
+
+```php
+$orgTaxInfoClient = $sdk->getOrgTaxInfo();
+
+// 查询税务信息
+$result = $orgTaxInfoClient->query($params);
+```
+
+### 20. 企业税种客户端 (QysClient)
+企业税种业务
+
+```php
+$qysClient = $sdk->getQys();
+
+// 查询税种信息
+$result = $qysClient->query($params);
+```
+
+### 21. 生产经营所得客户端 (ScjyClient)
+生产经营所得业务
+
+```php
+$scjyClient = $sdk->getScjy();
+
+// 查询所得信息
+$result = $scjyClient->query($params);
+```
+
+### 22. 社保客户端 (ShbxClient)
+社保业务
+
+```php
+$shbxClient = $sdk->getShbx();
+
+// 查询社保信息
+$result = $shbxClient->query($params);
+```
+
+### 23. 海关客户端 (CustomsClient)
+海关业务
+
+```php
+$customsClient = $sdk->getCustoms();
+
+// 查询海关信息
+$result = $customsClient->query($params);
+```
+
+### 24. 出口退税客户端 (CktsClient)
+出口退税业务
+
+```php
+$cktsClient = $sdk->getCkts();
+
+// 出口退税
+$result = $cktsClient->refund($params);
+```
+
+### 25. 企业采集客户端 (CollectClient)
+企业采集业务
+
+```php
+$collectClient = $sdk->getCollect();
+
+// 企业采集
+$result = $collectClient->collect($params);
+```
+
+### 26. 风险查询客户端 (RiskClient)
+风险查询业务
+
+```php
+$riskClient = $sdk->getRisk();
+
+// 查询风险信息
+$result = $riskClient->query($params);
+```
+
+### 27. 企业洞察客户端 (InsightClient)
+企业洞察业务
+
+```php
+$insightClient = $sdk->getInsight();
+
+// 企业洞察分析
+$result = $insightClient->analyze($params);
+```
+
+### 28. 政策法规客户端 (LegislationClient)
+政策法规业务
+
+```php
+$legislationClient = $sdk->getLegislation();
+
+// 查询政策法规
+$result = $legislationClient->query($params);
 ```
 
 ## 错误处理
@@ -451,7 +680,15 @@ Qixiangyun/
 │   │   ├── Config.php           # 配置类
 │   │   ├── HttpClient.php       # HTTP 客户端
 │   │   ├── BaseClient.php       # 基础客户端
-│   │   └── ClientFactory.php    # 客户端工厂
+│   │   ├── ClientFactory.php    # 客户端工厂
+│   │   ├── Response.php         # 响应基类
+│   │   └── ResponseBuilder.php  # 响应构建器
+│   ├── Core/Types/              # 类型化响应类
+│   │   ├── BaseResponse.php    # 基础响应
+│   │   ├── InvoiceResponse.php # 发票响应
+│   │   ├── OrgResponse.php     # 企业响应
+│   │   ├── TaxResponse.php     # 税务响应
+│   │   └── ...                 # 其他响应类
 │   ├── Clients/                  # 业务客户端
 │   │   ├── InvoiceClient.php   # 发票客户端
 │   │   ├── OrgClient.php       # 企业客户端
@@ -467,7 +704,20 @@ Qixiangyun/
 │   │   ├── QdfpClient.php      # 前台发票
 │   │   ├── SpxxClient.php      # 商品信息
 │   │   ├── KhxxClient.php      # 客户信息
-│   │   └── RzClient.php        # 认证客户端
+│   │   ├── RzClient.php        # 认证客户端
+│   │   ├── SdFileClient.php    # 文件版式下载
+│   │   ├── FpruzClient.php     # 发票入账
+│   │   ├── GjClient.php        # 发票归集
+│   │   ├── OrgTaxInfoClient.php # 企业税务信息
+│   │   ├── QysClient.php       # 企业税种
+│   │   ├── ScjyClient.php      # 生产经营所得
+│   │   ├── ShbxClient.php      # 社保
+│   │   ├── CustomsClient.php   # 海关
+│   │   ├── CktsClient.php      # 出口退税
+│   │   ├── CollectClient.php   # 企业采集
+│   │   ├── RiskClient.php      # 风险查询
+│   │   ├── InsightClient.php   # 企业洞察
+│   │   └── LegislationClient.php # 政策法规
 │   └── Exceptions/              # 异常类
 │       ├── QixiangyunException.php
 │       └── AuthTokenException.php
