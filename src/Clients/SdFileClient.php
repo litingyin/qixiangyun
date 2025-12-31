@@ -3,6 +3,7 @@
 namespace QixiangyunSDK\Clients;
 
 use QixiangyunSDK\Core\BaseClient;
+use QixiangyunSDK\Core\Types\BaseResponse;
 use QixiangyunSDK\Exceptions\QixiangyunException;
 
 /**
@@ -27,41 +28,41 @@ class SdFileClient extends BaseClient
      * 发起获取数电版式任务
      * 
      * @param array $params 参数
-     * @return array
+     * @return BaseResponse
      * @throws QixiangyunException
      */
     public function applyLayoutFile(array $params)
     {
         $this->validateParams($params, ['orgId']);
         
-        return $this->request('/v2/invoice/sdfile/applyLayoutFile', $params);
+        return $this->requestBaseResponse('/v2/invoice/sdfile/applyLayoutFile', $params);
     }
     
     /**
      * 获取数电票版式文件
      * 
      * @param array $params 参数
-     * @return array
+     * @return BaseResponse
      * @throws QixiangyunException
      */
     public function getLayoutFile(array $params)
     {
         $this->validateParams($params, ['taskId']);
         
-        return $this->request('/v2/invoice/sdfile/getLayoutFile', $params);
+        return $this->requestBaseResponse('/v2/invoice/sdfile/getLayoutFile', $params);
     }
     
     /**
      * 单张数电版式下载
      * 
      * @param array $params 参数
-     * @return array
+     * @return BaseResponse
      * @throws QixiangyunException
      */
     public function syncLayoutFile(array $params)
     {
         $this->validateParams($params, ['orgId', 'fpdm', 'fphm']);
         
-        return $this->request('/v2/invoice/sdfile/syncLayoutFile', $params);
+        return $this->requestBaseResponse('/v2/invoice/sdfile/syncLayoutFile', $params);
     }
 }

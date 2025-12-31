@@ -3,6 +3,7 @@
 namespace QixiangyunSDK\Clients;
 
 use QixiangyunSDK\Core\BaseClient;
+use QixiangyunSDK\Core\Types\MessageResponse;
 use QixiangyunSDK\Exceptions\QixiangyunException;
 
 /**
@@ -27,67 +28,67 @@ class MessageClient extends BaseClient
      * 获取服务异常通知
      * 
      * @param array $params 查询参数
-     * @return array
+     * @return MessageResponse
      * @throws QixiangyunException
      */
-    public function getNotice(array $params)
+    public function getNotice(array $params): MessageResponse
     {
         $this->validateParams($params, ['orgId']);
         
-        return $this->request('/v2/subscribe/sysmessage/getNoticeMessage', $params);
+        return $this->requestMessageResponse('/v2/subscribe/sysmessage/getNoticeMessage', $params);
     }
     
     /**
      * 获取系统消息列表
      * 
      * @param array $params 查询参数
-     * @return array
+     * @return MessageResponse
      * @throws QixiangyunException
      */
-    public function getSysMessageList(array $params = [])
+    public function getSysMessageList(array $params = []): MessageResponse
     {
-        return $this->request('/v2/public/sysmessage/list', $params);
+        return $this->requestMessageResponse('/v2/public/sysmessage/list', $params);
     }
     
     /**
      * 标记消息已读
      * 
      * @param array $params 消息参数
-     * @return array
+     * @return MessageResponse
      * @throws QixiangyunException
      */
-    public function markAsRead(array $params)
+    public function markAsRead(array $params): MessageResponse
     {
         $this->validateParams($params, ['messageId']);
         
-        return $this->request('/v2/public/sysmessage/markRead', $params);
+        return $this->requestMessageResponse('/v2/public/sysmessage/markRead', $params);
     }
     
     /**
      * 批量标记消息已读
      * 
      * @param array $params 消息参数
-     * @return array
+     * @return MessageResponse
      * @throws QixiangyunException
      */
-    public function batchMarkAsRead(array $params)
+    public function batchMarkAsRead(array $params): MessageResponse
     {
         $this->validateParams($params, ['messageIds']);
         
-        return $this->request('/v2/public/sysmessage/batchMarkRead', $params);
+        return $this->requestMessageResponse('/v2/public/sysmessage/batchMarkRead', $params);
     }
     
     /**
      * 删除消息
      * 
      * @param array $params 消息参数
-     * @return array
+     * @return MessageResponse
      * @throws QixiangyunException
      */
-    public function deleteMessage(array $params)
+    public function deleteMessage(array $params): MessageResponse
     {
         $this->validateParams($params, ['messageId']);
         
-        return $this->request('/v2/public/sysmessage/delete', $params);
+        return $this->requestMessageResponse('/v2/public/sysmessage/delete', $params);
     }
 }

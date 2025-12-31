@@ -3,6 +3,7 @@
 namespace QixiangyunSDK\Clients;
 
 use QixiangyunSDK\Core\BaseClient;
+use QixiangyunSDK\Core\Types\BsryglResponse;
 
 class BsryglClient extends BaseClient
 {
@@ -20,109 +21,109 @@ class BsryglClient extends BaseClient
      * 企业添加办税人员任务
      *
      * @param array $params 参数
-     * @return array
+     * @return BsryglResponse
      */
-    public function addBsyTask(array $params): array
+    public function addBsyTask(array $params): BsryglResponse
     {
-        return $this->httpClient->post('v2/bsrygl/qy/addBsyTask', $params);
+        return $this->requestBsryglResponse('v2/bsrygl/qy/addBsyTask', $params);
     }
     
     /**
      * 企业添加办税人员结果查询
      *
      * @param array $params 参数
-     * @return array
+     * @return BsryglResponse
      */
-    public function queryBsyTask(array $params): array
+    public function queryBsyTask(array $params): BsryglResponse
     {
-        return $this->httpClient->post('v2/bsrygl/qy/queryBsyTask', $params);
+        return $this->requestBsryglResponse('v2/bsrygl/qy/queryBsyTask', $params);
     }
     
     /**
      * 获取二维码
      *
      * @param array $params 参数
-     * @return array
+     * @return BsryglResponse
      */
-    public function getQrcode(array $params): array
+    public function getQrcode(array $params): BsryglResponse
     {
-        return $this->httpClient->post('v2/bsrygl/common/getQrcode', $params);
+        return $this->requestBsryglResponse('v2/bsrygl/common/getQrcode', $params);
     }
     
     /**
      * 二维码状态确认
      *
      * @param array $params 参数
-     * @return array
+     * @return BsryglResponse
      */
-    public function getQrcodeState(array $params): array
+    public function getQrcodeState(array $params): BsryglResponse
     {
-        return $this->httpClient->post('v2/bsrygl/common/getQrcodeState', $params);
+        return $this->requestBsryglResponse('v2/bsrygl/common/getQrcodeState', $params);
     }
     
     /**
      * 企业现有办税人员获取
      *
      * @param array $params 参数
-     * @return array
+     * @return BsryglResponse
      */
-    public function bsyInfoTask(array $params): array
+    public function bsyInfoTask(array $params): BsryglResponse
     {
-        return $this->httpClient->post('v2/bsrygl/qy/bsyInfoTask', $params);
+        return $this->requestBsryglResponse('v2/bsrygl/qy/bsyInfoTask', $params);
     }
     
     /**
      * 企业现有办税人员结果查询
      *
      * @param array $params 参数
-     * @return array
+     * @return BsryglResponse
      */
-    public function queryBsyInfoTask(array $params): array
+    public function queryBsyInfoTask(array $params): BsryglResponse
     {
-        return $this->httpClient->post('v2/bsrygl/qy/queryBsyInfoTask', $params);
+        return $this->requestBsryglResponse('v2/bsrygl/qy/queryBsyInfoTask', $params);
     }
     
     /**
      * 企业删除办税人员
      *
      * @param array $params 参数
-     * @return array
+     * @return BsryglResponse
      */
-    public function delBsyTask(array $params): array
+    public function delBsyTask(array $params): BsryglResponse
     {
-        return $this->httpClient->post('v2/bsrygl/qy/delBsyTask', $params);
+        return $this->requestBsryglResponse('v2/bsrygl/qy/delBsyTask', $params);
     }
     
     /**
      * 现有办税人员删除记录任务
      *
      * @param array $params 参数
-     * @return array
+     * @return BsryglResponse
      */
-    public function bsyDeletedTask(array $params): array
+    public function bsyDeletedTask(array $params): BsryglResponse
     {
-        return $this->httpClient->post('v2/bsrygl/qy/bsyDeletedTask', $params);
+        return $this->requestBsryglResponse('v2/bsrygl/qy/bsyDeletedTask', $params);
     }
     
     /**
      * 企业删除办税人员结果查询
      *
      * @param array $params 参数
-     * @return array
+     * @return BsryglResponse
      */
-    public function queryDelBsyTask(array $params): array
+    public function queryDelBsyTask(array $params): BsryglResponse
     {
-        return $this->httpClient->post('v2/bsrygl/qy/queryDelBsyTask', $params);
+        return $this->requestBsryglResponse('v2/bsrygl/qy/queryDelBsyTask', $params);
     }
     
     /**
      * 现有办税人员删除记录任务查询
      *
      * @param array $params 参数
-     * @return array
+     * @return BsryglResponse
      */
-    public function queryBsyDeletedTask(array $params): array
+    public function queryBsyDeletedTask(array $params): BsryglResponse
     {
-        return $this->httpClient->post('v2/bsrygl/qy/queryBsyDeletedTask', $params);
+        return $this->requestBsryglResponse('v2/bsrygl/qy/queryBsyDeletedTask', $params);
     }
 }

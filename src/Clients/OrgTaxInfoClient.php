@@ -3,6 +3,7 @@
 namespace QixiangyunSDK\Clients;
 
 use QixiangyunSDK\Core\BaseClient;
+use QixiangyunSDK\Core\Types\OrgResponse;
 use QixiangyunSDK\Exceptions\QixiangyunException;
 
 /**
@@ -27,41 +28,41 @@ class OrgTaxInfoClient extends BaseClient
      * 发起采集企业税务信息
      * 
      * @param array $params 采集参数
-     * @return array
+     * @return OrgResponse
      * @throws QixiangyunException
      */
-    public function loadOrgTaxInfo(array $params)
+    public function loadOrgTaxInfo(array $params): OrgResponse
     {
         $this->validateParams($params, ['orgId']);
         
-        return $this->request('/v2/public/org/loadOrgTaxInfo', $params);
+        return $this->requestOrgResponse('/v2/public/org/loadOrgTaxInfo', $params);
     }
     
     /**
      * 查询企业税务信息状态
      * 
      * @param array $params 查询参数
-     * @return array
+     * @return OrgResponse
      * @throws QixiangyunException
      */
-    public function queryOrgTaxInfoStatus(array $params)
+    public function queryOrgTaxInfoStatus(array $params): OrgResponse
     {
         $this->validateParams($params, ['orgId']);
         
-        return $this->request('/v2/public/org/hasReadSJInfo', $params);
+        return $this->requestOrgResponse('/v2/public/org/hasReadSJInfo', $params);
     }
     
     /**
      * 查询企业信息
      * 
      * @param array $params 查询参数
-     * @return array
+     * @return OrgResponse
      * @throws QixiangyunException
      */
-    public function queryOrgInfo(array $params)
+    public function queryOrgInfo(array $params): OrgResponse
     {
         $this->validateParams($params, ['orgId']);
         
-        return $this->request('/v2/public/org/queryOrgInfo', $params);
+        return $this->requestOrgResponse('/v2/public/org/queryOrgInfo', $params);
     }
 }

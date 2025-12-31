@@ -11,6 +11,7 @@
 - 📝 **完整日志记录** - 可配置的日志输出
 - 💪 **类型安全** - 完整的参数验证和异常处理
 - 📦 **易于集成** - 简单的 API 调用接口
+- ⚡ **链式操作** - 支持流畅的链式调用和类型安全响应
 
 ## 安装
 
@@ -59,6 +60,101 @@ $result = $invoiceClient->queryZzsfpCy([
 
 print_r($result);
 ```
+
+## 链式操作
+
+SDK 1.0.0 版本起支持链式操作，提供类型安全的响应对象，使API调用更加直观和易于维护。
+
+### 基本链式操作
+
+```php
+// 获取类型化响应
+$response = $invoiceClient->queryZzsfpCy($params);
+
+// 链式处理
+$response
+    ->then(function($data) {
+        echo "查询成功\n";
+        return processData($data);
+    })
+    ->catch(function($error, $statusCode) {
+        echo "查询失败: " . $error . " (状态码: " . $statusCode . ")\n";
+    })
+    ->finally(function($response) {
+        echo "操作完成\n";
+    });
+```
+
+### 类型化数据处理
+
+```php
+// 发票数据处理
+$response->processInvoice(function($invoiceData) {
+    echo "发票代码: " . $invoiceData['code'] . "\n";
+    echo "发票金额: " . number_format($invoiceData['amount'], 2) . "\n";
+    
+    return $invoiceData;
+});
+
+// 企业数据处理
+$response->processOrg(function($orgData) {
+    echo "企业名称: " . $orgData['name'] . "\n";
+    echo "统一社会信用代码: " . $orgData['creditCode'] . "\n";
+    
+    return $orgData;
+});
+```
+
+### 多级链式操作
+
+```php
+// 先查询企业信息，然后根据企业信息查询发票
+$orgClient->getOrgInfo(['orgId' => $orgId])
+    ->processOrg(function($orgData) use ($invoiceClient) {
+        if ($orgData['status'] === 'active') {
+            return $invoiceClient->queryPtfpCy($invoiceParams);
+        } else {
+            echo "企业未激活，无法查询发票\n";
+            return null;
+        }
+    })
+    ->then(function($invoiceResponse) {
+        if ($invoiceResponse) {
+            return $invoiceResponse->processInvoice(function($invoiceData) {
+                echo "企业关联发票: " . $invoiceData['number'] . "\n";
+                return $invoiceData;
+            });
+        }
+    });
+```
+
+### 类型安全操作
+
+```php
+// 类型安全的数据处理
+$response->processProduct(function($productData) {
+    // 确保数据类型正确
+    $productId = (string)($productData['id'] ?? '');
+    $price = (float)($productData['price'] ?? 0);
+    $isActive = (bool)($productData['isActive'] ?? false);
+    
+    // 类型验证
+    if (empty($productId)) {
+        throw new InvalidArgumentException("产品ID不能为空");
+    }
+    
+    return [
+        'id' => $productId,
+        'price' => $price,
+        'isActive' => $isActive
+    ];
+});
+```
+
+更多链式操作示例和最佳实践请参考：
+- [CHAIN_OPERATIONS.md](CHAIN_OPERATIONS.md) - 链式操作完整指南
+- [examples/chained_operations_example.php](examples/chained_operations_example.php) - 链式操作使用示例
+- [examples/chained_operations_test.php](examples/chained_operations_test.php) - 链式操作测试示例
 
 ## 配置选项
 

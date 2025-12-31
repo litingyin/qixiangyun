@@ -3,6 +3,7 @@
 namespace QixiangyunSDK\Clients;
 
 use QixiangyunSDK\Core\BaseClient;
+use QixiangyunSDK\Core\Types\CollectResponse;
 use QixiangyunSDK\Exceptions\QixiangyunException;
 
 /**
@@ -27,69 +28,69 @@ class CollectClient extends BaseClient
      * 发起企业数据采集
      * 
      * @param array $params 采集参数
-     * @return array
+     * @return CollectResponse
      * @throws QixiangyunException
      */
-    public function beginFinTask(array $params)
+    public function beginFinTask(array $params): CollectResponse
     {
         $this->validateParams($params, ['orgId']);
         
-        return $this->request('/v2/collect/beginFinTask', $params);
+        return $this->requestCollectResponse('/v2/collect/beginFinTask', $params);
     }
     
     /**
      * 获取采集状态信息
      * 
      * @param array $params 查询参数
-     * @return array
+     * @return CollectResponse
      * @throws QixiangyunException
      */
-    public function taskStatusDetails(array $params)
+    public function taskStatusDetails(array $params): CollectResponse
     {
         $this->validateParams($params, ['taskId']);
         
-        return $this->request('/v2/collect/taskStatusDetails', $params);
+        return $this->requestCollectResponse('/v2/collect/taskStatusDetails', $params);
     }
     
     /**
      * 获取采集状态及全量数据
      * 
      * @param array $params 查询参数
-     * @return array
+     * @return CollectResponse
      * @throws QixiangyunException
      */
-    public function getTaxAndFpInfo(array $params)
+    public function getTaxAndFpInfo(array $params): CollectResponse
     {
         $this->validateParams($params, ['orgId']);
         
-        return $this->request('/v2/collect/getTaxAndFpInfo', $params);
+        return $this->requestCollectResponse('/v2/collect/getTaxAndFpInfo', $params);
     }
     
     /**
      * 获取税务数据
      * 
      * @param array $params 查询参数
-     * @return array
+     * @return CollectResponse
      * @throws QixiangyunException
      */
-    public function getTaxInfo(array $params)
+    public function getTaxInfo(array $params): CollectResponse
     {
         $this->validateParams($params, ['taskId', 'dataType']);
         
-        return $this->request('/v2/collect/tax/getTaxInfo', $params);
+        return $this->requestCollectResponse('/v2/collect/tax/getTaxInfo', $params);
     }
     
     /**
      * 获取发票数据
      * 
      * @param array $params 查询参数
-     * @return array
+     * @return CollectResponse
      * @throws QixiangyunException
      */
-    public function getCollectTaskPageData(array $params)
+    public function getCollectTaskPageData(array $params): CollectResponse
     {
         $this->validateParams($params, ['taskId']);
         
-        return $this->request('/v2/collect/invoice/getCollectTaskPageData', $params);
+        return $this->requestCollectResponse('/v2/collect/invoice/getCollectTaskPageData', $params);
     }
 }

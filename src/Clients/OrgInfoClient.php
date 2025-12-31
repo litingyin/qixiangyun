@@ -3,6 +3,7 @@
 namespace QixiangyunSDK\Clients;
 
 use QixiangyunSDK\Core\BaseClient;
+use QixiangyunSDK\Core\Types\OrgResponse;
 use QixiangyunSDK\Exceptions\QixiangyunException;
 
 /**
@@ -27,67 +28,67 @@ class OrgInfoClient extends BaseClient
      * 发起企业基本信息采集任务
      * 
      * @param array $params 任务参数
-     * @return array
+     * @return OrgResponse
      * @throws QixiangyunException
      */
-    public function beginTask(array $params)
+    public function beginTask(array $params): OrgResponse
     {
         $this->validateParams($params, ['orgId', 'nsrsbh']);
         
-        return $this->request('/v2/public/beginOrgInfoTask', $params);
+        return $this->requestOrgResponse('/v2/public/beginOrgInfoTask', $params);
     }
     
     /**
      * 获取企业基本信息采集任务结果
      * 
      * @param array $params 查询参数
-     * @return array
+     * @return OrgResponse
      * @throws QixiangyunException
      */
-    public function queryTask(array $params)
+    public function queryTask(array $params): OrgResponse
     {
         $this->validateParams($params, ['orgId', 'taskId']);
         
-        return $this->request('/v2/public/queryOrgInfoTask', $params);
+        return $this->requestOrgResponse('/v2/public/queryOrgInfoTask', $params);
     }
     
     /**
      * 获取企业基本信息
      * 
      * @param array $params 查询参数
-     * @return array
+     * @return OrgResponse
      * @throws QixiangyunException
      */
-    public function getOrgInfo(array $params)
+    public function getOrgInfo(array $params): OrgResponse
     {
         $this->validateParams($params, ['orgId']);
         
-        return $this->request('/v2/public/getOrgInfo', $params);
+        return $this->requestOrgResponse('/v2/public/getOrgInfo', $params);
     }
     
     /**
      * 企业取消授权
      * 
      * @param array $params 取消参数
-     * @return array
+     * @return OrgResponse
      * @throws QixiangyunException
      */
-    public function delete(array $params)
+    public function delete(array $params): OrgResponse
     {
         $this->validateParams($params, ['orgId']);
         
-        return $this->request('/v2/public/org/delete', $params);
+        return $this->requestOrgResponse('/v2/public/org/delete', $params);
     }
     
     /**
      * 自然人获取企业列表
      * 
      * @param array $params 查询参数
-     * @return array
+     * @return OrgResponse
      * @throws QixiangyunException
      */
-    public function queryOrglist(array $params = [])
+    public function queryOrglist(array $params = []): OrgResponse
     {
-        return $this->request('/v2/public/zrr/queryOrglist', $params);
+        return $this->requestOrgResponse('/v2/public/zrr/queryOrglist', $params);
     }
 }
