@@ -91,7 +91,7 @@ $invoiceResponse
 echo "\n=== 测试企业响应 ===\n";
 
 $orgData = [
-    'orgId' => '123456789',
+    'aggOrgId' => '123456789',
     'orgName' => '测试企业有限公司',
     'tyshxydm' => '91110000123456789X',
     'fddbr' => '张三',
@@ -103,7 +103,7 @@ $orgData = [
 ];
 
 $orgResponse = ResponseBuilder::org($orgData);
-echo "企业ID: " . $orgResponse->getOrgId() . "\n";
+echo "企业ID: " . $orgResponse->getaggOrgId() . "\n";
 echo "企业名称: " . $orgResponse->getOrgName() . "\n";
 echo "统一社会信用代码: " . $orgResponse->getCreditCode() . "\n";
 echo "法定代表人: " . $orgResponse->getLegalRepresentative() . "\n";
@@ -211,7 +211,7 @@ $accountData = [
     'username' => 'testuser',
     'accountType' => 'admin',
     'status' => 'active',
-    'orgIds' => ['ORG001', 'ORG002'],
+    'aggOrgIds' => ['ORG001', 'ORG002'],
     'role' => 'manager',
     'permissions' => ['read', 'write', 'delete'],
     'createTime' => '2023-01-01 09:00:00',

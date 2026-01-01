@@ -7,9 +7,9 @@ use QixiangyunSDK\SDK;
 
 // 初始化SDK
 $sdk = SDK::create([
-    'appKey' => 'your_app_key',
+    'appKey' => '10003045',
     'apiHost' => 'https://api.qixiangyun.com',
-    'appSecret' => 'your_app_secret',
+    'appSecret' => '177WC3539UXRJP93C76VSN5CXF221YKSD35K3G59RK4FTVL9',
     'timeout' => 30,
     'enableCache' => true,
     'cacheDir' => __DIR__ . '/cache' // 可选，默认使用系统临时目录

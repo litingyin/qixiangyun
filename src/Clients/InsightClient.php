@@ -47,7 +47,7 @@ class InsightClient extends BaseClient
      */
     public function newEnterprise(array $params): BaseResponse
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/insight/newEnterprise', $params);
     }
@@ -61,7 +61,7 @@ class InsightClient extends BaseClient
      */
     public function contactInfo(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/insight/contactInfo', $params);
     }
@@ -75,7 +75,7 @@ class InsightClient extends BaseClient
      */
     public function info(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/insight/info', $params);
     }
@@ -89,7 +89,7 @@ class InsightClient extends BaseClient
      */
     public function companyContactInfo(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/insight/companyContactInfo', $params);
     }
@@ -103,7 +103,7 @@ class InsightClient extends BaseClient
      */
     public function investmentAbroad(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/insight/investmentAbroad', $params);
     }
@@ -117,7 +117,7 @@ class InsightClient extends BaseClient
      */
     public function taxBigIllegal(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/insight/taxBigIllegal', $params);
     }
@@ -131,7 +131,7 @@ class InsightClient extends BaseClient
      */
     public function certificateInfo(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/insight/certificateInfo', $params);
     }
@@ -145,7 +145,7 @@ class InsightClient extends BaseClient
      */
     public function limitHighConsumerInfo(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/insight/limitHighConsumerInfo', $params);
     }
@@ -159,7 +159,7 @@ class InsightClient extends BaseClient
      */
     public function limitHighConsumerRelationEn(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/insight/limitHighConsumerRelationEn', $params);
     }
@@ -173,7 +173,7 @@ class InsightClient extends BaseClient
      */
     public function judgmentDoc(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/insight/judgmentDoc', $params);
     }
@@ -187,7 +187,7 @@ class InsightClient extends BaseClient
      */
     public function oweTaxInfo(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/insight/oweTaxInfo', $params);
     }
@@ -201,7 +201,7 @@ class InsightClient extends BaseClient
      */
     public function taxUnNormalInfo(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/insight/taxUnNormalInfo', $params);
     }
@@ -215,7 +215,7 @@ class InsightClient extends BaseClient
      */
     public function administrationPenalty(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/insight/administrationPenalty', $params);
     }
@@ -229,7 +229,7 @@ class InsightClient extends BaseClient
      */
     public function administractiveLicense(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/insight/administrativeLicense', $params);
     }
@@ -243,7 +243,7 @@ class InsightClient extends BaseClient
      */
     public function exceptionList(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/insight/exceptionList', $params);
     }
@@ -257,7 +257,7 @@ class InsightClient extends BaseClient
      */
     public function seriousIllegalBlackInfo(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/insight/seriousIllegalBlackInfo', $params);
     }
@@ -271,7 +271,7 @@ class InsightClient extends BaseClient
      */
     public function trademarkInfo(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/insight/trademarkInfo', $params);
     }
@@ -285,7 +285,7 @@ class InsightClient extends BaseClient
      */
     public function patentInfo(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/insight/patentInfo', $params);
     }
@@ -299,7 +299,7 @@ class InsightClient extends BaseClient
      */
     public function patentRelationInfo(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/insight/patentRelationInfo', $params);
     }
@@ -313,7 +313,7 @@ class InsightClient extends BaseClient
      */
     public function patentLawStatus(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/insight/patentLawStatus', $params);
     }
@@ -327,7 +327,7 @@ class InsightClient extends BaseClient
      */
     public function taxpayerLevelA(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/insight/taxpayerLevelA', $params);
     }
@@ -341,7 +341,7 @@ class InsightClient extends BaseClient
      */
     public function shareholderInvest(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/insight/shareholderInvest', $params);
     }
@@ -355,7 +355,7 @@ class InsightClient extends BaseClient
      */
     public function branchInfo(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/insight/branchInfo', $params);
     }
@@ -369,7 +369,7 @@ class InsightClient extends BaseClient
      */
     public function dishonestyInfo(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/insight/dishonestyInfo', $params);
     }
@@ -383,7 +383,7 @@ class InsightClient extends BaseClient
      */
     public function executeInfo(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/insight/executeInfo', $params);
     }
@@ -397,7 +397,7 @@ class InsightClient extends BaseClient
      */
     public function enforceObj(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/insight/enforceObj', $params);
     }
@@ -411,7 +411,7 @@ class InsightClient extends BaseClient
      */
     public function caseInfo(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/insight/caseInfo', $params);
     }
@@ -425,7 +425,7 @@ class InsightClient extends BaseClient
      */
     public function judgementDocRelation(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/insight/judgementDocRelation', $params);
     }
@@ -439,7 +439,7 @@ class InsightClient extends BaseClient
      */
     public function websiteInfo(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/insight/websiteInfo', $params);
     }
@@ -453,7 +453,7 @@ class InsightClient extends BaseClient
      */
     public function softwareCopyright(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/insight/softwareCopyright', $params);
     }
@@ -467,7 +467,7 @@ class InsightClient extends BaseClient
      */
     public function orgManagerAssociateEnt(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/insight/orgManagerAssociateEnt', $params);
     }
@@ -481,7 +481,7 @@ class InsightClient extends BaseClient
      */
     public function bidInfo(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/insight/bidInfo', $params);
     }
@@ -495,7 +495,7 @@ class InsightClient extends BaseClient
      */
     public function annualRpt(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/insight/annualRpt', $params);
     }
@@ -509,7 +509,7 @@ class InsightClient extends BaseClient
      */
     public function alterInfo(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/insight/alterInfo', $params);
     }
@@ -523,7 +523,7 @@ class InsightClient extends BaseClient
      */
     public function equityPledgeInfo(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/insight/equityPledgeInfo', $params);
     }
@@ -537,7 +537,7 @@ class InsightClient extends BaseClient
      */
     public function keyPersonnelInfo(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/insight/keyPersonnelInfo', $params);
     }
@@ -551,7 +551,7 @@ class InsightClient extends BaseClient
      */
     public function courtAnnouncementInfo(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/insight/courtAnnouncementInfo', $params);
     }
@@ -565,7 +565,7 @@ class InsightClient extends BaseClient
      */
     public function judicialEquityFreeze(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/insight/judicialEquityFreeze', $params);
     }

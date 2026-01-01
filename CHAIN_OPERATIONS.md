@@ -124,7 +124,7 @@ $orgClient = $sdk->getClient('org');
 $invoiceClient = $sdk->getClient('invoice');
 
 // 先查询企业信息，然后根据企业信息查询发票
-$orgClient->getOrgInfo(['orgId' => $orgId])
+$orgClient->getOrgInfo(['aggOrgId' => $aggOrgId])
     ->processOrg(function($orgData) use ($invoiceClient) {
         // 根据企业信息决定查询哪些发票
         if ($orgData['status'] === 'active') {

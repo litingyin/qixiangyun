@@ -33,7 +33,7 @@ class RiskClient extends BaseClient
      */
     public function standard(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/risk/hmd/standard', $params);
     }
@@ -47,7 +47,7 @@ class RiskClient extends BaseClient
      */
     public function qyfkmx(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/risk/hmd/qyfkmx', $params);
     }
@@ -61,7 +61,7 @@ class RiskClient extends BaseClient
      */
     public function jyyc(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/risk/hmd/jyyc', $params);
     }
@@ -75,7 +75,7 @@ class RiskClient extends BaseClient
      */
     public function yzwf(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/risk/hmd/yzwf', $params);
     }
@@ -89,7 +89,7 @@ class RiskClient extends BaseClient
      */
     public function zdsswf(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/risk/hmd/zdsswf', $params);
     }
@@ -103,7 +103,7 @@ class RiskClient extends BaseClient
      */
     public function fzchnew(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/risk/hmd/fzchnew', $params);
     }
@@ -117,7 +117,7 @@ class RiskClient extends BaseClient
      */
     public function plus(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/risk/hmd/plus', $params);
     }
@@ -131,7 +131,7 @@ class RiskClient extends BaseClient
      */
     public function qycx(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/risk/hmd/qycx', $params);
     }
@@ -145,7 +145,7 @@ class RiskClient extends BaseClient
      */
     public function qycxnew(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/risk/hmd/qycxnew', $params);
     }

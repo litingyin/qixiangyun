@@ -35,9 +35,9 @@ class CktsResponse extends Response
      *
      * @return string
      */
-    public function getOrgId(): string
+    public function getaggOrgId(): string
     {
-        return $this->get('orgId', '');
+        return $this->get('aggOrgId', '');
     }
     
     /**
@@ -122,7 +122,7 @@ class CktsResponse extends Response
             $cktsData = [
                 'taskId' => $this->getTaskId(),
                 'status' => $this->getStatus(),
-                'orgId' => $this->getOrgId(),
+                'aggOrgId' => $this->getaggOrgId(),
                 'taxPeriod' => $this->getTaxPeriod(),
                 'declareId' => $this->getDeclareId(),
                 'reviewStatus' => $this->getReviewStatus(),

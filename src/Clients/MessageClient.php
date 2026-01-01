@@ -33,7 +33,7 @@ class MessageClient extends BaseClient
      */
     public function getNotice(array $params): MessageResponse
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestMessageResponse('/v2/subscribe/sysmessage/getNoticeMessage', $params);
     }

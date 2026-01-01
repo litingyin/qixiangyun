@@ -25,9 +25,9 @@ class CollectResponse extends Response
      *
      * @return string
      */
-    public function getOrgId(): string
+    public function getaggOrgId(): string
     {
-        return $this->get('orgId', '');
+        return $this->get('aggOrgId', '');
     }
     
     /**
@@ -131,7 +131,7 @@ class CollectResponse extends Response
         if ($this->isSuccess()) {
             $collectData = [
                 'taskId' => $this->getTaskId(),
-                'orgId' => $this->getOrgId(),
+                'aggOrgId' => $this->getaggOrgId(),
                 'status' => $this->getStatus(),
                 'progress' => $this->getProgress(),
                 'dataType' => $this->getDataType(),

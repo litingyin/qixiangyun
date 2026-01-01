@@ -182,7 +182,7 @@ try {
     // 使用登录客户端进行账号密码登录
     try {
         $result = $loginClient->password([
-            'orgId' => 'your_org_id',
+            'aggOrgId' => 'your_org_id',
             'username' => 'your_username',
             'password' => 'your_password',
             'taxType' => '1'
@@ -197,7 +197,7 @@ try {
     // 使用文件版式下载客户端发起获取数电版式任务
     try {
         $result = $sdFileClient->applyLayoutFile([
-            'orgId' => 'your_org_id',
+            'aggOrgId' => 'your_org_id',
             'fpdm' => 'your_fpdm',
             'fphm' => 'your_fphm'
         ]);
@@ -211,7 +211,7 @@ try {
     // 使用企业洞察客户端查询企业基本信息
     try {
         $result = $insightClient->info([
-            'orgId' => 'your_org_id'
+            'aggOrgId' => 'your_org_id'
         ]);
         
         echo "企业基本信息查询结果:\n";

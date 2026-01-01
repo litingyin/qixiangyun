@@ -32,7 +32,7 @@ class ShbxClient extends BaseClient
      */
     public function getCompanyRegisterInfo(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/shbx/declare/getCompanyRegisterInfo', $params);
     }
@@ -46,7 +46,7 @@ class ShbxClient extends BaseClient
      */
     public function checkAccountPassword(array $params)
     {
-        $this->validateParams($params, ['orgId', 'username', 'password']);
+        $this->validateParams($params, ['aggOrgId', 'username', 'password']);
         
         return $this->requestBaseResponse('/v2/shbx/declare/checkAccountPassword', $params);
     }
@@ -60,7 +60,7 @@ class ShbxClient extends BaseClient
      */
     public function queryAnnualPaymentSalary(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/shbx/declare/queryAnnualPaymentSalary', $params);
     }
@@ -74,7 +74,7 @@ class ShbxClient extends BaseClient
      */
     public function adjustAnnualPaymentSalary(array $params)
     {
-        $this->validateParams($params, ['orgId', 'salaryData']);
+        $this->validateParams($params, ['aggOrgId', 'salaryData']);
         
         return $this->requestBaseResponse('/v2/shbx/declare/adjustAnnualPaymentSalary', $params);
     }
@@ -88,7 +88,7 @@ class ShbxClient extends BaseClient
      */
     public function queryMonthlyPaymentSalary(array $params)
     {
-        $this->validateParams($params, ['orgId', 'yearMonth']);
+        $this->validateParams($params, ['aggOrgId', 'yearMonth']);
         
         return $this->requestBaseResponse('/v2/shbx/declare/queryMonthlyPaymentSalary', $params);
     }
@@ -102,7 +102,7 @@ class ShbxClient extends BaseClient
      */
     public function adjustMonthlyPaymentSalary(array $params)
     {
-        $this->validateParams($params, ['orgId', 'yearMonth', 'salaryData']);
+        $this->validateParams($params, ['aggOrgId', 'yearMonth', 'salaryData']);
         
         return $this->requestBaseResponse('/v2/shbx/declare/adjustMonthlyPaymentSalary', $params);
     }
@@ -116,7 +116,7 @@ class ShbxClient extends BaseClient
      */
     public function queryPaymentSalaryDeclarationRecord(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/shbx/declare/queryPaymentSalaryDeclarationRecord', $params);
     }
@@ -130,7 +130,7 @@ class ShbxClient extends BaseClient
      */
     public function queryDailyUnDeclare(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/shbx/declare/queryDailyUnDeclare', $params);
     }
@@ -144,7 +144,7 @@ class ShbxClient extends BaseClient
      */
     public function dailyDeclaration(array $params)
     {
-        $this->validateParams($params, ['orgId', 'declareData']);
+        $this->validateParams($params, ['aggOrgId', 'declareData']);
         
         return $this->requestBaseResponse('/v2/shbx/declare/dailyDeclaration', $params);
     }
@@ -172,7 +172,7 @@ class ShbxClient extends BaseClient
      */
     public function querySpecialPayUnDeclare(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/shbx/declare/querySpecialPayUnDeclare', $params);
     }
@@ -186,7 +186,7 @@ class ShbxClient extends BaseClient
      */
     public function specialPayDeclaration(array $params)
     {
-        $this->validateParams($params, ['orgId', 'declareData']);
+        $this->validateParams($params, ['aggOrgId', 'declareData']);
         
         return $this->requestBaseResponse('/v2/shbx/declare/specPayDeclaration', $params);
     }
@@ -214,7 +214,7 @@ class ShbxClient extends BaseClient
      */
     public function queryDeclareRecord(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/shbx/declare/queryDeclareRecord', $params);
     }
@@ -228,7 +228,7 @@ class ShbxClient extends BaseClient
      */
     public function cancelDeclare(array $params)
     {
-        $this->validateParams($params, ['orgId', 'declareId']);
+        $this->validateParams($params, ['aggOrgId', 'declareId']);
         
         return $this->requestBaseResponse('/v2/shbx/declare/cancelDeclare', $params);
     }
@@ -242,7 +242,7 @@ class ShbxClient extends BaseClient
      */
     public function thirdQuery(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/shbx/declare/thirdQuery', $params);
     }
@@ -256,7 +256,7 @@ class ShbxClient extends BaseClient
      */
     public function getQfxx(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/shbx/declare/getQfxx', $params);
     }
@@ -270,7 +270,7 @@ class ShbxClient extends BaseClient
      */
     public function thirdPay(array $params)
     {
-        $this->validateParams($params, ['orgId', 'payData']);
+        $this->validateParams($params, ['aggOrgId', 'payData']);
         
         return $this->requestBaseResponse('/v2/shbx/declare/thirdPay', $params);
     }
@@ -284,7 +284,7 @@ class ShbxClient extends BaseClient
      */
     public function printBankPaymentVoucher(array $params)
     {
-        $this->validateParams($params, ['orgId', 'payId']);
+        $this->validateParams($params, ['aggOrgId', 'payId']);
         
         return $this->requestBaseResponse('/v2/shbx/declare/printBankPaymentVoucher', $params);
     }
@@ -298,7 +298,7 @@ class ShbxClient extends BaseClient
      */
     public function cancelBankPaymentVoucher(array $params)
     {
-        $this->validateParams($params, ['orgId', 'voucherId']);
+        $this->validateParams($params, ['aggOrgId', 'voucherId']);
         
         return $this->requestBaseResponse('/v2/shbx/declare/cancelBankPaymentVoucher', $params);
     }
@@ -312,7 +312,7 @@ class ShbxClient extends BaseClient
      */
     public function queryPayRecord(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/shbx/declare/queryPayRecord', $params);
     }
@@ -326,7 +326,7 @@ class ShbxClient extends BaseClient
      */
     public function printTaxProof(array $params)
     {
-        $this->validateParams($params, ['orgId', 'proofType', 'period']);
+        $this->validateParams($params, ['aggOrgId', 'proofType', 'period']);
         
         return $this->requestBaseResponse('/v2/shbx/declare/printTaxProof', $params);
     }
@@ -340,7 +340,7 @@ class ShbxClient extends BaseClient
      */
     public function printPayRecord(array $params)
     {
-        $this->validateParams($params, ['orgId', 'period']);
+        $this->validateParams($params, ['aggOrgId', 'period']);
         
         return $this->requestBaseResponse('/v2/shbx/declare/printPayRecord', $params);
     }
@@ -354,7 +354,7 @@ class ShbxClient extends BaseClient
      */
     public function printEmployeePaymentRecord(array $params)
     {
-        $this->validateParams($params, ['orgId', 'employeeIds', 'period']);
+        $this->validateParams($params, ['aggOrgId', 'employeeIds', 'period']);
         
         return $this->requestBaseResponse('/v2/shbx/declare/printEmployeePaymentRecord', $params);
     }
@@ -368,7 +368,7 @@ class ShbxClient extends BaseClient
      */
     public function queryPayRecordRymx(array $params)
     {
-        $this->validateParams($params, ['orgId', 'declareId']);
+        $this->validateParams($params, ['aggOrgId', 'declareId']);
         
         return $this->requestBaseResponse('/v2/shbx/declare/queryPayRecordRymx', $params);
     }
@@ -382,7 +382,7 @@ class ShbxClient extends BaseClient
      */
     public function queryUnitInsuranceInfo(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/shbx/declare/queryUnitInsuranceInfo', $params);
     }
@@ -396,7 +396,7 @@ class ShbxClient extends BaseClient
      */
     public function querySocialSecurityFeeDeclarationDetail(array $params)
     {
-        $this->validateParams($params, ['orgId', 'declareId']);
+        $this->validateParams($params, ['aggOrgId', 'declareId']);
         
         return $this->requestBaseResponse('/v2/shbx/declare/querySocialSecurityFeeDeclarationDetail', $params);
     }
@@ -410,7 +410,7 @@ class ShbxClient extends BaseClient
      */
     public function querySocialSecurityFeePayableInfo(array $params)
     {
-        $this->validateParams($params, ['orgId', 'period']);
+        $this->validateParams($params, ['aggOrgId', 'period']);
         
         return $this->requestBaseResponse('/v2/shbx/declare/querySocialSecurityFeePayableInfo', $params);
     }
@@ -424,7 +424,7 @@ class ShbxClient extends BaseClient
      */
     public function queryEmployeeInsuranceInfo(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/shbx/declare/queryEmployeeInsuranceInfo', $params);
     }

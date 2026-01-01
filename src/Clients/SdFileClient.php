@@ -33,7 +33,7 @@ class SdFileClient extends BaseClient
      */
     public function applyLayoutFile(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/invoice/sdfile/applyLayoutFile', $params);
     }
@@ -61,7 +61,7 @@ class SdFileClient extends BaseClient
      */
     public function syncLayoutFile(array $params)
     {
-        $this->validateParams($params, ['orgId', 'fpdm', 'fphm']);
+        $this->validateParams($params, ['aggOrgId', 'fpdm', 'fphm']);
         
         return $this->requestBaseResponse('/v2/invoice/sdfile/syncLayoutFile', $params);
     }

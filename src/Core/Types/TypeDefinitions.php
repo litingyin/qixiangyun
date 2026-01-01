@@ -49,7 +49,7 @@ namespace QixiangyunSDK\Core\Types;
  * 企业信息响应类型 - OrgResponse
  * 
  * 提供企业相关API的返回值类型定义和方法：
- * - getOrgId(): string - 获取企业ID
+ * - getaggOrgId(): string - 获取企业ID
  * - getOrgName(): string - 获取企业名称
  * - getCreditCode(): string - 获取统一社会信用代码
  * - getLegalRepresentative(): string - 获取法定代表人
@@ -130,7 +130,7 @@ namespace QixiangyunSDK\Core\Types;
  * - getUsername(): string - 获取用户名
  * - getAccountType(): string - 获取账户类型
  * - getStatus(): string - 获取账户状态
- * - getOrgIds(): array - 获取企业ID列表
+ * - getaggOrgIds(): array - 获取企业ID列表
  * - getRole(): string - 获取角色
  * - getPermissions(): array - 获取权限列表
  * - getCreateTime(): string - 获取创建时间

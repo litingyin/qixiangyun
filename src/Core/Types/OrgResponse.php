@@ -15,9 +15,9 @@ class OrgResponse extends Response
      *
      * @return string
      */
-    public function getOrgId(): string
+    public function getaggOrgId(): string
     {
-        return $this->get('orgId', '');
+        return $this->get('aggOrgId', '');
     }
     
     /**
@@ -107,7 +107,7 @@ class OrgResponse extends Response
      */
     public function isValid(): bool
     {
-        return $this->isSuccess() && !empty($this->getOrgId());
+        return $this->isSuccess() && !empty($this->getaggOrgId());
     }
     
     /**
@@ -120,7 +120,7 @@ class OrgResponse extends Response
     {
         if ($this->isValid()) {
             $orgData = [
-                'id' => $this->getOrgId(),
+                'id' => $this->getaggOrgId(),
                 'name' => $this->getOrgName(),
                 'creditCode' => $this->getCreditCode(),
                 'legalRepresentative' => $this->getLegalRepresentative(),

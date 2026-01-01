@@ -33,7 +33,7 @@ class CustomsClient extends BaseClient
      */
     public function getHQTSBGD2(array $params): CustomsResponse
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestCustomsResponse('/v2/customs/imex/dzh/getHQTSBGD2', $params);
     }
@@ -47,7 +47,7 @@ class CustomsClient extends BaseClient
      */
     public function getTSBGD_PRINT(array $params): CustomsResponse
     {
-        $this->validateParams($params, ['orgId', 'documentId']);
+        $this->validateParams($params, ['aggOrgId', 'documentId']);
         
         return $this->requestCustomsResponse('/v2/customs/imex/dzh/getTSBGD_PRINT', $params);
     }
@@ -61,7 +61,7 @@ class CustomsClient extends BaseClient
      */
     public function getHQJCKBGD(array $params): CustomsResponse
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestCustomsResponse('/v2/customs/imex/dzh/getHQJCKBGD', $params);
     }
@@ -75,7 +75,7 @@ class CustomsClient extends BaseClient
      */
     public function getHQTGWZHCKFXTZS_PDF(array $params): CustomsResponse
     {
-        $this->validateParams($params, ['orgId', 'documentId']);
+        $this->validateParams($params, ['aggOrgId', 'documentId']);
         
         return $this->requestCustomsResponse('/v2/customs/imex/dzh/getHQTGWZHCKFXTZS_PDF', $params);
     }
@@ -89,7 +89,7 @@ class CustomsClient extends BaseClient
      */
     public function getHQDZWTXY_PDF(array $params): CustomsResponse
     {
-        $this->validateParams($params, ['orgId', 'documentId']);
+        $this->validateParams($params, ['aggOrgId', 'documentId']);
         
         return $this->requestCustomsResponse('/v2/customs/imex/dzh/getHQDZWTXY_PDF', $params);
     }
@@ -103,7 +103,7 @@ class CustomsClient extends BaseClient
      */
     public function getHQGXHT_PDF(array $params): CustomsResponse
     {
-        $this->validateParams($params, ['orgId', 'documentId']);
+        $this->validateParams($params, ['aggOrgId', 'documentId']);
         
         return $this->requestCustomsResponse('/v2/customs/imex/dzh/getHQGXHT_PDF', $params);
     }
@@ -117,7 +117,7 @@ class CustomsClient extends BaseClient
      */
     public function getHQZXD_PDF(array $params): CustomsResponse
     {
-        $this->validateParams($params, ['orgId', 'documentId']);
+        $this->validateParams($params, ['aggOrgId', 'documentId']);
         
         return $this->requestCustomsResponse('/v2/customs/imex/dzh/getHQZXD_PDF', $params);
     }
@@ -131,7 +131,7 @@ class CustomsClient extends BaseClient
      */
     public function getRLR_PDF(array $params): CustomsResponse
     {
-        $this->validateParams($params, ['orgId', 'documentId']);
+        $this->validateParams($params, ['aggOrgId', 'documentId']);
         
         return $this->requestCustomsResponse('/v2/customs/imex/dzh/getRLR_PDF', $params);
     }

@@ -33,7 +33,7 @@ class PhoneClient extends BaseClient
      */
     public function createOrder(array $params): PhoneResponse
     {
-        $this->validateParams($params, ['orgId', 'accountCount']);
+        $this->validateParams($params, ['aggOrgId', 'accountCount']);
         
         return $this->requestPhoneResponse('/v2/public/sjhm/createBsxhOrder', $params);
     }

@@ -33,7 +33,7 @@ class ScjyClient extends BaseClient
      */
     public function getInvestorInfo(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/scjy/data/getInvestorInfo', $params);
     }
@@ -47,7 +47,7 @@ class ScjyClient extends BaseClient
      */
     public function getEnterpriseAndInvestorInfo(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/scjy/basic/getEnterpriseAndInvestorInfo', $params);
     }
@@ -61,7 +61,7 @@ class ScjyClient extends BaseClient
      */
     public function getRevenueExpenseAndPrepaymentInfo(array $params)
     {
-        $this->validateParams($params, ['orgId', 'taxPeriod']);
+        $this->validateParams($params, ['aggOrgId', 'taxPeriod']);
         
         return $this->requestBaseResponse('/v2/scjy/calculateTax/getRevenueExpenseAndPrepaymentInfo', $params);
     }
@@ -75,7 +75,7 @@ class ScjyClient extends BaseClient
      */
     public function calculateASynIndividualIncomeTax(array $params)
     {
-        $this->validateParams($params, ['orgId', 'investorId', 'taxPeriod']);
+        $this->validateParams($params, ['aggOrgId', 'investorId', 'taxPeriod']);
         
         return $this->requestBaseResponse('/v2/scjy/calculateTax/calculateASynIndividualIncomeTax', $params);
     }
@@ -103,7 +103,7 @@ class ScjyClient extends BaseClient
      */
     public function sendDeclaration(array $params)
     {
-        $this->validateParams($params, ['orgId', 'investorId', 'taxPeriod']);
+        $this->validateParams($params, ['aggOrgId', 'investorId', 'taxPeriod']);
         
         return $this->requestBaseResponse('/v2/scjy/report/send', $params);
     }
@@ -145,7 +145,7 @@ class ScjyClient extends BaseClient
      */
     public function getCompanyIncomes(array $params)
     {
-        $this->validateParams($params, ['orgId', 'taxPeriod']);
+        $this->validateParams($params, ['aggOrgId', 'taxPeriod']);
         
         return $this->requestBaseResponse('/v2/scjy/report/getCompanyIncomes', $params);
     }
@@ -159,7 +159,7 @@ class ScjyClient extends BaseClient
      */
     public function checkDeclarationStatus(array $params)
     {
-        $this->validateParams($params, ['orgId', 'taxPeriod']);
+        $this->validateParams($params, ['aggOrgId', 'taxPeriod']);
         
         return $this->requestBaseResponse('/v2/scjy/report/checkStatus', $params);
     }
@@ -173,7 +173,7 @@ class ScjyClient extends BaseClient
      */
     public function abandonedDeclaration(array $params)
     {
-        $this->validateParams($params, ['orgId', 'investorId', 'taxPeriod']);
+        $this->validateParams($params, ['aggOrgId', 'investorId', 'taxPeriod']);
         
         return $this->requestBaseResponse('/v2/scjy/report/abandoned', $params);
     }
@@ -201,7 +201,7 @@ class ScjyClient extends BaseClient
      */
     public function correctDeclaration(array $params)
     {
-        $this->validateParams($params, ['orgId', 'investorId', 'taxPeriod']);
+        $this->validateParams($params, ['aggOrgId', 'investorId', 'taxPeriod']);
         
         return $this->requestBaseResponse('/v2/scjy/report/correct', $params);
     }
@@ -215,7 +215,7 @@ class ScjyClient extends BaseClient
      */
     public function cancelCorrectDeclaration(array $params)
     {
-        $this->validateParams($params, ['orgId', 'investorId', 'taxPeriod']);
+        $this->validateParams($params, ['aggOrgId', 'investorId', 'taxPeriod']);
         
         return $this->requestBaseResponse('/v2/scjy/report/cancelCorrect', $params);
     }
@@ -229,7 +229,7 @@ class ScjyClient extends BaseClient
      */
     public function getThirdInfo(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/scjy/payment/thirdInfo', $params);
     }
@@ -257,7 +257,7 @@ class ScjyClient extends BaseClient
      */
     public function thirdAgreementPayment(array $params)
     {
-        $this->validateParams($params, ['orgId', 'investorId', 'taxPeriod']);
+        $this->validateParams($params, ['aggOrgId', 'investorId', 'taxPeriod']);
         
         return $this->requestBaseResponse('/v2/scjy/payment/thirdAgreementPayment', $params);
     }
@@ -285,7 +285,7 @@ class ScjyClient extends BaseClient
      */
     public function getUnionPayUrl(array $params)
     {
-        $this->validateParams($params, ['orgId', 'investorId', 'taxPeriod']);
+        $this->validateParams($params, ['aggOrgId', 'investorId', 'taxPeriod']);
         
         return $this->requestBaseResponse('/v2/scjy/payment/getUnionPayUrl', $params);
     }
@@ -299,7 +299,7 @@ class ScjyClient extends BaseClient
      */
     public function scanPayment(array $params)
     {
-        $this->validateParams($params, ['orgId', 'investorId', 'taxPeriod']);
+        $this->validateParams($params, ['aggOrgId', 'investorId', 'taxPeriod']);
         
         return $this->requestBaseResponse('/v2/scjy/payment/scanPay', $params);
     }
@@ -327,7 +327,7 @@ class ScjyClient extends BaseClient
      */
     public function printWithholdingVoucher(array $params)
     {
-        $this->validateParams($params, ['orgId', 'investorId', 'taxPeriod']);
+        $this->validateParams($params, ['aggOrgId', 'investorId', 'taxPeriod']);
         
         return $this->requestBaseResponse('/v2/scjy/payment/withholdingVoucher', $params);
     }
@@ -369,7 +369,7 @@ class ScjyClient extends BaseClient
      */
     public function cancelWithholdingVoucher(array $params)
     {
-        $this->validateParams($params, ['orgId', 'investorId', 'taxPeriod']);
+        $this->validateParams($params, ['aggOrgId', 'investorId', 'taxPeriod']);
         
         return $this->requestBaseResponse('/v2/scjy/payment/cancelWithholdingVoucher', $params);
     }
@@ -383,7 +383,7 @@ class ScjyClient extends BaseClient
      */
     public function getWithheldVoucher(array $params)
     {
-        $this->validateParams($params, ['orgId', 'investorId', 'taxPeriod']);
+        $this->validateParams($params, ['aggOrgId', 'investorId', 'taxPeriod']);
         
         return $this->requestBaseResponse('/v2/scjy/payment/getWithheldVoucher', $params);
     }
@@ -397,7 +397,7 @@ class ScjyClient extends BaseClient
      */
     public function queryArrearage(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/scjy/payment/queryArrearage', $params);
     }
@@ -425,7 +425,7 @@ class ScjyClient extends BaseClient
      */
     public function lbljCheck(array $params)
     {
-        $this->validateParams($params, ['orgId', 'taxPeriod']);
+        $this->validateParams($params, ['aggOrgId', 'taxPeriod']);
         
         return $this->requestBaseResponse('/v2/scjy/check/lbljCheck', $params);
     }
@@ -439,7 +439,7 @@ class ScjyClient extends BaseClient
      */
     public function queryTaxPayment(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/scjy/payment/queryTaxPayment', $params);
     }

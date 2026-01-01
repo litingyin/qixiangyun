@@ -33,7 +33,7 @@ class ProductClient extends BaseClient
      */
     public function purchase(array $params): ProductResponse
     {
-        $this->validateParams($params, ['orgId', 'productId', 'productType']);
+        $this->validateParams($params, ['aggOrgId', 'productId', 'productType']);
         
         return $this->requestProductResponse('/v2/public/org/productPurchase', $params);
     }
@@ -47,7 +47,7 @@ class ProductClient extends BaseClient
      */
     public function modify(array $params): ProductResponse
     {
-        $this->validateParams($params, ['orgId', 'productId']);
+        $this->validateParams($params, ['aggOrgId', 'productId']);
         
         return $this->requestProductResponse('/v2/public/org/productPurchaseModify', $params);
     }
@@ -61,7 +61,7 @@ class ProductClient extends BaseClient
      */
     public function cancel(array $params): ProductResponse
     {
-        $this->validateParams($params, ['orgId', 'productId']);
+        $this->validateParams($params, ['aggOrgId', 'productId']);
         
         return $this->requestProductResponse('/v2/public/org/productCancel', $params);
     }
@@ -75,7 +75,7 @@ class ProductClient extends BaseClient
      */
     public function list(array $params): ProductResponse
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestProductResponse('/v2/public/org/productList', $params);
     }

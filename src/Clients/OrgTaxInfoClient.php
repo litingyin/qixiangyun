@@ -33,7 +33,7 @@ class OrgTaxInfoClient extends BaseClient
      */
     public function loadOrgTaxInfo(array $params): OrgResponse
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestOrgResponse('/v2/public/org/loadOrgTaxInfo', $params);
     }
@@ -47,7 +47,7 @@ class OrgTaxInfoClient extends BaseClient
      */
     public function queryOrgTaxInfoStatus(array $params): OrgResponse
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestOrgResponse('/v2/public/org/hasReadSJInfo', $params);
     }
@@ -61,7 +61,7 @@ class OrgTaxInfoClient extends BaseClient
      */
     public function queryOrgInfo(array $params): OrgResponse
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestOrgResponse('/v2/public/org/queryOrgInfo', $params);
     }

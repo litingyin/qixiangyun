@@ -33,7 +33,7 @@ class RzClient extends BaseClient
      */
     public function getTaxPeriod(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/invoice/rz/sbxx', $params);
     }
@@ -47,7 +47,7 @@ class RzClient extends BaseClient
      */
     public function applyTaxPeriodCollect(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/invoice/rz/sqSkssqCj', $params);
     }
@@ -75,7 +75,7 @@ class RzClient extends BaseClient
      */
     public function queryInputInvoice(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/invoice/rz/jxfpqs', $params);
     }
@@ -89,7 +89,7 @@ class RzClient extends BaseClient
      */
     public function applyInputInvoiceCollect(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/invoice/rz/sqJxfpCj', $params);
     }
@@ -117,7 +117,7 @@ class RzClient extends BaseClient
      */
     public function applyCustomsCollect(array $params)
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/invoice/rz/sqHgjksCj', $params);
     }

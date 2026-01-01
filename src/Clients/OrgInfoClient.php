@@ -33,7 +33,7 @@ class OrgInfoClient extends BaseClient
      */
     public function beginTask(array $params): OrgResponse
     {
-        $this->validateParams($params, ['orgId', 'nsrsbh']);
+        $this->validateParams($params, ['aggOrgId', 'nsrsbh']);
         
         return $this->requestOrgResponse('/v2/public/beginOrgInfoTask', $params);
     }
@@ -47,7 +47,7 @@ class OrgInfoClient extends BaseClient
      */
     public function queryTask(array $params): OrgResponse
     {
-        $this->validateParams($params, ['orgId', 'taskId']);
+        $this->validateParams($params, ['aggOrgId', 'taskId']);
         
         return $this->requestOrgResponse('/v2/public/queryOrgInfoTask', $params);
     }
@@ -61,7 +61,7 @@ class OrgInfoClient extends BaseClient
      */
     public function getOrgInfo(array $params): OrgResponse
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestOrgResponse('/v2/public/getOrgInfo', $params);
     }
@@ -75,7 +75,7 @@ class OrgInfoClient extends BaseClient
      */
     public function delete(array $params): OrgResponse
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestOrgResponse('/v2/public/org/delete', $params);
     }

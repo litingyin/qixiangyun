@@ -204,7 +204,7 @@ $response->processOrg(function($orgData) {
 
 ```php
 // 先查询企业信息，然后根据企业信息查询发票
-$orgClient->getOrgInfo(['orgId' => $orgId])
+$orgClient->getOrgInfo(['aggOrgId' => $aggOrgId])
     ->processOrg(function($orgData) use ($invoiceClient) {
         if ($orgData['status'] === 'active') {
             return $invoiceClient->queryPtfpCy($invoiceParams);

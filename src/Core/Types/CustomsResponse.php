@@ -25,9 +25,9 @@ class CustomsResponse extends Response
      *
      * @return string
      */
-    public function getOrgId(): string
+    public function getaggOrgId(): string
     {
-        return $this->get('orgId', '');
+        return $this->get('aggOrgId', '');
     }
     
     /**
@@ -81,7 +81,7 @@ class CustomsResponse extends Response
         if ($this->isValid()) {
             $customsData = [
                 'taskId' => $this->getTaskId(),
-                'orgId' => $this->getOrgId(),
+                'aggOrgId' => $this->getaggOrgId(),
                 'documentId' => $this->getDocumentId(),
                 'fileUrl' => $this->getFileUrl(),
                 'customsData' => $this->getCustomsData()

@@ -25,9 +25,9 @@ class GjResponse extends Response
      *
      * @return string
      */
-    public function getOrgId(): string
+    public function getaggOrgId(): string
     {
-        return $this->get('orgId', '');
+        return $this->get('aggOrgId', '');
     }
     
     /**
@@ -91,7 +91,7 @@ class GjResponse extends Response
         if ($this->isValid()) {
             $gjData = [
                 'taskId' => $this->getTaskId(),
-                'orgId' => $this->getOrgId(),
+                'aggOrgId' => $this->getaggOrgId(),
                 'type' => $this->getType(),
                 'summaryAmount' => $this->getSummaryAmount(),
                 'invoiceData' => $this->getInvoiceData(),

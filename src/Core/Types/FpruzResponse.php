@@ -25,9 +25,9 @@ class FpruzResponse extends Response
      *
      * @return string
      */
-    public function getOrgId(): string
+    public function getaggOrgId(): string
     {
-        return $this->get('orgId', '');
+        return $this->get('aggOrgId', '');
     }
     
     /**
@@ -101,7 +101,7 @@ class FpruzResponse extends Response
         if ($this->isValid()) {
             $fpruzData = [
                 'taskId' => $this->getTaskId(),
-                'orgId' => $this->getOrgId(),
+                'aggOrgId' => $this->getaggOrgId(),
                 'invoiceId' => $this->getInvoiceId(),
                 'accountingStatus' => $this->getAccountingStatus(),
                 'customsId' => $this->getCustomsId(),

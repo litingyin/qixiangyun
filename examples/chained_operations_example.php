@@ -49,7 +49,7 @@ echo "=== 示例2：多级链式操作 ===\n";
 
 // 获取企业客户端并查询企业信息
 $orgClient = $sdk->getClient('org');
-$orgResponse = $orgClient->getOrgInfo(['orgId' => '12345']);
+$orgResponse = $orgClient->getOrgInfo(['aggOrgId' => '12345']);
 
 // 链式处理企业数据，然后继续处理发票
 $orgResponse
@@ -87,7 +87,7 @@ echo "=== 示例3：条件链式操作 ===\n";
 
 $taxClient = $sdk->getClient('tax');
 $taxResponse = $taxClient->loadDeclareTask([
-    'aggOrgId' => '12345',
+    'aggaggOrgId' => '12345',
     'taxType' => '增值税',
     'taxPeriod' => '2023-01'
 ]);

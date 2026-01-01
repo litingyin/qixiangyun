@@ -33,7 +33,7 @@ class CollectClient extends BaseClient
      */
     public function beginFinTask(array $params): CollectResponse
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestCollectResponse('/v2/collect/beginFinTask', $params);
     }
@@ -61,7 +61,7 @@ class CollectClient extends BaseClient
      */
     public function getTaxAndFpInfo(array $params): CollectResponse
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestCollectResponse('/v2/collect/getTaxAndFpInfo', $params);
     }

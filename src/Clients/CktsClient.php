@@ -33,7 +33,7 @@ class CktsClient extends BaseClient
      */
     public function selfCheck(array $params): CktsResponse
     {
-        $this->validateParams($params, ['orgId', 'taxPeriod', 'taxData']);
+        $this->validateParams($params, ['aggOrgId', 'taxPeriod', 'taxData']);
         
         return $this->requestCktsResponse('/v2/ckts/selfCheck', $params);
     }
@@ -89,7 +89,7 @@ class CktsClient extends BaseClient
      */
     public function loadReviewProgress(array $params): CktsResponse
     {
-        $this->validateParams($params, ['orgId', 'taxPeriod']);
+        $this->validateParams($params, ['aggOrgId', 'taxPeriod']);
         
         return $this->requestCktsResponse('/v2/ckts/loadReviewProgress', $params);
     }
@@ -117,7 +117,7 @@ class CktsClient extends BaseClient
      */
     public function loadDeclareConfirmation(array $params): CktsResponse
     {
-        $this->validateParams($params, ['orgId', 'taxPeriod', 'taxData']);
+        $this->validateParams($params, ['aggOrgId', 'taxPeriod', 'taxData']);
         
         return $this->requestCktsResponse('/v2/ckts/loadDeclareConfirmation', $params);
     }
@@ -145,7 +145,7 @@ class CktsClient extends BaseClient
      */
     public function loadAuditTaskList(array $params): CktsResponse
     {
-        $this->validateParams($params, ['orgId', 'taxPeriod']);
+        $this->validateParams($params, ['aggOrgId', 'taxPeriod']);
         
         return $this->requestCktsResponse('/v2/ckts/loadAuditTaskList', $params);
     }
@@ -173,7 +173,7 @@ class CktsClient extends BaseClient
      */
     public function downloadSbForm(array $params): CktsResponse
     {
-        $this->validateParams($params, ['orgId', 'taxPeriod']);
+        $this->validateParams($params, ['aggOrgId', 'taxPeriod']);
         
         return $this->requestCktsResponse('/v2/ckts/downloadSbForm', $params);
     }
@@ -201,7 +201,7 @@ class CktsClient extends BaseClient
      */
     public function uploadAttachedInformation(array $params): CktsResponse
     {
-        $this->validateParams($params, ['orgId', 'taxPeriod', 'fileData']);
+        $this->validateParams($params, ['aggOrgId', 'taxPeriod', 'fileData']);
         
         return $this->requestCktsResponse('/v2/ckts/attachedInformationUpload', $params);
     }
@@ -229,7 +229,7 @@ class CktsClient extends BaseClient
      */
     public function cancelSbForm(array $params): CktsResponse
     {
-        $this->validateParams($params, ['orgId', 'taxPeriod', 'declareId']);
+        $this->validateParams($params, ['aggOrgId', 'taxPeriod', 'declareId']);
         
         return $this->requestCktsResponse('/v2/ckts/cancelSbForm', $params);
     }
@@ -257,7 +257,7 @@ class CktsClient extends BaseClient
      */
     public function syncRefundTaxLibraryQuery(array $params): CktsResponse
     {
-        $this->validateParams($params, ['orgId', 'taxPeriod']);
+        $this->validateParams($params, ['aggOrgId', 'taxPeriod']);
         
         return $this->requestCktsResponse('/v2/ckts/syncRefundTaxLibraryQuery', $params);
     }

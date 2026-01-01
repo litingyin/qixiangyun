@@ -33,7 +33,7 @@ class GjClient extends BaseClient
      */
     public function applyInvoiceSummary(array $params): GjResponse
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestGjResponse('/v2/invoice/gj/queryFpsljeseHj', $params);
     }
@@ -61,7 +61,7 @@ class GjClient extends BaseClient
      */
     public function collectTask(array $params): GjResponse
     {
-        $this->validateParams($params, ['orgId', 'type']);
+        $this->validateParams($params, ['aggOrgId', 'type']);
         
         return $this->requestGjResponse('/v2/invoice/gj/collectTask', $params);
     }
@@ -103,7 +103,7 @@ class GjClient extends BaseClient
      */
     public function redInvoiceCollectTask(array $params): GjResponse
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestGjResponse('/v2/invoice/gj/redInvoiceCollectTask', $params);
     }
@@ -117,7 +117,7 @@ class GjClient extends BaseClient
      */
     public function collectCheckedInvoice(array $params): GjResponse
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestGjResponse('/v2/invoice/gj/collectCheckedInvoice', $params);
     }
@@ -173,7 +173,7 @@ class GjClient extends BaseClient
      */
     public function syncCollectTask(array $params): GjResponse
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestGjResponse('/v2/invoice/gj/syncCollectTask', $params);
     }
@@ -187,7 +187,7 @@ class GjClient extends BaseClient
      */
     public function syncFpjbxx(array $params): GjResponse
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestGjResponse('/v2/invoice/gj/syncFpjbxx', $params);
     }
@@ -201,7 +201,7 @@ class GjClient extends BaseClient
      */
     public function collectFpmx(array $params): GjResponse
     {
-        $this->validateParams($params, ['orgId', 'fpdm', 'fphm']);
+        $this->validateParams($params, ['aggOrgId', 'fpdm', 'fphm']);
         
         return $this->requestGjResponse('/v2/invoice/gj/fpmx', $params);
     }

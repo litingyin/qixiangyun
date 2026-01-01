@@ -33,7 +33,7 @@ class FpruzClient extends BaseClient
      */
     public function queryInvoiceAccountingInfo(array $params): FpruzResponse
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestFpruzResponse('/v2/invoice/fpruz/queryFprzxx', $params);
     }
@@ -47,7 +47,7 @@ class FpruzClient extends BaseClient
      */
     public function invoiceAccounting(array $params): FpruzResponse
     {
-        $this->validateParams($params, ['orgId', 'invoiceId', 'accountingStatus']);
+        $this->validateParams($params, ['aggOrgId', 'invoiceId', 'accountingStatus']);
         
         return $this->requestFpruzResponse('/v2/invoice/fpruz/fprzbc', $params);
     }
@@ -61,7 +61,7 @@ class FpruzClient extends BaseClient
      */
     public function queryCustomsAccountingInfo(array $params): FpruzResponse
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestFpruzResponse('/v2/invoice/fpruz/queryHgjksrzxx', $params);
     }
@@ -75,7 +75,7 @@ class FpruzClient extends BaseClient
      */
     public function customsAccounting(array $params): FpruzResponse
     {
-        $this->validateParams($params, ['orgId', 'customsId', 'accountingStatus']);
+        $this->validateParams($params, ['aggOrgId', 'customsId', 'accountingStatus']);
         
         return $this->requestFpruzResponse('/v2/invoice/fpruz/hgjksrzbc', $params);
     }
@@ -89,7 +89,7 @@ class FpruzClient extends BaseClient
      */
     public function queryWithholdingAccountingInfo(array $params): FpruzResponse
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestFpruzResponse('/v2/invoice/fpruz/queryDkdjrzxx', $params);
     }
@@ -103,7 +103,7 @@ class FpruzClient extends BaseClient
      */
     public function withholdingAccounting(array $params): FpruzResponse
     {
-        $this->validateParams($params, ['orgId', 'withholdingId', 'accountingStatus']);
+        $this->validateParams($params, ['aggOrgId', 'withholdingId', 'accountingStatus']);
         
         return $this->requestFpruzResponse('/v2/invoice/fpruz/dkdjrzbc', $params);
     }

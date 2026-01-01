@@ -55,9 +55,9 @@ class AccountResponse extends Response
      *
      * @return array
      */
-    public function getOrgIds(): array
+    public function getaggOrgIds(): array
     {
-        return $this->get('orgIds', []);
+        return $this->get('aggOrgIds', []);
     }
     
     /**
@@ -145,7 +145,7 @@ class AccountResponse extends Response
                 'username' => $this->getUsername(),
                 'accountType' => $this->getAccountType(),
                 'status' => $this->getStatus(),
-                'orgIds' => $this->getOrgIds(),
+                'aggOrgIds' => $this->getaggOrgIds(),
                 'role' => $this->getRole(),
                 'permissions' => $this->getPermissions(),
                 'isActive' => $this->isActive(),

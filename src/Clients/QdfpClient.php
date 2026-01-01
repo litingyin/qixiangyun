@@ -47,7 +47,7 @@ class QdfpClient extends BaseClient
      */
     public function getOrgInfo(array $params): QdfpResponse
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestQdfpResponse('/v2/invoice/qdfp/qyjbxxcx', $params);
     }
@@ -87,7 +87,7 @@ class QdfpClient extends BaseClient
      */
     public function getFaceQrcode(array $params): QdfpResponse
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestQdfpResponse('/v2/invoice/qdfp/rzewm', $params);
     }
@@ -115,7 +115,7 @@ class QdfpClient extends BaseClient
      */
     public function queryOilStock(array $params): QdfpResponse
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestQdfpResponse('/v2/invoice/qdfp/queryKchztz', $params);
     }
@@ -129,7 +129,7 @@ class QdfpClient extends BaseClient
      */
     public function queryQuota(array $params): QdfpResponse
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestQdfpResponse('/v2/invoice/qdfp/kptjxxcx', $params);
     }
@@ -143,7 +143,7 @@ class QdfpClient extends BaseClient
      */
     public function applyRedInfo(array $params): QdfpResponse
     {
-        $this->validateParams($params, ['orgId', 'invoiceType', 'invoiceNo']);
+        $this->validateParams($params, ['aggOrgId', 'invoiceType', 'invoiceNo']);
         
         return $this->requestQdfpResponse('/v2/invoice/qdfp/hzqrxxSave', $params);
     }
@@ -157,7 +157,7 @@ class QdfpClient extends BaseClient
      */
     public function createRedInvoice(array $params): QdfpResponse
     {
-        $this->validateParams($params, ['orgId', 'invoiceType']);
+        $this->validateParams($params, ['aggOrgId', 'invoiceType']);
         
         return $this->requestQdfpResponse('/v2/invoice/qdfp/hzFpkj', $params);
     }
@@ -199,7 +199,7 @@ class QdfpClient extends BaseClient
      */
     public function listRedInfo(array $params): QdfpResponse
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestQdfpResponse('/v2/invoice/qdfp/hzqrxxList', $params);
     }
@@ -227,7 +227,7 @@ class QdfpClient extends BaseClient
      */
     public function queryInvoiceList(array $params): QdfpResponse
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestQdfpResponse('/v2/invoice/qdfp/fpcx', $params);
     }
@@ -255,7 +255,7 @@ class QdfpClient extends BaseClient
      */
     public function queryInvoiceStats(array $params): QdfpResponse
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestQdfpResponse('/v2/invoice/qdfp/fptjcx', $params);
     }
@@ -283,7 +283,7 @@ class QdfpClient extends BaseClient
      */
     public function applyQuotaAdjustment(array $params): QdfpResponse
     {
-        $this->validateParams($params, ['orgId', 'quotaType', 'quotaAmount']);
+        $this->validateParams($params, ['aggOrgId', 'quotaType', 'quotaAmount']);
         
         return $this->requestQdfpResponse('/v2/invoice/qdfp/saveSxedsqSqxx', $params);
     }
@@ -297,7 +297,7 @@ class QdfpClient extends BaseClient
      */
     public function queryQuotaApplyList(array $params): QdfpResponse
     {
-        $this->validateParams($params, ['orgId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestQdfpResponse('/v2/invoice/qdfp/querySxedtzSqxx', $params);
     }
