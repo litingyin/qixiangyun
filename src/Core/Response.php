@@ -158,12 +158,12 @@ class Response
      * 链式调用：获取数据并执行回调
      *
      * @param callable $callback 回调函数
-     * @return mixed
+     * @return self
      */
-    public function then(callable $callback)
+    public function then(callable $callback): self
     {
         if ($this->success) {
-            return $callback($this->data);
+            $callback($this->data);
         }
         
         return $this;
