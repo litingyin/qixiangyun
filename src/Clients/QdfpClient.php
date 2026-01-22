@@ -239,7 +239,7 @@ class QdfpClient extends BaseClient
      */
     public function getRedInfoDetail(array $params): QdfpResponse
     {
-        $this->validateParams($params, ['redInfoId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestQdfpResponse('/v2/invoice/qdfp/hzqrxxDetail', $params);
     }
