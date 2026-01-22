@@ -101,9 +101,35 @@ class QdfpClient extends BaseClient
      */
     public function getFaceResult(array $params): QdfpResponse
     {
-        $this->validateParams($params, ['taskId']);
+        $this->validateParams($params, ['nsrsbh', 'aggOrgId']);
         
         return $this->requestQdfpResponse('/v2/invoice/qdfp/rzztcx', $params);
+    }
+
+    /**
+     * 获取个税人脸识别二维码
+     * 
+     * @param array $params 参数
+     * @return QdfpResponse
+     * @throws QixiangyunException
+     */
+    public function getGsFaceQrcode(array $params): QdfpResponse
+    {
+        $this->validateParams($params, ['aggOrgId']);
+        return $this->requestQdfpResponse('/v2/invoice/qdfp/gsrzewm', $params);
+    }
+    
+    /**
+     * 获取个税人脸识别结果
+     * 
+     * @param array $params 查询参数
+     * @return QdfpResponse
+     * @throws QixiangyunException
+     */
+    public function getGsFaceResult(array $params): QdfpResponse
+    {
+        $this->validateParams($params, ['nsrsbh', 'aggOrgId']);
+        return $this->requestQdfpResponse('/v2/invoice/qdfp/gsrzztcx', $params);
     }
     
     /**
@@ -143,7 +169,7 @@ class QdfpClient extends BaseClient
      */
     public function applyRedInfo(array $params): QdfpResponse
     {
-        $this->validateParams($params, ['aggOrgId', 'invoiceType', 'invoiceNo']);
+        $this->validateParams($params, ['aggOrgId', 'nsrsbh', 'data']);
         
         return $this->requestQdfpResponse('/v2/invoice/qdfp/hzqrxxSave', $params);
     }
@@ -157,7 +183,7 @@ class QdfpClient extends BaseClient
      */
     public function createRedInvoice(array $params): QdfpResponse
     {
-        $this->validateParams($params, ['aggOrgId', 'invoiceType']);
+        $this->validateParams($params, ['aggOrgId', 'nsrsbh']);
         
         return $this->requestQdfpResponse('/v2/invoice/qdfp/hzFpkj', $params);
     }
@@ -171,7 +197,7 @@ class QdfpClient extends BaseClient
      */
     public function confirmRedInfo(array $params): QdfpResponse
     {
-        $this->validateParams($params, ['redInfoId']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestQdfpResponse('/v2/invoice/qdfp/hzqrxxConfirm', $params);
     }
@@ -269,7 +295,7 @@ class QdfpClient extends BaseClient
      */
     public function downloadFileBatch(array $params): QdfpResponse
     {
-        $this->validateParams($params, ['invoiceIds']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestQdfpResponse('/v2/invoice/qdfp/bswjxzBatch', $params);
     }
@@ -300,5 +326,19 @@ class QdfpClient extends BaseClient
         $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestQdfpResponse('/v2/invoice/qdfp/querySxedtzSqxx', $params);
+    }
+
+    /**
+     * 查询申请额度列表
+     * 
+     * @param array $params 查询参数
+     * @return QdfpResponse
+     * @throws QixiangyunException
+     */
+    public function fpkjZzs(array $params): QdfpResponse
+    {
+        $this->validateParams($params, ['aggOrgId', 'nsrsbh', 'data']);
+    
+        return $this->requestQdfpResponse('/v2/invoice/qdfp/fpkjZzs', $params);
     }
 }

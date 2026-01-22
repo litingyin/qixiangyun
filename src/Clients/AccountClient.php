@@ -25,6 +25,7 @@ class AccountClient extends BaseClient
      */
     public function createBaseAccount(array $params): AccountResponse
     {
+        $this->validateParams($params, ['aggOrgId', 'gryhm', 'gryhmm', 'sflx', 'sjhm']);
         return $this->requestAccountResponse('v2/public/account/createBaseAccount', $params);
     }
     

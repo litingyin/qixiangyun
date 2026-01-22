@@ -39,7 +39,7 @@ class SpxxClient extends BaseClient
      */
     public function queryTaxInfoByName(array $params)
     {
-        $this->validateParams($params, ['productName']);
+        $this->validateParams($params, ['aggOrgId']);
         
         return $this->requestBaseResponse('/v2/invoice/qdfp/spxxZnFm', $params);
     }
