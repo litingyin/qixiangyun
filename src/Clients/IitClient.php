@@ -16,7 +16,7 @@ class IitClient extends BaseClient
     {
         return 'IitClient';
     }
-    
+
     /**
      * 企业注册
      *
@@ -27,7 +27,7 @@ class IitClient extends BaseClient
     {
         return $this->requestBaseResponse('v2/iit/declare/getCompanyRegisterInfo', $params);
     }
-    
+
     /**
      * 账号信息上传并校验（申报密码校验）
      *
@@ -38,7 +38,7 @@ class IitClient extends BaseClient
     {
         return $this->requestBaseResponse('v2/iit/check/checkPassword', $params);
     }
-    
+
     /**
      * 投资者信息报送
      *
@@ -49,7 +49,7 @@ class IitClient extends BaseClient
     {
         return $this->requestBaseResponse('v2/iit/declare/declareEmployeeInfo', $params);
     }
-    
+
     /**
      * 投资者信息报送反馈
      *
@@ -60,7 +60,7 @@ class IitClient extends BaseClient
     {
         return $this->requestBaseResponse('v2/iit/declare/getEmployeeInfoFeedback', $params);
     }
-    
+
     /**
      * 作废人员信息
      *
@@ -71,7 +71,7 @@ class IitClient extends BaseClient
     {
         return $this->requestBaseResponse('v2/iit/declare/batchInvalidSubmission', $params);
     }
-    
+
     /**
      * 企业人员列表查询
      *
@@ -82,7 +82,7 @@ class IitClient extends BaseClient
     {
         return $this->requestBaseResponse('v2/iit/data/getCompanyEmployee', $params);
     }
-    
+
     /**
      * 异步算税
      *
@@ -93,7 +93,7 @@ class IitClient extends BaseClient
     {
         return $this->requestBaseResponse('v2/iit/calculateTax/calculateASynIndividualIncomeTax', $params);
     }
-    
+
     /**
      * 异步算税反馈
      *
@@ -104,7 +104,7 @@ class IitClient extends BaseClient
     {
         return $this->requestBaseResponse('v2/iit/calculateTax/getASynIndividualIncomeTaxFeedback', $params);
     }
-    
+
     /**
      * 申报数据报送
      *
@@ -115,7 +115,7 @@ class IitClient extends BaseClient
     {
         return $this->requestBaseResponse('v2/iit/report/send', $params);
     }
-    
+
     /**
      * 申报数据报送反馈
      *
@@ -126,7 +126,7 @@ class IitClient extends BaseClient
     {
         return $this->requestBaseResponse('v2/iit/report/getFeedback', $params);
     }
-    
+
     /**
      * 申报内置算税结果查询
      *
@@ -137,7 +137,7 @@ class IitClient extends BaseClient
     {
         return $this->requestBaseResponse('v2/iit/report/getDeclareTaxResultFeedback', $params);
     }
-    
+
     /**
      * 申报作废
      *
@@ -148,7 +148,7 @@ class IitClient extends BaseClient
     {
         return $this->requestBaseResponse('v2/iit/report/cancel', $params);
     }
-    
+
     /**
      * 申报作废反馈
      *
@@ -159,7 +159,7 @@ class IitClient extends BaseClient
     {
         return $this->requestBaseResponse('v2/iit/report/getCancelFeedback', $params);
     }
-    
+
     /**
      * 申报状态查询
      *
@@ -170,7 +170,7 @@ class IitClient extends BaseClient
     {
         return $this->requestBaseResponse('v2/iit/report/queryDeclarationRecord', $params);
     }
-    
+
     /**
      * 申报更正
      *
@@ -181,7 +181,7 @@ class IitClient extends BaseClient
     {
         return $this->requestBaseResponse('v2/iit/report/correct', $params);
     }
-    
+
     /**
      * 撤销更正申报
      *
@@ -192,7 +192,7 @@ class IitClient extends BaseClient
     {
         return $this->requestBaseResponse('v2/iit/report/cancelCorrect', $params);
     }
-    
+
     /**
      * 发送扣缴确认申报申请
      *
@@ -203,7 +203,7 @@ class IitClient extends BaseClient
     {
         return $this->requestBaseResponse('v2/iit/payment/sendWithholdingConfirm', $params);
     }
-    
+
     /**
      * 获取三方信息
      *
@@ -214,7 +214,7 @@ class IitClient extends BaseClient
     {
         return $this->requestBaseResponse('v2/iit/payment/queryAgreement', $params);
     }
-    
+
     /**
      * 三方协议缴款
      *
@@ -225,7 +225,7 @@ class IitClient extends BaseClient
     {
         return $this->requestBaseResponse('v2/iit/payment/declareWithholding', $params);
     }
-    
+
     /**
      * 三方协议缴款反馈
      *
@@ -236,7 +236,7 @@ class IitClient extends BaseClient
     {
         return $this->requestBaseResponse('v2/iit/payment/getWithholdingFeedback', $params);
     }
-    
+
     /**
      * 银联缴款
      *
@@ -247,7 +247,7 @@ class IitClient extends BaseClient
     {
         return $this->requestBaseResponse('v2/iit/payment/getUnionPayUrl', $params);
     }
-    
+
     /**
      * 缴款状态查询
      *
@@ -258,7 +258,7 @@ class IitClient extends BaseClient
     {
         return $this->requestBaseResponse('v2/iit/payment/getSyncWithholdingFeedback', $params);
     }
-    
+
     /**
      * 打印缴款凭证
      *
@@ -268,5 +268,49 @@ class IitClient extends BaseClient
     public function withholdingVoucher(array $params): BaseResponse
     {
         return $this->requestBaseResponse('v2/iit/payment/withholdingVoucher', $params);
+    }
+
+    /**
+     * 获取累计数反馈结果
+     * @param array $params
+     * @return BaseResponse
+     * @throws \QixiangyunSDK\Exceptions\QixiangyunException
+     */
+    public function getCumulativeNumber(array $params)
+    {
+        return $this->requestBaseResponse('v2/iit/calculateTax/getCumulativeNumber', $params);
+    }
+
+    /**
+     * 获取累计数反馈结果
+     * @param array $params
+     * @return BaseResponse
+     * @throws \QixiangyunSDK\Exceptions\QixiangyunException
+     */
+    public function getCumulativeNumberFeedback(array $params)
+    {
+        return $this->requestBaseResponse('v2/iit/calculateTax/getCumulativeNumberFeedback', $params);
+    }
+
+    /**
+     * 单位申报记录查询截图
+     * @param array $params
+     * @return BaseResponse
+     * @throws \QixiangyunSDK\Exceptions\QixiangyunException
+     */
+    public function getDeclarationRecordScreenshot(array $params)
+    {
+        return $this->requestBaseResponse('v2/iit/report/getDeclarationRecordScreenshot', $params);
+    }
+
+    /**
+     * 代扣代缴-漏报漏缴检查
+     * @param array $params
+     * @return BaseResponse
+     * @throws \QixiangyunSDK\Exceptions\QixiangyunException
+     */
+    public function lbljCheck(array $params): BaseResponse
+    {
+        return $this->requestBaseResponse('/v2/iit/check/lbljCheck', $params);
     }
 }
