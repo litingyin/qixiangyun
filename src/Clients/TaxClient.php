@@ -16,7 +16,7 @@ class TaxClient extends BaseClient
     {
         return 'TaxClient';
     }
-    
+
     /**
      * 批量设置会计准则制度
      *
@@ -27,7 +27,7 @@ class TaxClient extends BaseClient
     {
         return $this->requestTaxResponse('v2/tax/qys/batchAccountingStandard', $params);
     }
-    
+
     /**
      * 查询漏报检查任务
      *
@@ -38,7 +38,7 @@ class TaxClient extends BaseClient
     {
         return $this->requestTaxResponse('v2/tax/qys/queryTaskTaxInfo', $params);
     }
-    
+
     /**
      * 发起获取申报条目任务
      *
@@ -49,7 +49,7 @@ class TaxClient extends BaseClient
     {
         return $this->requestTaxResponse('v2/tax/qys/loadTaxItemTask', $params);
     }
-    
+
     /**
      * 上传各税种申报表数据
      *
@@ -60,7 +60,7 @@ class TaxClient extends BaseClient
     {
         return $this->requestTaxResponse('v2/tax/qys/writeTaxData', $params);
     }
-    
+
     /**
      * 上传各税种申报表EXCEL数据
      *
@@ -71,7 +71,7 @@ class TaxClient extends BaseClient
     {
         return $this->requestTaxResponse('v2/tax/qys/writeTaxExcelData', $params);
     }
-    
+
     /**
      * 查询下载PDF任务结果
      *
@@ -82,7 +82,7 @@ class TaxClient extends BaseClient
     {
         return $this->requestTaxResponse('v2/tax/qys/queryTaskInfo', $params);
     }
-    
+
     /**
      * 上传财报数据
      *
@@ -93,7 +93,7 @@ class TaxClient extends BaseClient
     {
         return $this->requestTaxResponse('v2/tax/qys/writeFiData', $params);
     }
-    
+
     /**
      * 发起申报任务
      *
@@ -104,7 +104,7 @@ class TaxClient extends BaseClient
     {
         return $this->requestTaxResponse('v2/tax/qys/loadDeclareTask', $params);
     }
-    
+
     /**
      * 发起更正申报任务接口
      *
@@ -115,7 +115,7 @@ class TaxClient extends BaseClient
     {
         return $this->requestTaxResponse('v2/tax/qys/writeTaxDataWithGzDeclare', $params);
     }
-    
+
     /**
      * 发起简易申报任务
      *
@@ -126,7 +126,7 @@ class TaxClient extends BaseClient
     {
         return $this->requestTaxResponse('v2/tax/qys/loadSimplifiedDeclareTask', $params);
     }
-    
+
     /**
      * 发起作废申报任务
      *
@@ -137,7 +137,7 @@ class TaxClient extends BaseClient
     {
         return $this->requestTaxResponse('v2/tax/qys/loadTaxSbCancel', $params);
     }
-    
+
     /**
      * 查询作废申报任务结果
      *
@@ -148,7 +148,7 @@ class TaxClient extends BaseClient
     {
         return $this->requestTaxResponse('v2/tax/qys/queryTaxSbCancel', $params);
     }
-    
+
     /**
      * 发起税款缴纳任务
      *
@@ -159,7 +159,7 @@ class TaxClient extends BaseClient
     {
         return $this->requestTaxResponse('v2/tax/qys/loadPaymentTask', $params);
     }
-    
+
     /**
      * 发起申报信息查询任务
      *
@@ -170,7 +170,7 @@ class TaxClient extends BaseClient
     {
         return $this->requestTaxResponse('v2/tax/qys/loadDeclareInfoTask', $params);
     }
-    
+
     /**
      * 发起漏报检查任务
      *
@@ -181,7 +181,7 @@ class TaxClient extends BaseClient
     {
         return $this->requestTaxResponse('v2/tax/qys/loadTaxCheckTask', $params);
     }
-    
+
     /**
      * 发起获取我的待办
      *
@@ -192,7 +192,7 @@ class TaxClient extends BaseClient
     {
         return $this->requestTaxResponse('v2/tax/qys/loadTaxMyTodo', $params);
     }
-    
+
     /**
      * 发起获取我的提醒
      *
@@ -203,7 +203,7 @@ class TaxClient extends BaseClient
     {
         return $this->requestTaxResponse('v2/tax/qys/loadTaxMyRemind', $params);
     }
-    
+
     /**
      * 发起下载完税证明任务
      *
@@ -214,7 +214,7 @@ class TaxClient extends BaseClient
     {
         return $this->requestTaxResponse('v2/tax/qys/loadWszmTask', $params);
     }
-    
+
     /**
      * 发起下载当期PDF任务
      *
@@ -225,7 +225,7 @@ class TaxClient extends BaseClient
     {
         return $this->requestTaxResponse('v2/tax/qys/loadPdfTask', $params);
     }
-    
+
     /**
      * 发起下载往期PDF任务
      *
@@ -235,5 +235,16 @@ class TaxClient extends BaseClient
     public function loadWqPdfTask(array $params): TaxResponse
     {
         return $this->requestTaxResponse('v2/tax/qys/loadWqPdfTask', $params);
+    }
+
+    /**
+     * 查询多个任务执行结果
+     * @param array $params
+     * @return TaxResponse
+     * @throws \QixiangyunSDK\Exceptions\QixiangyunException
+     */
+    public function queryTaskIdsInfo(array $params)
+    {
+        return $this->requestTaxResponse('v2/tax/qys/queryTaskIdsInfo', $params);
     }
 }

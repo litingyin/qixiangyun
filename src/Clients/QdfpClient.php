@@ -329,7 +329,7 @@ class QdfpClient extends BaseClient
     }
 
     /**
-     * 查询申请额度列表
+     * 查询申请额度列表 
      * 
      * @param array $params 查询参数
      * @return QdfpResponse
