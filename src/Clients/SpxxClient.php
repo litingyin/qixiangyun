@@ -43,18 +43,6 @@ class SpxxClient extends BaseClient
         
         return $this->requestBaseResponse('/v2/invoice/qdfp/spxxZnFm', $params);
     }
-
-    /**
-     * 查询企业税收分类编码信息
-     * 
-     * @param array $params 查询参数
-     * @return BaseResponse
-     * @throws QixiangyunException
-     */
-    public function querySsflbmList(array $params = [])
-    {
-        return $this->requestBaseResponse('/v2/invoice/qdfp/querySsflbm', $params);
-    }
     
     /**
      * 税编查询税收分类信息
@@ -80,6 +68,18 @@ class SpxxClient extends BaseClient
     public function queryCategoryList(array $params = [])
     {
         return $this->requestBaseResponse('/v2/invoice/qdfp/spxxFlcx', $params);
+    }
+
+     /**
+     * 查询税收分类编码信息
+     * 
+     * @param array $params 查询参数
+     * @return BaseResponse
+     * @throws QixiangyunException
+     */
+    public function querySsflbm(array $params = [])
+    {
+        return $this->requestBaseResponse('/v2/invoice/qdfp/querySsflbm', $params);
     }
     
     /**
