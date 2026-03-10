@@ -2,13 +2,15 @@
 
 /**
  * 改进的 HttpClient - 支持自动Token刷新
- * 
+ *
  * 这是 vendor/qixiangyun/sdk/src/Core/HttpClient.php 的改进版本
  * 主要改进：
  * 1. 自动检测401/token失效错误
  * 2. 自动清除过期token并重新获取
- * 3. 失效后自动重试原始请求（最多1次）
+ * 3. 失效后自动重试原始请求
  * 4. 添加详细的日志记录
+ * 5. 优化签名构建逻辑，支持GET/POST方法
+ * 6. 改进文件操作错误处理
  */
 
 namespace QixiangyunSDK\Core;
@@ -62,18 +64,41 @@ class HttpClient
     protected $maxTokenRefreshRetries = 2;
 
     /**
-     * Token刷新后的自动重试次数
-     *
-     * @var int
+     * Token缓存有效期（秒）- 15天
      */
-    protected $autoRetryAfterTokenRefresh = 1;
+    const TOKEN_CACHE_TTL = 1296000;
 
     /**
-     * 是否正在进行token刷新
-     *
-     * @var bool
+     * 成功响应码
      */
-    protected $isRefreshing = false;
+    const SUCCESS_CODE = 2000;
+
+    /**
+     * Token错误码列表
+     */
+    const TOKEN_ERROR_CODES = [
+        '401',
+        'TOKEN_EXPIRED',
+        'INVALID_TOKEN',
+        'AUTH_ERROR',
+        'AUTH_FAILED',
+    ];
+
+    /**
+     * Token错误消息列表
+     */
+    const TOKEN_ERROR_MESSAGES = [
+        'token已过期',
+        'token失效',
+        'token无效',
+        'access token已过期',
+        'access token失效',
+        'access token无效',
+        '未授权',
+        'unauthorized',
+        'token expired',
+        'invalid token',
+    ];
 
     /**
      * 构造函数
@@ -102,7 +127,7 @@ class HttpClient
             $url .= '?' . http_build_query($params);
         }
 
-        $headers = $this->buildHeaders('', $url);
+        $headers = $this->buildHeaders('', 'GET');
 
         return $this->executeRequest('GET', $url, '', $headers);
     }
@@ -119,7 +144,7 @@ class HttpClient
     {
         $url = $this->config->getApiUrl($endpoint);
         $jsonData = json_encode($data, JSON_UNESCAPED_UNICODE);
-        $headers = $this->buildHeaders($jsonData, $url);
+        $headers = $this->buildHeaders($jsonData, 'POST');
 
         return $this->executeRequest('POST', $url, $jsonData, $headers);
     }
@@ -139,20 +164,24 @@ class HttpClient
 
         // 如果启用缓存，尝试从缓存文件读取token
         if ($this->config->isEnableCache() && file_exists($this->cacheFile)) {
-            $cacheData = json_decode(file_get_contents($this->cacheFile), true);
-            // 检查token是否仍然有效（假设有效期15天）
-            if ($cacheData && isset($cacheData['access_token']) && isset($cacheData['cached_at'])) {
-                $cacheTime = $cacheData['cached_at'];
-                $currentTime = time();
+            $cacheContent = @file_get_contents($this->cacheFile);
+            if ($cacheContent !== false) {
+                $cacheData = json_decode($cacheContent, true);
+                // 检查token是否仍然有效（15天有效期）
+                if ($cacheData && isset($cacheData['access_token']) && isset($cacheData['cached_at'])) {
+                    $cacheTime = $cacheData['cached_at'];
+                    $currentTime = time();
 
-                // 15天 = 15 * 24 * 60 * 60 = 1296000秒
-                if ($currentTime - $cacheTime < 1296000) {
-                    $this->accessToken = $cacheData['access_token'];
-                    $this->logDebug("使用缓存的token");
-                    return $this->accessToken;
-                } else {
-                    $this->logInfo("缓存的token已过期");
+                    if ($currentTime - $cacheTime < self::TOKEN_CACHE_TTL) {
+                        $this->accessToken = $cacheData['access_token'];
+                        $this->logDebug("使用缓存的token");
+                        return $this->accessToken;
+                    } else {
+                        $this->logInfo("缓存的token已过期");
+                    }
                 }
+            } else {
+                $this->logWarning("读取token缓存文件失败");
             }
         }
 
@@ -183,8 +212,8 @@ class HttpClient
         ];
 
         $response = $this->executeRequestWithoutToken('POST', $tokenUrl, $jsonData, $headers);
-        
-        if (!$response || $response['code'] != 2000) {
+
+        if (!$response || $response['code'] !== self::SUCCESS_CODE) {
             throw AuthTokenException::failedToRetrieveToken(
                 'Failed to get access token: ' . ($response['message'] ?? '未知错误')
             );
@@ -204,8 +233,13 @@ class HttpClient
                 'access_token' => $this->accessToken,
                 'cached_at' => time(),
             ];
-            file_put_contents($this->cacheFile, json_encode($cacheData));
-            $this->logInfo("新token已缓存");
+            $cacheContent = json_encode($cacheData);
+            $result = @file_put_contents($this->cacheFile, $cacheContent);
+            if ($result === false) {
+                $this->logWarning("写入token缓存文件失败");
+            } else {
+                $this->logInfo("新token已缓存");
+            }
         }
 
         $this->logInfo("成功获取新的access token");
@@ -216,17 +250,17 @@ class HttpClient
      * 构建请求头
      *
      * @param string $jsonData 请求数据JSON字符串
-     * @param string $url 请求URL
+     * @param string $method 请求方法（GET/POST）
      * @return array
      * @throws AuthTokenException
      */
-    protected function buildHeaders(string $jsonData, string $url): array
+    protected function buildHeaders(string $jsonData, string $method = 'POST'): array
     {
         $accessToken = $this->getAccessToken();
         $reqDate = time() * 1000; // 毫秒时间戳
 
-        // 构建签名字符串
-        $signStr = 'POST' . '_' . md5($jsonData) . '_' . $reqDate . '_' . $accessToken . '_' . $this->config->getAppSecret();
+        // 构建签名字符串，使用传入的method
+        $signStr = $method . '_' . md5($jsonData) . '_' . $reqDate . '_' . $accessToken . '_' . $this->config->getAppSecret();
         $reqSign = 'API-SV1' . ':' . $this->config->getAppKey() . ':' . base64_encode(md5($signStr));
 
         return [
@@ -251,8 +285,11 @@ class HttpClient
     {
         $lastException = null;
         $tokenRefreshAttempts = 0;
+        $totalAttempts = 0;
 
-        for ($attempt = 1; $attempt <= $this->maxRetries; $attempt++) {
+        while ($totalAttempts < $this->maxRetries + $tokenRefreshAttempts) {
+            $totalAttempts++;
+
             try {
                 $response = $this->doRequest($method, $url, $data, $headers);
 
@@ -271,17 +308,13 @@ class HttpClient
                     // 清除并刷新token
                     $this->clearTokenCache();
                     $this->accessToken = null; // 强制重新获取
-                    $newToken = $this->getAccessToken();
+                    $this->getAccessToken();
 
                     // 重新构建请求头（使用新token）
-                    if ($method === 'POST') {
-                        $headers = $this->buildHeaders($data, $url);
-                    } else {
-                        $headers = $this->buildHeaders('', $url);
-                    }
+                    $headers = $this->buildHeaders($data, $method);
 
                     $this->logInfo("Token已刷新，重试请求 (尝试 {$tokenRefreshAttempts}/{$this->maxTokenRefreshRetries})");
-                    
+
                     // 继续下一次循环尝试
                     continue;
                 }
@@ -298,14 +331,14 @@ class HttpClient
                     throw $e;
                 }
 
-                // 如果是最后一次尝试，抛出异常
-                if ($attempt >= $this->maxRetries) {
+                // 如果已达到最大尝试次数，抛出异常
+                if ($totalAttempts >= $this->maxRetries + $tokenRefreshAttempts) {
                     throw $e;
                 }
 
                 // 等待后重试
-                $waitTime = $this->retryDelay * $attempt;
-                $this->logInfo("请求失败，{$waitTime}ms后重试 (尝试 {$attempt}/{$this->maxRetries})");
+                $waitTime = $this->retryDelay * ($totalAttempts - $tokenRefreshAttempts);
+                $this->logInfo("请求失败，{$waitTime}ms后重试 (尝试 {$totalAttempts})");
                 usleep($waitTime * 1000);
             }
         }
@@ -322,42 +355,22 @@ class HttpClient
     protected function isTokenExpiredError(array $response): bool
     {
         // 检查HTTP状态码
-        if (isset($response['http_code']) && $response['http_code'] === 401) {
+        if (isset($response['http_code']) && (int)$response['http_code'] === 401) {
             return true;
         }
 
         // 检查业务错误码
         if (isset($response['code'])) {
-            $tokenErrorCodes = [
-                '401',           // 未授权
-                'TOKEN_EXPIRED', // Token过期
-                'INVALID_TOKEN', // 无效token
-                'AUTH_ERROR',    // 认证错误
-                'AUTH_FAILED',   // 认证失败
-            ];
-
-            if (in_array($response['code'], $tokenErrorCodes)) {
+            $code = (string)$response['code'];
+            if (in_array($code, self::TOKEN_ERROR_CODES, true)) {
                 return true;
             }
         }
 
         // 检查消息内容
         if (isset($response['message'])) {
-            $tokenErrorMessages = [
-                'token已过期',
-                'token失效',
-                'token无效',
-                'access token已过期',
-                'access token失效',
-                'access token无效',
-                '未授权',
-                'unauthorized',
-                'token expired',
-                'invalid token',
-            ];
-
             $message = strtolower($response['message']);
-            foreach ($tokenErrorMessages as $errorMsg) {
+            foreach (self::TOKEN_ERROR_MESSAGES as $errorMsg) {
                 if (strpos($message, strtolower($errorMsg)) !== false) {
                     return true;
                 }
@@ -447,7 +460,7 @@ class HttpClient
                 $errorCode = $responseData['code'] ?? null;
 
                 $this->logError("HTTP {$httpCode} 错误: {$message}");
-                
+
                 throw QixiangyunException::apiError(
                     'HTTP Error: ' . $httpCode . ' - ' . $message,
                     $errorCode,
@@ -523,13 +536,6 @@ class HttpClient
      */
     protected function log(string $message, string $level = 'info'): void
     {
-        $logMessage = sprintf(
-            '[%s] [%s] [HttpClient] %s',
-            date('Y-m-d H:i:s'),
-            $level,
-            $message
-        );
-
         // 如果Laravel Log可用，使用Laravel日志
         if (class_exists('\Illuminate\Support\Facades\Log')) {
             switch ($level) {
@@ -547,6 +553,13 @@ class HttpClient
                     break;
             }
         } else {
+            // 仅在非Laravel环境时构建日志消息
+            $logMessage = sprintf(
+                '[%s] [%s] [HttpClient] %s',
+                date('Y-m-d H:i:s'),
+                strtoupper($level),
+                $message
+            );
             error_log($logMessage);
         }
     }
